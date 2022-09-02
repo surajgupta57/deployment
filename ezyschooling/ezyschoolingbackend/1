@@ -1,0 +1,2461 @@
+import csv
+import math
+import calendar
+from datetime import datetime,timedelta
+from allauth.account import app_settings as allauth_settings
+from django.conf import settings
+from django.contrib.contenttypes.models import ContentType
+from django.core.exceptions import ObjectDoesNotExist
+from django.db import transaction
+from django.db.models import BooleanField, Case, Count, Prefetch, Value, When
+from django.db.models.query import QuerySet
+from django.http import Http404, HttpResponse
+from django.utils import timezone
+from rest_framework import response
+from rest_framework.exceptions import APIException
+from django.utils.encoding import force_text
+
+from django_elasticsearch_dsl_drf.constants import (LOOKUP_FILTER_GEO_DISTANCE,
+                                                    MATCHING_OPTION_MUST,
+                                                    SUGGESTER_COMPLETION,
+                                                    LOOKUP_QUERY_LTE,
+                                                    LOOKUP_FILTER_TERMS,
+                                                    LOOKUP_FILTER_RANGE,
+                                                    LOOKUP_FILTER_PREFIX,
+                                                    LOOKUP_FILTER_WILDCARD,
+                                                    LOOKUP_QUERY_IN,
+                                                    LOOKUP_QUERY_GT,
+                                                    LOOKUP_QUERY_GTE,
+                                                    LOOKUP_QUERY_LT,
+                                                    LOOKUP_QUERY_EXCLUDE,)
+from django_elasticsearch_dsl_drf.filter_backends import (
+    CompoundSearchFilterBackend, DefaultOrderingFilterBackend,
+    FilteringFilterBackend, GeoSpatialFilteringFilterBackend,FacetedSearchFilterBackend,
+    GeoSpatialOrderingFilterBackend, HighlightBackend, SuggesterFilterBackend,
+    NestedFilteringFilterBackend, OrderingFilterBackend, SearchFilterBackend,IdsFilterBackend)
+from django_elasticsearch_dsl_drf.pagination import LimitOffsetPagination
+from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet
+from elasticsearch import Elasticsearch
+from notifications.models import Notification
+from notifications.signals import notify
+from rest_auth.registration.views import RegisterView
+from rest_framework import generics, permissions, status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from accounts.api.v1.serializers import TokenSerializer
+from admission_forms.api.v1.serializers import (
+    SchoolApplicationDetailSerializer, SchoolApplicationListSerializer, ApplicationStatusSerializer, ApplicationStatusLogSerializer, ApplicationStatusLogCreateSerializer)
+from admission_forms.filters import SchoolApplicationFilter
+from admission_forms.models import SchoolApplication, ApplicationStatus, ApplicationStatusLog
+from schools.api.v1.serializers import SchoolDocumentSerializer,SchoolUploadCsvSerializer
+from schools.documents import SchoolProfileDocument
+from schools.filters import RegionFilter,StateFilter,CityFilter,DistrictFilter,DistrictRegionFilter
+from schools.mixins import SchoolPerformCreateUpdateMixin
+from schools.models import *
+from schools.permissions import (HasSchoolChildModelPermissionOrReadOnly,
+                                 HasSchoolObjectPermission, IsSchool,
+                                 IsSchoolOrReadOnly, SchoolDashboardPermission,
+                                 SchoolEnquiryPermission, SchoolViewPermission)
+from schools.resources import *
+from schools.tasks import send_school_code_request_mail,add_selected_child_data_from_csv
+from schools.utils import (default_required_admission_form_fields,
+                           default_required_child_fields,
+                           default_required_father_fields,
+                           default_required_guardian_fields,
+                           default_required_mother_fields)
+
+from . import serializers
+from parents.permissions import (IsParent)
+from backend.logger import info_logger,error_logger
+import pandas as pd
+from rest_framework.parsers import FileUploadParser
+import json
+from rest_framework.decorators import api_view
+
+from rest_framework.permissions import BasePermission, SAFE_METHODS
+
+
+class SchoolRegisterView(RegisterView):
+    serializer_class = serializers.SchoolRegisterSerializer
+
+    def get_response_data(self, user):
+        if (
+            allauth_settings.EMAIL_VERIFICATION
+            == allauth_settings.EmailVerificationMethod.MANDATORY
+        ):
+            return {"detail": _("Verification e-mail sent.")}
+
+        if getattr(settings, "REST_USE_JWT", False):
+            data = {"user": user, "token": self.token}
+            return JWTSerializer(data).data
+        else:
+            return TokenSerializer(user.auth_token.first()).data
+
+
+class SchoolProfileView(generics.RetrieveUpdateAPIView):
+    serializer_class = serializers.SchoolProfileSerializer
+    lookup_field = "slug"
+    permission_classes = [
+        IsSchoolOrReadOnly,
+    ]
+
+    def get_queryset(self):
+        queryset = SchoolProfile.objects.all().select_related(
+            "school_type",
+            "school_board",
+            # "region",
+            # "state"
+            "school_country",
+            "school_state",
+            "school_city",
+            "district",
+            "district_region",
+            ).prefetch_related(
+            Prefetch(
+                "admmissionopenclasses_set",
+                queryset=AdmmissionOpenClasses.objects.all().select_related("class_relation").order_by('class_relation__rank'))).prefetch_related(
+                "profile_views",
+                "school_boardss",
+                "class_relation",
+                "schooladmissionformfee_set",)
+        return queryset
+
+    def set_form_price_for_school(self,form_price,school):
+        for class_relation in school.class_relation.all():
+            form_fee_obj,boolean = SchoolAdmissionFormFee.objects.get_or_create(class_relation=class_relation,school_relation=school)
+            form_fee_obj.form_price=form_price
+            form_fee_obj.save()
+
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.SchoolProfileSerializer
+        if self.request.method in ["PUT","PATCH"]:
+            if 'form_price' in self.request.data:
+                school = SchoolProfile.objects.get(user=self.request.user)
+                self.set_form_price_for_school(form_price=self.request.data['form_price'],school=school)
+            return serializers.SchoolProfileUpdateSerializer
+
+
+class SchoolGalleryView(SchoolPerformCreateUpdateMixin, generics.ListCreateAPIView):
+    serializer_class = serializers.GallerySerializer
+    permission_classes = [
+        HasSchoolChildModelPermissionOrReadOnly,
+    ]
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug")
+        queryset = Gallery.objects.filter(
+            is_active=True).filter(school__slug=slug)
+        return queryset
+
+@api_view(['GET'])
+def school_fee_stucture_min_max_api(request,**kwargs):
+    school_slug = kwargs.get("slug",'')
+    
+    if school_slug == '':
+        return Response({'error':'Pass A school Slug'})
+
+    if not  SchoolProfile.objects.filter(slug=school_slug).exists():
+        return Response({
+            'error':'School Does Not Exist'
+        })
+
+    school = SchoolProfile.objects.get(slug=school_slug)
+    fees_structure =  FeeStructure.objects.filter(school = school)
+    
+    final_list = []
+    for j in fees_structure:
+        final_list.append(j.fee_price)
+    if final_list: 
+        return Response({
+             'school':school.name,
+             'minimum':round(min(final_list)),
+            'maximum':round(max(final_list))
+             })
+    else:
+        return Response({'school':school.name,
+                          'minimum':0,
+                          'maximux':0
+                          }) 
+
+
+class SchoolGalleryDetailView(SchoolPerformCreateUpdateMixin, generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = serializers.GallerySerializer
+    permission_classes = [
+        HasSchoolChildModelPermissionOrReadOnly,
+    ]
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug")
+        queryset = Gallery.objects.filter(
+            is_active=True).filter(school__slug=slug)
+        return queryset
+
+
+class SchoolBrowseSearchView(APIView):
+    def get(self, request, format=False):
+        elastic_host = "http://localhost:9200"
+        if hasattr(settings, "ELASTICSEARCH_DSL"):
+            elastic_host = settings.ELASTICSEARCH_DSL["default"]["hosts"]
+            http_auth = settings.ELASTICSEARCH_DSL["default"]["http_auth"]
+        es = Elasticsearch([f"http://{elastic_host}"], http_auth=http_auth)
+
+        page_size = self.request.GET.get("page_size", 10)
+        offset_size = self.request.GET.get("offset_size", 0)
+
+        school_type_slug = self.request.GET.get("school_type_slug", None)
+        region_slug = self.request.GET.get("region_slug", None)
+        format_slug = self.request.GET.get("format_slug", None)
+        state_slug = self.request.GET.get("state_slug", None)
+        school_board_slug = self.request.GET.get("school_board_slug", None)
+        school_category = self.request.GET.get("school_category", None)
+        distance = self.request.GET.get("distance", None)
+        latitude = self.request.GET.get("latitude", None)
+        longitude = self.request.GET.get("longitude", None)
+        class_relation_slug = self.request.GET.get("class_relation_slug", None)
+        fee_price_gte = self.request.GET.get("fee_price_gte", 0)
+        fee_price_lte = self.request.GET.get("fee_price_lte", 10000000)
+        admission_open_class = self.request.GET.get(
+            "admission_open_class", None)
+
+        body = {}
+
+        school_name = self.request.GET.get("school_name", None)
+
+        body["query"] = {}
+
+        body["query"]["bool"] = {}
+        body["query"]["bool"]["must"] = []
+        body["query"]["bool"]["must"].append(
+            {"match_phrase": {"is_active": True}})
+        body["query"]["bool"]["must"].append(
+            {"match_phrase": {"is_verified": True}})
+        body["track_scores"] = True
+        body["sort"] = [{"global_rank": {"order": "desc"}}, {
+            "admissionclasses_open_count": {"order": "desc"}}, {"total_views": {"order": "desc"}}]
+
+        if school_name:
+            body["query"]["bool"]["must"].append(
+                [
+                    {
+                        "simple_query_string": {
+                            "query": school_name + "~5",
+                            "fields": ["name^3"]
+                        }
+                    },
+                ]
+            )
+            body["highlight"] = {
+                "pre_tags": ["<b>"],
+                "post_tags": ["</b>"],
+                "fields": {"name": {}, },
+            }
+
+        if school_type_slug:
+            body["query"]["bool"]["must"].append(
+                {"match_phrase": {"school_type.slug": school_type_slug}})
+
+        if region_slug:
+            body["query"]["bool"]["must"].append(
+                {"match_phrase": {"region.slug": region_slug}})
+            body["sort"] = [{"region_rank": {"order": "desc"}}, {
+                "admissionclasses_open_count": {"order": "desc"}}, {"total_views": {"order": "desc"}}]
+
+        if format_slug:
+            body["query"]["bool"]["must"].append(
+                {"match_phrase": {"school_format.slug": format_slug}})
+
+        if state_slug:
+            body["query"]["bool"]["must"].append(
+                {"match_phrase": {"state.slug": state_slug}})
+
+        if school_board_slug:
+            body["query"]["bool"]["must"].append(
+                {"match_phrase": {"school_board.slug": school_board_slug}})
+
+        if school_category:
+            body["query"]["bool"]["must"].append(
+                {"match_phrase": {"school_category": school_category}})
+
+        if class_relation_slug or int(fee_price_lte) < 10000000:
+            nested_query = {}
+            nested_query["nested"] = {}
+            nested_query["nested"]["path"] = "school_fee_structure"
+            nested_query["nested"]["query"] = {}
+            nested_query["nested"]["query"]["bool"] = {}
+            nested_query["nested"]["query"]["bool"]["must"] = []
+            if class_relation_slug:
+                nested_query["nested"]["query"]["bool"]["must"].append({
+                    "match": {
+                        "school_fee_structure.class_relation.slug": class_relation_slug
+                    }
+                }
+                )
+
+            if int(fee_price_lte) < 10000000:
+                nested_query["nested"]["query"]["bool"]["must"].append({
+                    "range": {
+                        "school_fee_structure.fee_price": {
+                            "gte": int(fee_price_gte),
+                            "lte": int(fee_price_lte)
+                        }
+                    }
+                }
+                )
+
+            body["query"]["bool"]["must"].append(nested_query)
+
+        if admission_open_class:
+            nested_query = {}
+            nested_query["nested"] = {}
+            nested_query["nested"]["path"] = "admmissionopenclasses_set"
+            nested_query["nested"]["query"] = {}
+            nested_query["nested"]["query"]["bool"] = {}
+            nested_query["nested"]["query"]["bool"]["must"] = []
+            nested_query["nested"]["query"]["bool"]["must"].append({
+                "match": {
+                    "admmissionopenclasses_set.class_relation.id": admission_open_class
+                }
+            })
+
+            body["query"]["bool"]["must"].append(nested_query)
+
+        if distance and latitude and longitude:
+            body["query"]["bool"]["filter"] = {}
+            body["query"]["bool"]["filter"]["geo_distance"] = {}
+            body["query"]["bool"]["filter"]["geo_distance"]["distance"] = f"{distance}km"
+            body["query"]["bool"]["filter"]["geo_distance"]["geocoords"] = {}
+            body["query"]["bool"]["filter"]["geo_distance"]["geocoords"]["lat"] = latitude
+            body["query"]["bool"]["filter"]["geo_distance"]["geocoords"]["lon"] = longitude
+            body["sort"].append({"_geo_distance": {"order": "asc", "geocoords": f"{latitude},{longitude}"}})
+
+        # import json
+        # print(json.dumps(body, indent=4))
+
+        res = es.search(
+            index="prod-school-profile",
+            size=page_size,
+            from_=offset_size,
+            # _source=[
+            #     "title",
+            #     "description",
+            #     "timestamp",
+            #     "slug",
+            #     "thumbnail",
+            #     "views",
+            #     "board",
+            #     "sub_category",
+            #     "id",
+            # ],
+            body=body,
+        )
+        return Response(res, status=status.HTTP_200_OK)
+
+
+class SchoolTypeView(generics.ListAPIView):
+    serializer_class = serializers.SchoolTypeSerializer
+    queryset = SchoolType.objects.all().order_by("order_rank")
+
+
+class SchoolBoardView(generics.ListAPIView):
+    serializer_class = serializers.SchoolBoardSerializer
+    queryset = SchoolBoard.objects.all()
+
+
+class RegionView(generics.ListAPIView):
+    serializer_class = serializers.RegionSerializer
+    queryset = Region.objects.filter(active=True).order_by("rank")
+    filterset_class = RegionFilter
+
+
+class SchoolFormatView(generics.ListAPIView):
+    serializer_class = serializers.SchoolFormatSerializer
+    queryset = SchoolFormat.objects.all()
+
+
+class StateView(generics.ListAPIView):
+    serializer_class = serializers.StateSerializer
+    queryset = State.objects.all()
+    
+
+class CountryView(generics.ListAPIView):
+    serializer_class = serializers.CountrySerializer
+    queryset = Country.objects.all()
+
+class StatesView(generics.ListAPIView):
+    serializer_class = serializers.StatesSerializer
+    queryset = States.objects.all()
+    filterset_class = StateFilter
+    
+class CityView(generics.ListAPIView):
+    serializer_class = serializers.CitySerializer
+   # queryset = City.objects.all().filter(params__Count__gt=0).order_by('-params__Count')
+    filterset_class = CityFilter
+
+    def get_queryset(self):
+        is_featured =self.request.GET.get("is_featured",None)
+        if is_featured:
+            return City.objects.all().filter(params__Count__gt=0,is_featured=is_featured).order_by('-params__Count')
+        return City.objects.all().filter(params__Count__gt=0).order_by('-params__Count')
+
+
+class DistrictView(generics.ListAPIView):
+    serializer_class = serializers.DistrictSerializer
+    queryset = District.objects.all().filter(params__Count__gt=0).order_by('name')
+    filterset_class = DistrictFilter
+
+
+class DistrictRegionView(generics.ListAPIView):
+    serializer_class = serializers.DistrictRegionSerializer
+    queryset = DistrictRegion.objects.all().filter(params__Count__gt=0).order_by('name')
+    filterset_class = DistrictRegionFilter
+
+
+class SchoolClassesView(generics.ListAPIView):
+    serializer_class = serializers.SchoolClassesSerializer
+    queryset = SchoolClasses.objects.order_by("rank")
+
+
+class ActivityTypeView(SchoolPerformCreateUpdateMixin, generics.ListCreateAPIView):
+    def get_queryset(self):
+        school = generics.get_object_or_404(SchoolProfile, slug=self.kwargs.get("slug"))
+        queryset = ActivityType.objects.filter(
+            school=school).prefetch_related("activities")
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.ActivityTypeSerializer
+        if self.request.method == "POST":
+            return serializers.ActivityTypeCreateSerializer
+
+
+class ActivityTypeDetailView(SchoolPerformCreateUpdateMixin, generics.RetrieveUpdateDestroyAPIView):
+    def get_queryset(self):
+        school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+        queryset = ActivityType.objects.filter(
+            school=school).prefetch_related("activities")
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.ActivityTypeSerializer
+        if self.request.method in ["PUT", "PATCH"]:
+            return serializers.ActivityTypeCreateSerializer
+
+
+class ActivityView(generics.CreateAPIView):
+    serializer_class = serializers.ActivitySerializer
+
+
+class ActivityDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = serializers.ActivitySerializer
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        school = generics.get_object_or_404(SchoolProfile, slug=self.kwargs.get("slug"))
+        queryset = Activity.objects.filter(activity_type__school=school)
+        return queryset
+
+
+class FeeStructureView(SchoolPerformCreateUpdateMixin, generics.ListCreateAPIView):
+    permission_classes = [IsSchoolOrReadOnly, ]
+    def get_queryset(self):
+        school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+        queryset = FeeStructure.objects.filter(school=school).select_related(
+            "class_relation","stream_relation").prefetch_related("fees_parameters").order_by("class_relation__rank")
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.FeeStructureSerializer
+        if self.request.method == "POST":
+            return serializers.FeeStructureCreateUpdateSeirializer
+
+
+
+class FeeStructureDetailView(SchoolPerformCreateUpdateMixin, generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [HasSchoolObjectPermission, ]
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+        queryset = FeeStructure.objects.filter(school=school).select_related(
+            "class_relation","stream_relation").prefetch_related("fees_parameters").order_by("class_relation__rank")
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.FeeStructureSerializer
+        if self.request.method in ["PUT", "PATCH"]:
+            return serializers.FeeStructureCreateUpdateSeirializer
+    
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        for i in instance._prefetched_objects_cache['fees_parameters']:
+            i.delete()
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class FeeParameterobjectDelete(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [HasSchoolObjectPermission, ]
+    lookup_field = "pk"
+    serializer_class = serializers.SchoolFeesParametersSerializer
+
+    def get_queryset(self):
+        school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+        queryset = SchoolFeesParameters.objects.filter(school=school)
+        return queryset
+
+
+class FeeHeadDetailViews(generics.ListCreateAPIView):
+    serializer_class=serializers.SchoolFeesTypeSerializer
+    def get_queryset(self):
+        queryset = SchoolFeesType.objects.all()
+        return queryset
+
+class FeeStructureStreamsDetailView(generics.ListCreateAPIView):
+    serializer_class=serializers.SchoolStreamSerializer
+    def get_queryset(self):
+        queryset = SchoolStream.objects.all()
+        return queryset
+
+
+class FeeStructureClassFilterView(generics.ListCreateAPIView):
+    permission_classes = [IsSchoolOrReadOnly, ]
+    def get_queryset(self):
+        school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+        queryset = FeeStructure.objects.filter(school=school,class_relation=self.kwargs.get("class_id")).select_related("stream_relation")
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.FeeStructureSerializer
+       
+
+
+class FeeStructureStreamDetailView(SchoolPerformCreateUpdateMixin,generics.GenericAPIView):
+    permission_classes = [HasSchoolObjectPermission, ]
+
+    def get(self, request, slug,pk,stream_id):
+        try:
+            school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+            self.queryset = FeeStructure.objects.filter(school=school,class_relation=self.kwargs.get("pk"),stream_relation=self.kwargs.get("stream_id"))
+            self.serializer=self.get_serializer(self.queryset,many=True)
+            if not self.serializer.data:
+               raise CustomValidation('Data For Given id do not exist,check either class id exist or stream id', 'data', status_code=status.HTTP_404_NOT_FOUND)
+        except FeeStructure.DoesNotExist:
+             raise CustomValidation('Data For Given id do not exist', 'data', status_code=status.HTTP_404_NOT_FOUND)
+        return Response(self.serializer.data)
+    
+    def put(self,request, slug,pk,stream_id):
+        try:
+            school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+            self.instance =  FeeStructure.objects.filter(school=school,class_relation=self.kwargs.get("pk"),stream_relation=self.kwargs.get("stream_id")).first()
+            self.serializer = self.get_serializer(self.instance, data=request.data)
+            self.serializer.is_valid(raise_exception=True)
+            self.serializer.save()
+        except FeeStructure.DoesNotExist:
+             raise CustomValidation('Data For Given id do not exist', 'data', status_code=status.HTTP_404_NOT_FOUND)
+        return Response({
+            "status": status.HTTP_202_ACCEPTED,
+            "Message":"Data Updated"
+        })
+    
+    def patch(self,request, slug,pk,stream_id):
+        try:
+            school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+            self.instance =  FeeStructure.objects.filter(school=school,class_relation=self.kwargs.get("pk"),stream_relation=self.kwargs.get("stream_id")).first()
+            self.serializer = self.get_serializer(self.instance, data=request.data,partial=True)
+            self.serializer.is_valid(raise_exception=True)
+            self.serializer.save()
+        except FeeStructure.DoesNotExist:
+             raise CustomValidation('Data For Given id do not exist', 'data', status_code=status.HTTP_404_NOT_FOUND)
+        return Response({
+            "status": status.HTTP_202_ACCEPTED,
+            "Message":"Data Updated"
+        })
+        
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.FeeStructureSerializer
+        if self.request.method in ["PUT", "PATCH"]:
+            return serializers.FeeStructureCreateUpdateSerializer
+
+
+class SchoolPointCreateView(SchoolPerformCreateUpdateMixin, generics.CreateAPIView):
+    serializer_class = serializers.SchoolPointCreateSerializer
+    permission_classes = [IsSchoolOrReadOnly, ]
+    queryset = SchoolPoint.objects.all()
+
+
+class SchoolPointUpdateView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = serializers.SchoolPointCreateSerializer
+    permission_classes = [SchoolDashboardPermission, ]
+
+    def get_object(self, queryset=None):
+        if queryset is None:
+            queryset = self.get_queryset()
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        return generics.get_object_or_404(queryset, school=school)
+
+    def get_queryset(self):
+        queryset = SchoolPoint.objects.all()
+        return queryset
+
+    def perform_update(self, serializer):
+        school_id = self.request.user.current_school
+        serializer.save(school_id=school_id)
+
+
+class DistancePointView(generics.ListCreateAPIView):
+    serializer_class = serializers.DistancePointSerializer
+    #permission_classes = [permissions.IsAuthenticated, ]
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        queryset = DistancePoint.objects.filter(
+            school=school).order_by("start")
+        return queryset
+
+    def perform_create(self, serializer):
+        school_id = self.request.user.current_school
+        serializer.save(school_id=school_id)
+
+
+class DistancePointDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = serializers.DistancePointSerializer
+    lookup_field = "pk"
+    permission_classes = [HasSchoolObjectPermission]
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        queryset = DistancePoint.objects.filter(school=school)
+        return queryset
+
+    def perform_update(self, serializer):
+        school_id = self.request.user.current_school
+        serializer.save(school_id=school_id)
+
+
+class SchoolBasicProfileView(generics.RetrieveUpdateAPIView):
+    permission_classes = [
+        IsSchool,
+    ]
+
+    def get_object(self, queryset=None):
+        if queryset is None:
+            queryset = self.get_queryset()
+        return generics.get_object_or_404(
+            queryset, pk=int(
+                self.request.user.current_school))
+
+    def get_queryset(self):
+        queryset = SchoolProfile.objects.all().select_related(
+            "school_type",
+            "school_board",
+            # "region",
+            # "state"
+            "school_country",
+            "school_state",
+            "school_city",
+            "district",
+            "district_region",
+            ).prefetch_related(
+            Prefetch(
+                "admmissionopenclasses_set",
+                queryset=AdmmissionOpenClasses.objects.all().select_related("class_relation"))).prefetch_related(
+                "profile_views",
+                "class_relation",
+                "school_boardss",)
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.SchoolProfileSerializer
+        if self.request.method in ["PUT", "PATCH"]:
+            return serializers.SchoolDashboardProfileUpdateSerializer
+
+
+class AdmmissionOpenClassesView(SchoolPerformCreateUpdateMixin, generics.ListCreateAPIView):
+    serializer_class = serializers.AdmmissionOpenClassesSerializer
+    permission_classes = [HasSchoolChildModelPermissionOrReadOnly]
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        queryset = AdmmissionOpenClasses.objects.filter(school=school)
+        return queryset
+
+
+class AdmmissionOpenClassesDetailView(SchoolPerformCreateUpdateMixin, generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = serializers.AdmmissionOpenClassesSerializer
+    permission_classes = [HasSchoolChildModelPermissionOrReadOnly]
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        queryset = AdmmissionOpenClasses.objects.filter(school=school)
+        return queryset
+
+
+class AdmissionFormOptionalKeysView(APIView):
+
+    def get(self, request, format=False):
+        response = {}
+        response["default_required_admission_form_fields"] = default_required_admission_form_fields().keys()
+        response["default_required_child_fields"] = default_required_child_fields().keys()
+        response["default_required_father_fields"] = default_required_father_fields().keys()
+        response["default_required_mother_fields"] = default_required_mother_fields().keys()
+        response["default_required_guardian_fields"] = default_required_guardian_fields(
+        ).keys()
+        return Response(response, status=status.HTTP_200_OK)
+
+
+class SchoolApplicationListView(generics.ListAPIView):
+    serializer_class = SchoolApplicationListSerializer
+    filterset_class = SchoolApplicationFilter
+
+    def get_queryset(self):
+        return SchoolApplication.objects.select_related(
+            "child", "form").filter(
+            school__pk=self.request.user.current_school)
+
+
+class SchoolApplicationDetailView(generics.RetrieveUpdateAPIView):
+    serializer_class = SchoolApplicationDetailSerializer
+
+    def get_queryset(self):
+        return SchoolApplication.objects.select_related(
+            "child", "form").filter(
+            school__pk=self.request.user.current_school)
+
+class ApplicationStatusListView(generics.ListAPIView):
+    serializer_class = ApplicationStatusSerializer
+    filterset_fields = ('type',)
+
+    def get_queryset(self):
+        return ApplicationStatus.objects.all().order_by('rank')
+
+class ApplicationStatusLogCreateView(APIView):
+    serializer_class = ApplicationStatusLogCreateSerializer
+    permission_classes = [IsSchool]
+
+    def post(self,request, *args, **kwargs):
+        serializer = ApplicationStatusLogCreateSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({}, status=status.HTTP_200_OK)
+        else:
+            error_logger(f"{self.__class__.__name__} Serializer Invalid for userid {self.request.user.id}")
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST)
+
+class SchoolViewsListView(generics.ListAPIView):
+    serializer_class = serializers.SchoolViewSerializer
+    permission_classes = [SchoolViewPermission]
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        queryset = SchoolView.objects.filter(school=school)
+        if('shortlisted' in self.request.GET and self.request.GET.get('shortlisted')=='yes'):
+            list_of_ids=[]
+            for obj in queryset:
+                    if ChildSchoolCart.objects.filter(child__user=obj.user, school=school).exists():
+                        list_of_ids.append(obj.id)
+            queryset = SchoolView.objects.filter(id__in = list_of_ids)
+        return queryset
+
+class SchoolViewsMonthWiseView(APIView):
+    permission_classes = [SchoolViewPermission]
+
+    def get(self,request,slug):
+        slug = self.kwargs.get("slug",None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        month = datetime.now().date().month +1
+        year = datetime.now().date().year
+        views={}
+        for i in range(0,5):
+            month = month -1
+            if(month==0):
+                month=12
+                year-=1
+            if('shortlisted' in request.GET and request.GET.get('shortlisted')=='yes'):
+                users = SchoolView.objects.filter(school=school,updated_at__month=month,updated_at__year=year,).values_list('user') 
+                cnt = 0
+                for user in users:
+                    if ChildSchoolCart.objects.filter(child__user=user, school=school).exists():
+                        cnt+=1
+                views[calendar.month_name[month]] = cnt
+            else:
+                views[calendar.month_name[month]]= SchoolView.objects.filter(school=school,updated_at__month=month,updated_at__year=year).count() 
+        return Response(views,status=status.HTTP_200_OK)
+
+class SchoolEnquiryView(generics.ListCreateAPIView):
+    serializer_class = serializers.SchoolEnquirySerializer
+    permission_classes = [SchoolEnquiryPermission, ]
+
+    def perform_create(self, serializer):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        if self.request.user.is_authenticated:
+            serializer.save(user=self.request.user, school=school)
+        else:
+            serializer.save(school=school)
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        if self.request.user.is_school:
+            school_id = self.request.user.current_school
+            queryset = SchoolEnquiry.objects.filter(
+                school__id=school_id, school__slug=slug).order_by("-timestamp")
+        else:
+            queryset = SchoolEnquiry.objects.none()
+        return queryset
+
+
+class FormsSubmittedWeeklyView(APIView):
+    permission_classes = [IsSchool, ]
+
+    def get(self, request, **kwargs):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        school_id = self.request.user.current_school
+        if school_id == school.id:
+            total = SchoolApplication.objects.filter(
+                school__slug=slug).count()
+            res = {}
+            res["total"] = total
+            res["results"] = []
+            num_weeks = 5
+            day_of_week = timezone.now().date().weekday()
+            from_date = timezone.now().date() - timezone.timedelta(days=day_of_week)
+            to_date = timezone.now().date()
+            for week in reversed(range(num_weeks)):
+                if week == (num_weeks - 1):
+                    count = SchoolApplication.objects.filter(
+                        school__slug=slug).filter(
+                        timestamp__date__range=[
+                            from_date, to_date]).count()
+                    res["results"].append(
+                        {'week': week, 'count': count, 'from': from_date, 'to': to_date})
+                else:
+                    to_date = from_date - timezone.timedelta(days=1)
+                    from_date = from_date - timezone.timedelta(days=7)
+                    count = SchoolApplication.objects.filter(
+                        school__slug=slug).filter(
+                        timestamp__date__range=[
+                            from_date, to_date]).count()
+                    res["results"].append(
+                        {'week': week, 'count': count, 'from': from_date, 'to': to_date})
+            return Response(res)
+        else:
+            error_logger(f"{self.__class__.__name__} Permission Error for userid {request.user.id}")
+            res = {"detail": "You do not have permission to perform this action."}
+            return Response(res, status=status.HTTP_401_UNAUTHORIZED)
+
+
+def combined_address(data):
+    return data.form.short_address+" "+data.form.street_address+" "+data.form.city+" "+data.form.state+" "+data.form.pincode
+                
+
+
+class ExcelExportDOEView(APIView):
+    permission_classes = [
+        IsSchoolOrReadOnly,
+    ]
+    def get(self, request, format=None):
+        apps = SchoolApplication.objects.select_related(
+            "child", "form").filter(
+            school__pk=self.request.user.current_school)
+        
+        if 'apply_for' in request.GET and request.GET.get('apply_for'):
+            apps = apps.filter(apply_for=request.GET['apply_for'])
+        if 'start_date' in request.GET and request.GET.get('start_date'):
+            apps = apps.filter(timestamp__date__gte=request.GET['start_date'])
+        if 'end_date' in request.GET and request.GET.get('end_date'):
+            apps = apps.filter(timestamp__date__lte=request.GET['end_date'])
+    
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="All Forms DOE.csv"'
+        writer = csv.DictWriter(
+            response,
+            fieldnames=[
+                'Reg. No.',
+                'Received Date',
+                'Child Age',
+                'DOB',
+                'Child Name',
+                'Gender',
+                'Father\'s Name',
+                'Mother\'s Name',
+                'Guardian\'s Name',
+                'Short Address',
+                'Address',
+                'City',
+                'State',
+                'Zipcode',
+                'Combined Address',
+                'Phone',
+                'Points',
+                'Distance Points',
+                "Single Child Points",
+                "First Born Child Points",
+                'Siblings Points',
+                "Christian Child Points",
+                "Parent Alumni Points",
+                "Staff Ward Points",
+                "Single Girl Child Points",
+                "First Girl Child Points",
+                "Girl Child Points",
+                "Single Parent Points",
+                "Minority Points",
+                "Children of Armed Forces Points",
+                "Children With Special Needs Points",
+                "Transport Facility Points",
+                "Applying For"])
+        writer.writeheader()
+        for i in apps:
+            if  i.child.orphan:
+                 writer.writerow({
+                'Reg. No.': i.uid,
+                'Received Date': i.timestamp.strftime("%-d/%-m/%Y %-I:%-M%p"),
+                'DOB': i.child.date_of_birth,
+                'Child Name': i.child.name.title(),
+                "Child Age": i.child.age_str,
+                'Gender': i.child.gender.title(),
+                'Guardian\'s Name': i.form.guardian.name.title(),
+                "Applying For": i.apply_for.name,
+                "Points": i.total_points if(i.apply_for.name in ["Nursery","KG","Class 1"]) else "",
+                'Distance Points': i.distance_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.distance_points!=0)) else "",
+                "Single Child Points": i.single_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_child_points!=0)) else "",
+                "First Born Child Points": i.first_born_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.first_born_child_points!=0)) else "",
+                'Siblings Points': i.siblings_studied_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.siblings_studied_points!=0)) else "",
+                "Christian Child Points": i.christian_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.christian_points!=0)) else "",
+                "Parent Alumni Points": i.parents_alumni_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.parents_alumni_points!=0)) else "",
+                "Staff Ward Points": i.staff_ward_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.staff_ward_points!=0)) else "",
+                "Single Girl Child Points": i.single_girl_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_girl_child_points!=0)) else "",
+                "First Girl Child Points": i.first_girl_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.first_girl_child_points!=0)) else "",
+                "Girl Child Points": i.girl_child_point if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.girl_child_point!=0)) else "",
+                "Single Parent Points": i.single_parent_point if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_parent_point!=0))  else "",
+                "Minority Points": i.minority_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.minority_points!=0)) else "",
+                "Children of Armed Forces Points": i.children_of_armed_force_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.children_of_armed_force_points!=0)) else "",
+                "Children With Special Needs Points": i.student_with_special_needs_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.student_with_special_needs_points!=0)) else "",
+                "Transport Facility Points": i.transport_facility_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.transport_facility_points!=0)) else "",
+                'Short Address':i.form.short_address,
+                'Address': i.form.street_address,
+                'Zipcode': i.form.pincode,
+                'City': i.form.city,
+                'State': i.form.state, 
+                'Combined Address': combined_address(i),
+                'Phone': i.form.guardian.phone
+                })
+            else:  
+                writer.writerow({
+                    'Reg. No.': i.uid,
+                    'Received Date': i.timestamp.strftime("%-d/%-m/%Y %-I:%-M%p"),
+                    'DOB': i.child.date_of_birth,
+                    'Child Name': i.child.name.title(),
+                    "Child Age": i.child.age_str,
+                    'Gender': i.child.gender.title(),
+                    'Father\'s Name': i.form.father.name.title(),
+                    'Mother\'s Name': i.form.mother.name.title(),
+                    "Applying For": i.apply_for.name,
+                    "Points": i.total_points if(i.apply_for.name in ["Nursery","KG","Class 1"]) else "N/A",
+                    'Distance Points': i.distance_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.distance_points!=0)) else "",
+                    "Single Child Points": i.single_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_child_points!=0)) else "",
+                    "First Born Child Points": i.first_born_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.first_born_child_points!=0)) else "",
+                    'Siblings Points': i.siblings_studied_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.siblings_studied_points!=0)) else "",
+                    "Christian Child Points": i.christian_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.christian_points!=0)) else "",
+                    "Parent Alumni Points": i.parents_alumni_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.parents_alumni_points!=0)) else "",
+                    "Staff Ward Points": i.staff_ward_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.staff_ward_points!=0)) else "",
+                    "Single Girl Child Points": i.single_girl_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_girl_child_points!=0)) else "",
+                    "First Girl Child Points": i.first_girl_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.first_girl_child_points!=0)) else "",
+                    "Girl Child Points": i.girl_child_point if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.girl_child_point!=0)) else "",
+                    "Single Parent Points": i.single_parent_point if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_parent_point!=0))  else "",
+                    "Minority Points": i.minority_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.minority_points!=0)) else "",
+                    "Children of Armed Forces Points": i.children_of_armed_force_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.children_of_armed_force_points!=0)) else "",
+                    "Children With Special Needs Points": i.student_with_special_needs_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.student_with_special_needs_points!=0)) else "",
+                    "Transport Facility Points": i.transport_facility_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.transport_facility_points!=0)) else "",
+                    'Short Address':i.form.short_address,
+                    'Address': i.form.street_address,
+                    'Zipcode': i.form.pincode,
+                    'City': i.form.city,
+                    'State': i.form.state,
+                    'Combined Address': combined_address(i),
+                    'Phone': i.form.father.phone
+                })
+        return response
+
+
+def getalumnaniname1(data):
+    if data:
+        if data.form:
+            if(data.form.sibling1_alumni_school_name):
+                if(data.school.name == data.form.sibling1_alumni_school_name.name):
+                    return data.form.sibling1_alumni_name
+                else:
+                    return ""
+            else:
+                return ""
+        else:
+            return ""
+def getalumnaniname2(data):
+    if data:
+        if data.form:
+            if(data.form.sibling2_alumni_school_name):
+                if(data.school.name == data.form.sibling2_alumni_school_name.name):
+                    return data.form.sibling2_alumni_name
+                else:
+                    return ""
+            else:
+                return ""
+        else:
+            return ""
+
+def getalumanischoolname1(data):
+    if data:
+        if data.form:
+            if(data.form.sibling1_alumni_school_name):
+                if(data.school.name == data.form.sibling1_alumni_school_name.name):
+                    return data.form.sibling1_alumni_school_name.name
+                else:
+                    return ""
+            else:
+                return ""
+        else:
+            return ""
+
+def getalumanischoolname2(data):
+    if data:
+        if data.form:
+            if(data.form.sibling2_alumni_school_name):
+                if(data.school.name == data.form.sibling2_alumni_school_name.name):
+                    return data.form.sibling2_alumni_school_name.name
+                else:
+                    return ""
+            else:
+                return ""
+        else:
+            return ""
+
+def sibling1alumaniproof(data):
+    if data:
+        if data.form:
+            if(data.form.sibling1_alumni_school_name):
+                if(data.school.name == data.form.sibling1_alumni_school_name.name):
+                    if(data.form.sibling1_alumni_proof!=''):
+                        return data.form.sibling1_alumni_proof.url
+                    else:
+                        return ""
+                else:
+                    return ""
+            else:
+                return ""
+        else:
+            return ""
+
+def sibling2alumaniproof(data):
+    if data:
+        if data.form:
+            if(data.form.sibling2_alumni_school_name):
+                if(data.school.name == data.form.sibling2_alumni_school_name.name):
+                    if(data.form.sibling2_alumni_proof!=''):
+                        return data.form.sibling2_alumni_proof.url
+                    else:
+                        return ""
+                else:
+                    return ""
+            else:
+                return ""
+        else:
+            return ""
+
+def childs_aadhaar_number(data):
+    if('aadhaar_card_number' in data.school.required_child_fields.keys()):
+        return data.child.aadhaar_number
+    else:
+        return ""
+
+def childs_aadhaar_card_proof(data):
+    if('aadhaar_card_proof' in data.school.required_child_fields.keys()):
+        if(data.child.aadhaar_card_proof):
+            return data.child.aadhaar_card_proof
+        else:
+            return ""
+    else:
+        return ""
+
+def childs_blood_group(data):
+    if('blood_group' in data.school.required_child_fields.keys()):
+        return data.child.blood_group
+    else:
+        return ""
+
+def childs_birth_certificate(data):
+    if('birth_certificate' in data.school.required_child_fields.keys()):
+        if data.child.birth_certificate:
+            return data.child.birth_certificate.url
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def childs_address_proof(data):
+    if('address_proof' in data.school.required_child_fields.keys()):
+        if data.child.address_proof:
+            return data.child.address_proof.url
+        else:
+            return ""
+    else:
+        return ""
+   
+
+def childs_address_proof2(data):
+    if('address_proof2' in data.school.required_child_fields.keys()):
+        if data.child.address_proof2:
+            return data.child.address_proof2.url
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def childs_first_child_affidavit(data):
+    if('first_child_affidavit' in data.school.required_child_fields.keys()):
+        if data.child.first_child_affidavit:
+            return data.child.first_child_affidavit.url
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def childs_vaccination_card(data):
+    if('vaccination_card' in data.school.required_child_fields.keys()):
+        if data.child.vaccination_card:
+            return data.child.vaccination_card.url
+        else:
+            return ""
+    else:
+        return ""
+
+
+def form_family_photo(data):
+    if('family_photo' in data.school.required_admission_form_fields.keys()):
+        if(data.form.family_photo):
+            return data.form.family_photo.url
+        else:
+            return ""
+    else:
+        return ""
+   
+
+def form_distance_affidavit(data):
+    if('distance_affidavit' in data.school.required_admission_form_fields.keys()):
+        if(data.form.distance_affidavit):
+            return data.form.distance_affidavit.url
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def form_baptism_certificate(data):
+    if('baptism_certificate' in data.school.required_admission_form_fields.keys()):
+        if(data.form.baptism_certificate):
+            return data.form.baptism_certificate.url
+        else:
+            return ""
+    else:
+        return ""
+
+
+def form_parent_signature_upload(data):
+    if('parent_signature_upload' in data.school.required_admission_form_fields.keys()):
+        if(data.form.parent_signature_upload):
+            return data.form.parent_signature_upload.url
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def form_differently_abled_proof(data):
+    if('differently_abled_proof' in data.school.required_admission_form_fields.keys()):
+        if(data.form.differently_abled_proof):
+            return data.form.differently_abled_proof.url
+        else:
+            return ""
+    else:
+        return ""
+   
+
+def form_caste_category_certificate(data):
+    if('caste_category_certificate' in data.school.required_admission_form_fields.keys()):
+        if(data.form.caste_category_certificate):
+            return data.form.caste_category_certificate.url
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def form_transport_facility_required(data):
+    if('transport_facility' in data.school.required_admission_form_fields.keys()):
+        return data.form.transport_facility_required
+    else:
+        return ""
+
+def last_school_name(data):
+    if('last_school_name' in data.school.required_admission_form_fields.keys()):
+        return data.form.last_school_name
+    else:
+        return ""
+        
+def last_school_board(data):
+    if('last_school_board_id' in data.school.required_admission_form_fields.keys()):
+        if data.form.last_school_board:
+            return data.form.last_school_board.name
+        else:
+            return ""
+    else:
+        return ""
+
+def last_school_address(data):
+    if('last_school_address' in data.school.required_admission_form_fields.keys()):
+        if data.form.last_school_board:
+            return data.form.last_school_board.name
+        else:
+            return ""
+    else:
+        return ""
+        
+def last_school_class(data):
+    if('last_school_class_id' in data.school.required_admission_form_fields.keys()):
+        if data.form.last_school_class:
+            return data.form.last_school_class.name
+        else:
+            return ""
+    else:
+        return ""
+
+def transfer_certificate(data):
+    if('transfer_certificate' in data.school.required_admission_form_fields.keys()):
+        if data.form.transfer_certificate:
+           return data.form.transfer_certificate.url
+        else:
+            return ""
+    else:
+        return ""
+
+def reason_of_leaving(data):
+    if('reason_of_leaving' in data.school.required_admission_form_fields.keys()):
+       return data.form.reason_of_leaving
+    else:
+        return ""
+def report_card(data):
+    if('report_card' in data.school.required_admission_form_fields.keys()):
+        if(data.form.report_card):
+           return data.form.report_card.url
+        else:
+            return ""
+    else:
+        return ""
+
+def last_school_result_percentage(data):
+    if('last_school_result_percentage' in data.school.required_admission_form_fields.keys()):
+       return data.form.last_school_result_percentage
+    else:
+        return ""
+        
+def transfer_number(data):
+    if('transfer_number' in data.school.required_admission_form_fields.keys()):
+       return data.form.transfer_number
+    else:
+        return ""
+        
+def transfer_date(data):
+    if('transfer_date' in data.school.required_admission_form_fields.keys()):
+       return data.form.transfer_date
+    else:
+        return ""
+
+def companyname(data,p_filter):
+    if(('company_name' in p_filter.school.required_father_fields.keys()) or
+       ('company_name' in p_filter.school.required_mother_fields.keys()) or
+       ('company_name' in p_filter.school.required_guardian_fields.keys())):
+        return companyname
+    else:
+        return ""
+
+def aadhaar_number(data,p_filter):
+    if(('aadhaar_card_number' in p_filter.school.required_father_fields.keys()) or
+       ('aadhaar_card_number' in p_filter.school.required_mother_fields.keys()) or
+       ('aadhaar_card_number' in p_filter.school.required_guardian_fields.keys())):
+       return data.aadhaar_number
+    else:
+        return ""
+def transferable_job(data,p_filter):
+    if(('transferable_job' in p_filter.school.required_father_fields.keys()) or
+       ('transferable_job' in p_filter.school.required_mother_fields.keys()) or
+       ('transferable_job' in p_filter.school.required_guardian_fields.keys())):
+       return data.transferable_job
+    else:
+        return ""
+    
+
+def special_ground(data,p_filter):
+    if(('special_ground' in p_filter.school.required_father_fields.keys()) or
+       ('special_ground' in p_filter.school.required_mother_fields.keys()) or
+       ('special_ground' in p_filter.school.required_guardian_fields.keys())):
+       return data.special_ground
+    else:
+        return ""
+
+
+def designation(data,p_filter):
+    if(('designation' in p_filter.school.required_father_fields.keys()) or
+       ('designation' in p_filter.school.required_mother_fields.keys()) or
+       ('designation' in p_filter.school.required_guardian_fields.keys())):
+       return data.designation
+    else:
+        return ""
+   
+
+def profession(data,p_filter):
+    if(('profession' in p_filter.school.required_father_fields.keys()) or
+       ('profession' in p_filter.school.required_mother_fields.keys()) or
+       ('profession' in p_filter.school.required_guardian_fields.keys())):
+       return data.profession
+    else:
+        return ""
+   
+
+def special_ground_proof(data,p_filter):
+    if(('special_ground_proof' in p_filter.school.required_father_fields.keys()) or
+       ('special_ground_proof' in p_filter.school.required_mother_fields.keys()) or
+       ('special_ground_proof' in p_filter.school.required_guardian_fields.keys())):
+        if data.special_ground_proof:
+           return data.special_ground_proof.url
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def parent_aadhar_card(data,p_filter):
+    if(('parent_aadhar_card' in p_filter.school.required_father_fields.keys()) or
+       ('parent_aadhar_card' in p_filter.school.required_mother_fields.keys()) or
+       ('parent_aadhar_card' in p_filter.school.required_guardian_fields.keys())):
+        if data.parent_aadhar_card:
+           return data.parent_aadhar_card.url
+        else:
+            return ""
+
+    else:
+        return ""
+    
+
+def pan_card_proof(data,p_filter):
+    if(('pan_card_proof' in p_filter.school.required_father_fields.keys()) or
+       ('pan_card_proof' in p_filter.school.required_mother_fields.keys()) or
+       ('pan_card_proof' in p_filter.school.required_guardian_fields.keys())):
+        if data.pan_card_proof:
+            return data.pan_card_proof.url
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def income(data,p_filter):
+    if(('income' in p_filter.school.required_father_fields.keys()) or
+       ('income' in p_filter.school.required_mother_fields.keys()) or
+       ('income' in p_filter.school.required_guardian_fields.keys())):
+       return data.income
+    else:
+        return ""
+   
+
+
+def bio(data,p_filter):
+    if(('bio' in p_filter.school.required_father_fields.keys()) or
+       ('bio' in p_filter.school.required_mother_fields.keys()) or
+       ('bio' in p_filter.school.required_guardian_fields.keys())):
+       return data.bio
+    else:
+        return ""
+
+
+def education(data,p_filter):
+    if(('education' in p_filter.school.required_father_fields.keys()) or
+       ('education' in p_filter.school.required_mother_fields.keys()) or
+       ('education' in p_filter.school.required_guardian_fields.keys())):
+       return data.education
+    else:
+        return ""
+    
+
+def occupation(data,p_filter):
+    if(('occupation' in p_filter.school.required_father_fields.keys()) or
+       ('occupation' in p_filter.school.required_mother_fields.keys()) or
+       ('occupation' in p_filter.school.required_guardian_fields.keys())):
+       return data.occupation
+    else:
+        return ""
+   
+
+def office_address(data,p_filter):
+    if(('office_address' in p_filter.school.required_father_fields.keys()) or
+       ('office_address' in p_filter.school.required_mother_fields.keys()) or
+       ('office_address' in p_filter.school.required_guardian_fields.keys())):
+       return data.office_address
+    else:
+        return ""
+
+def office_number(data,p_filter):
+    if(('office_number' in p_filter.school.required_father_fields.keys()) or
+       ('office_number' in p_filter.school.required_mother_fields.keys()) or
+       ('office_number' in p_filter.school.required_guardian_fields.keys())):
+       return data.office_number
+    else:
+        return ""
+
+
+def alumni_school_name(data,p_filter):
+    if(('alumni_school_name_id' in p_filter.school.required_father_fields.keys()) or
+       ('alumni_school_name_id' in p_filter.school.required_mother_fields.keys()) or
+       ('alumni_school_name_id' in p_filter.school.required_guardian_fields.keys())):
+        if(data.alumni_school_name):
+            if(data.alumni_school_name.name==p_filter.school.name):
+                return data.alumni_school_name
+            else:
+                return ""
+        else:
+            return ""
+    else:
+        return ""
+
+def alumni_year_of_passing(data,p_filter):
+    if(('alumni_school_name_id' in p_filter.school.required_father_fields.keys()) or
+       ('alumni_school_name_id' in p_filter.school.required_mother_fields.keys()) or
+       ('alumni_school_name_id' in p_filter.school.required_guardian_fields.keys())):
+        if(data.alumni_school_name):
+            if(data.alumni_school_name.name==p_filter.school.name):
+                return data.alumni_year_of_passing
+            else:
+                return ""
+        else:
+            return ""
+    else:
+        return ""
+    
+
+def passing_class(data,p_filter):
+    if(('alumni_school_name_id' in p_filter.school.required_father_fields.keys()) or
+       ('alumni_school_name_id' in p_filter.school.required_mother_fields.keys()) or
+       ('alumni_school_name_id' in p_filter.school.required_guardian_fields.keys())):
+        if(data.alumni_school_name):
+            if(data.alumni_school_name.name==p_filter.school.name):
+                return data.passing_class
+            else:
+                return ""
+        else:
+            return ""
+    else:
+        return ""
+
+def alumni_proof(data,p_filter):
+    if(('alumni_school_name_id' in p_filter.school.required_father_fields.keys()) or
+       ('alumni_school_name_id' in p_filter.school.required_mother_fields.keys()) or
+       ('alumni_school_name_id' in p_filter.school.required_guardian_fields.keys())):
+        if(data.alumni_school_name):
+            if(data.alumni_school_name.name==p_filter.school.name):
+                if data.alumni_proof:
+                    return data.alumni_proof.url
+                else:
+                    return ""
+            else:
+                return ""
+        else:
+            return ""
+    else:
+        return ""
+
+
+
+
+class ExcelExportAllView(APIView):
+    permission_classes = [
+        IsSchoolOrReadOnly,
+    ]
+
+    def get(self, request, format=None):
+        apps = SchoolApplication.objects.select_related(
+            "child", "form").filter(
+            school__pk=self.request.user.current_school)
+        
+        if 'apply_for' in request.GET and request.GET.get('apply_for'):
+            apps = apps.filter(apply_for=request.GET['apply_for'])
+        if 'start_date' in request.GET and request.GET.get('start_date'):
+            apps = apps.filter(timestamp__date__gte=request.GET['start_date'])
+        if 'end_date' in request.GET and request.GET.get('end_date'):
+            apps = apps.filter(timestamp__date__lte=request.GET['end_date'])
+            
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="All Forms List.csv"'
+        writer = csv.DictWriter(
+            response,
+            fieldnames=[
+                'Form Id',
+                'Date Received',
+                'Points',
+                'Distance Points',
+                "Single Child Points",
+                "First Born Child Points",
+                'Siblings Points',
+                "Christian Child Points",
+                "Parent Alumni Points",
+                "Staff Ward Points",
+                "Single Girl Child Points",
+                "First Girl Child Points",
+                "Girl Child Points",
+                "Single Parent Points",
+                "Minority Points",
+                "Children of Armed Forces Points",
+                "Children With Special Needs Points",
+                "Transport Facility Points",
+                'Name',
+                "Applying For",
+                "Date of Birth",
+                "Child Age",
+                'Short Address',
+                'Address',
+                'City',
+                'State',
+                'Zipcode',
+                'Combined Address',
+                'Gender',
+                'Category',
+                'Email',
+                'Phone No',
+                'Blood Group',
+                'Religion',
+                'Nationality',
+                'Father\'s Name',
+                'Father\'s Age',
+                'Father\'s Phone No',
+                'Father\'s Email',
+                'Guardian\'s Name',
+                'Guardian\'s Age',
+                'Guardian\'s Phone No',
+                'Guardian\'s Email',
+                'Mother\'s Name',
+                'Mother\'s Age',
+                'Mother\'s Phone No',
+                'Mother\'s Email',
+                'Father\'s Photo',
+                'Guardian\'s Photo',
+                'Mother\'s Photo',
+                'Child\'s Photo',
+                'Child\'s Aadhaar number',
+                'Child\'s Aadhaar Proof',
+                'Child\'s blood Group',
+                'Child\'s Birth certificate',
+                'Childs\'s Address proof',
+                'Childs\'s Address proof2',
+                'First child affidavit',
+                'Childs\'s Vaccination card',
+                'Minority proof',
+                'Sibling1 Alumni Name',
+                'Sibling1 Alumni School Name',
+                'Sibling2 Alumni Name',
+                'Sibling2 Alumni School Name',
+                'Sibling1 Alumni Proof',
+                'Sibling2 Alumni Proof',
+                'Alumni School Name',
+                'Alumni year of passing',
+                'family_photo',
+                'Distance_affidavit',
+                'Baptism_certificate',
+                'Parent_signature_upload',
+                'Differently_abled_proof',
+                'Caste_category_certificate',
+                'Transport_facility_required',
+                'Father\'s Company Name',
+                'Father\'s Aadhaar Number',
+                'Father\'s Transferable Job',
+                'Father\'s Special Ground',
+                'Father\'s Designation',
+                "Father\'s Profession",
+                "Father\'s Special Ground proof",
+                "Father\'s aadhar card",
+                "Father\'s Pan_card_proof",
+                "Father\'s Income",
+                "Father\'s Bio",
+                "Father\'s Education",
+                "Father\'s Occupation",
+                "Father\'s Office_address",
+                "Father\'s Office_number",
+                "Father\'s Alumni_school_name",
+                "Father\'s Alumni_year_of_passing",
+                "Father\'s Passing_class",
+                "Father\'s Alumni_proof",
+                'Mother\'s Company Name',
+                'Mother\'sAadhaar Number',
+                'Mother\'s Transferable Job',
+                'Mother\'s Special Ground',
+                'Mother\'s Designation',
+                "Mother\'s Profession",
+                "Mother\'s Special Ground proof",
+                "Mother\'s Parent aadhar card",
+                "Mother\'s Pan_card_proof",
+                "Mother\'s Income",
+                "Mother\'s Bio",
+                "Mother\'s Education",
+                "Mother\'s Occupation",
+                "Mother\'s Office_address",
+                "Mother\'s Office_number",
+                "Mother\'s Alumni_school_name",
+                "Mother\'s Alumni_year_of_passing",
+                "Mother\'s Passing_class",
+                "Mother\'s Alumni_proof",
+                'Guardian\'s Company Name',
+                'Guardian\'s Aadhaar Number',
+                'Guardian\'s Transferable Job',
+                'Guardian\'s Special Ground',
+                'Guardian\'s Designation',
+                "Guardian\'s Profession",
+                "Guardian\'s Special Ground proof",
+                "Guardian\'s Parent aadhar card",
+                "Guardian\'s Pan_card_proof",
+                "Guardian\'s Income",
+                "Guardian\'s Bio",
+                "Guardian\'s Education",
+                "Guardian\'s Occupation",
+                "Guardian\'s Office_address",
+                "Guardian\'s Office_number",
+                "Guardian\'s Alumni_school_name",
+                "Guardian\'s Alumni_year_of_passing",
+                "Guardian\'s Passing_class",
+                "Guardian\'s Alumni_proof",
+                "Last School Name",
+                "Last School board",
+                "last school_address",
+                "last school_class",
+                "transfer certificate",
+                "reason of leaving",
+                "report card",
+                "last school result percentage",
+                "transfer number",
+                "transfer date",
+                ])
+        writer.writeheader()
+      
+        for i in apps:
+            if  i.child.orphan:   
+                writer.writerow({
+                    'Form Id': i.uid,
+                    "Points": i.total_points if(i.apply_for.name in ["Nursery","KG","Class 1"]) else "N/A",
+                    'Distance Points': i.distance_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.distance_points!=0)) else "",
+                    "Single Child Points": i.single_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_child_points!=0)) else "",
+                    "First Born Child Points": i.first_born_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.first_born_child_points!=0)) else "",
+                    'Siblings Points': i.siblings_studied_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.siblings_studied_points!=0)) else "",
+                    "Christian Child Points": i.christian_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.christian_points!=0)) else "",
+                    "Parent Alumni Points": i.parents_alumni_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.parents_alumni_points!=0)) else "",
+                    "Staff Ward Points": i.staff_ward_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.staff_ward_points!=0)) else "",
+                    "Single Girl Child Points": i.single_girl_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_girl_child_points!=0)) else "",
+                    "First Girl Child Points": i.first_girl_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.first_girl_child_points!=0)) else "",
+                    "Girl Child Points": i.girl_child_point if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.girl_child_point!=0)) else "",
+                    "Single Parent Points": i.single_parent_point if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_parent_point!=0))  else "",
+                    "Minority Points": i.minority_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.minority_points!=0)) else "",
+                    "Children of Armed Forces Points": i.children_of_armed_force_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.children_of_armed_force_points!=0)) else "",
+                    "Children With Special Needs Points": i.student_with_special_needs_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.student_with_special_needs_points!=0)) else "",
+                    "Transport Facility Points": i.transport_facility_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.transport_facility_points!=0)) else "",
+                    'Date Received': i.timestamp.strftime("%-d/%-m/%Y %-I:%-M%p"),
+                    'Date of Birth': i.child.date_of_birth,
+                    'Name': i.child.name.title(),
+                    "Child Age": i.child.age_str,
+                    'Child\'s Photo': i.child.photo.url,
+                    'Gender': i.child.gender.title(),
+                    'Guardian\'s Name':i.form.guardian.name.title(),
+                    'Guardian\'s Photo': i.form.guardian.photo.url,
+                    'Guardian\'s Age':i.form.guardian.age,
+                    'Guardian\'s Phone No':i.form.guardian.phone,
+                    'Guardian\'s Email':i.form.guardian.email,
+                    "Applying For": i.apply_for.name,
+                    "Points":  i.total_points if(i.apply_for.name in ["Nursery","KG","Class 1"]) else "N/A",
+                    'Short Address':i.form.short_address,
+                    'Address': i.form.street_address,
+                    'Zipcode': i.form.pincode,
+                    'City': i.form.city,
+                    'State': i.form.state,
+                    'Combined Address':combined_address(i),
+                    'Phone No': i.form.guardian.phone,
+                    'Category': i.form.category,
+                    'Email': i.user.email,
+                    'Blood Group': i.child.blood_group,
+                    'Religion': i.child.religion,
+                    'Nationality': i.child.nationality,
+
+                    'Sibling1 Alumni Name': getalumnaniname1(i),
+                    'Sibling1 Alumni School Name':getalumanischoolname1(i),
+                    'Sibling2 Alumni Name':getalumnaniname2(i),
+                    'Sibling2 Alumni School Name':getalumanischoolname2(i),
+                    'Sibling1 Alumni Proof':sibling1alumaniproof(i),
+                    'Sibling2 Alumni Proof':sibling2alumaniproof(i),
+                    'Child\'s Aadhaar number':childs_aadhaar_number(i),
+                    'Child\'s Aadhaar Proof':childs_aadhaar_card_proof(i),
+                    'Child\'s blood Group':childs_blood_group(i),
+                    'Child\'s Birth certificate':childs_birth_certificate(i),
+                    'Childs\'s Address proof':childs_address_proof(i),
+                    'Childs\'s Address proof2':childs_address_proof2(i),
+                    'First child affidavit':childs_first_child_affidavit(i),
+                    'Childs\'s Vaccination card':childs_vaccination_card(i),
+                    'family_photo': form_family_photo(i), 
+                    'Distance_affidavit':form_distance_affidavit(i),
+                    'Baptism_certificate':form_baptism_certificate(i),
+                    'Parent_signature_upload':form_parent_signature_upload(i),
+                    'Differently_abled_proof':form_differently_abled_proof(i),
+                    'Caste_category_certificate':form_caste_category_certificate(i),
+                    'Transport_facility_required':form_transport_facility_required(i),
+
+                    'Guardian\'s Company Name':companyname(i.form.guardian,i),
+                    'Guardian\'s Aadhaar Number':aadhaar_number(i.form.guardian,i),
+                    'Guardian\'s Transferable Job':transferable_job(i.form.guardian,i),
+                    'Guardian\'s Special Ground':special_ground(i.form.guardian,i),
+                    'Guardian\'s Designation':designation(i.form.guardian,i),
+                    "Guardian\'s Profession":profession(i.form.guardian,i),
+                    "Guardian\'s Special Ground proof":special_ground_proof(i.form.guardian,i),
+                    "Guardian\'s Parent aadhar card":parent_aadhar_card(i.form.guardian,i),
+                    "Guardian\'s Pan_card_proof":pan_card_proof(i.form.guardian,i),
+                    "Guardian\'s Income":income(i.form.guardian,i),
+                    "Guardian\'s Bio":bio(i.form.guardian,i),
+                    "Guardian\'s Education":education(i.form.guardian,i),
+                    "Guardian\'s Occupation":occupation(i.form.guardian,i),
+                    "Guardian\'s Office_address":office_address(i.form.guardian,i),
+                    "Guardian\'s Office_number":office_number(i.form.guardian,i),
+                    "Guardian\'s Alumni_school_name":alumni_school_name(i.form.guardian,i),
+                    "Guardian\'s Alumni_year_of_passing":alumni_year_of_passing(i.form.guardian,i),
+                    "Guardian\'s Passing_class":passing_class(i.form.guardian,i),
+                    "Guardian\'s Alumni_proof":alumni_proof(i.form.guardian,i),
+
+                    "Last School Name":last_school_name(i),
+                    "Last School board":last_school_board(i),
+                    "last school_address":last_school_address(i),
+                    "last school_class":last_school_class(i),
+                    "transfer certificate":transfer_certificate(i),
+                    "reason of leaving":reason_of_leaving(i),
+                    "report card":report_card(i),
+                    "last school result percentage":last_school_result_percentage(i),
+                    "transfer number":transfer_number(i),
+                    "transfer date":transfer_date(i),
+                })
+            else:
+                writer.writerow({
+                    'Form Id': i.uid,
+                    "Points": i.total_points if(i.apply_for.name in ["Nursery","KG","Class 1"]) else "N/A",
+                    'Distance Points': i.distance_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.distance_points!=0)) else "",
+                    "Single Child Points": i.single_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_child_points!=0)) else "",
+                    "First Born Child Points": i.first_born_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.first_born_child_points!=0)) else "",
+                    'Siblings Points': i.siblings_studied_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.siblings_studied_points!=0)) else "",
+                    "Christian Child Points": i.christian_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.christian_points!=0)) else "",
+                    "Parent Alumni Points": i.parents_alumni_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.parents_alumni_points!=0)) else "",
+                    "Staff Ward Points": i.staff_ward_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.staff_ward_points!=0)) else "",
+                    "Single Girl Child Points": i.single_girl_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_girl_child_points!=0)) else "",
+                    "First Girl Child Points": i.first_girl_child_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.first_girl_child_points!=0)) else "",
+                    "Girl Child Points": i.girl_child_point if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.girl_child_point!=0)) else "",
+                    'Childs\'s Vaccination card':childs_vaccination_card(i),
+                    "Single Parent Points": i.single_parent_point if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.single_parent_point!=0))  else "",
+                    "Minority Points": i.minority_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.minority_points!=0)) else "",
+                    "Children of Armed Forces Points": i.children_of_armed_force_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.children_of_armed_force_points!=0)) else "",
+                    "Children With Special Needs Points": i.student_with_special_needs_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.student_with_special_needs_points!=0)) else "",
+                    "Transport Facility Points": i.transport_facility_points if((i.apply_for.name in ["Nursery","KG","Class 1"]) and (i.transport_facility_points!=0)) else "",
+                    'Date Received': i.timestamp.strftime("%-d/%-m/%Y %-I:%-M%p"),
+                    'Date of Birth': i.child.date_of_birth,
+                    'Name': i.child.name.title(),
+                    "Child Age": i.child.age_str,
+                    'Child\'s Photo': i.child.photo.url,
+                    'Gender': i.child.gender.title(),
+                    'Father\'s Name': i.form.father.name.title(),
+                    'Father\'s Photo': i.form.father.photo.url,
+                    'Father\'s Age': i.form.father.age,
+                    'Father\'s Phone No': i.form.father.phone,
+                    'Father\'s Email': i.form.father.email,
+                    'Mother\'s Name': i.form.mother.name.title(),
+                    'Mother\'s Photo': i.form.mother.photo.url,
+                    'Mother\'s Age': i.form.mother.age,
+                    'Mother\'s Phone No': i.form.mother.phone,
+                    'Mother\'s Email': i.form.mother.email,
+                    "Applying For": i.apply_for.name,
+                    "Points": i.total_points if(i.apply_for.name in ["Nursery","KG","Class 1"]) else "N/A",
+                    'Short Address':i.form.short_address,
+                    'Address': i.form.street_address,
+                    'Zipcode': i.form.pincode,
+                    'City': i.form.city,
+                    'State': i.form.state,
+                    'Combined Address':combined_address(i),
+                    'Phone No': i.form.father.phone,
+                    'Category': i.form.category,
+                    'Email': i.user.email,
+                    'Blood Group': i.child.blood_group,
+                    'Religion': i.child.religion,
+                    'Nationality': i.child.nationality,
+
+                    'Sibling1 Alumni Name': getalumnaniname1(i),
+                    'Sibling1 Alumni School Name':getalumanischoolname1(i),
+                    'Sibling2 Alumni Name':getalumnaniname2(i),
+                    'Sibling2 Alumni School Name':getalumanischoolname2(i),
+                    'Sibling1 Alumni Proof':sibling1alumaniproof(i),
+                    'Sibling2 Alumni Proof':sibling2alumaniproof(i),
+                    'Child\'s Aadhaar number':childs_aadhaar_number(i),
+                    'Child\'s Aadhaar Proof':childs_aadhaar_card_proof(i),
+                    'Child\'s blood Group':childs_blood_group(i),
+                    'Child\'s Birth certificate':childs_birth_certificate(i),
+                    'Childs\'s Address proof':childs_address_proof(i),
+                    'Childs\'s Address proof2':childs_address_proof2(i),
+                    'First child affidavit':childs_first_child_affidavit(i),
+                    'Childs\'s Vaccination card':childs_vaccination_card(i),
+                    'family_photo': form_family_photo(i), 
+                    'Distance_affidavit':form_distance_affidavit(i),
+                    'Baptism_certificate':form_baptism_certificate(i),
+                    'Parent_signature_upload':form_parent_signature_upload(i),
+                    'Differently_abled_proof':form_differently_abled_proof(i),
+                    'Caste_category_certificate':form_caste_category_certificate(i),
+                    'Transport_facility_required':form_transport_facility_required(i),
+
+                    'Father\'s Company Name':companyname(i.form.father,i),
+                    'Father\'s Aadhaar Number':aadhaar_number(i.form.father,i),
+                    'Father\'s Transferable Job':transferable_job(i.form.father,i),
+                    'Father\'s Special Ground':special_ground(i.form.father,i),
+                    'Father\'s Designation':designation(i.form.father,i),
+                    "Father\'s Profession":profession(i.form.father,i),
+                    "Father\'s Special Ground proof":special_ground_proof(i.form.father,i),
+                    "Father\'s aadhar card":parent_aadhar_card(i.form.father,i),
+                    "Father\'s Pan_card_proof":pan_card_proof(i.form.father,i),
+                    "Father\'s Income":income(i.form.father,i),
+                    "Father\'s Bio":bio(i.form.father,i),
+                    "Father\'s Education":education(i.form.father,i),
+                    "Father\'s Occupation":occupation(i.form.father,i),
+                    "Father\'s Office_address":office_address(i.form.father,i),
+                    "Father\'s Office_number":office_number(i.form.father,i),
+                    "Father\'s Alumni_school_name":alumni_school_name(i.form.father,i),
+                    "Father\'s Alumni_year_of_passing":alumni_year_of_passing(i.form.father,i),
+                    "Father\'s Passing_class":passing_class(i.form.father,i),
+                    "Father\'s Alumni_proof":alumni_proof(i.form.father,i),
+                
+                    'Mother\'s Company Name':companyname(i.form.mother,i),
+                    'Mother\'sAadhaar Number':aadhaar_number(i.form.mother,i),
+                    'Mother\'s Transferable Job':transferable_job(i.form.mother,i),
+                    'Mother\'s Special Ground':special_ground(i.form.mother,i),
+                    'Mother\'s Designation':designation(i.form.mother,i),
+                    "Mother\'s Profession":profession(i.form.mother,i),
+                    "Mother\'s Special Ground proof":special_ground_proof(i.form.mother,i),
+                    "Mother\'s Parent aadhar card":parent_aadhar_card(i.form.mother,i),
+                    "Mother\'s Pan_card_proof":pan_card_proof(i.form.mother,i),
+                    "Mother\'s Income":income(i.form.mother,i),
+                    "Mother\'s Bio":bio(i.form.mother,i),
+                    "Mother\'s Education":education(i.form.mother,i),
+                    "Mother\'s Occupation":occupation(i.form.mother,i),
+                    "Mother\'s Office_address":office_address(i.form.mother,i),
+                    "Mother\'s Office_number":office_number(i.form.mother,i),
+                    "Mother\'s Alumni_school_name":alumni_school_name(i.form.mother,i),
+                    "Mother\'s Alumni_year_of_passing":alumni_year_of_passing(i.form.mother,i),
+                    "Mother\'s Passing_class":passing_class(i.form.mother,i),
+                    "Mother\'s Alumni_proof":alumni_proof(i.form.mother,i),
+
+                    "Last School Name":last_school_name(i),
+                    "Last School board":last_school_board(i),
+                    "last school_address":last_school_address(i),
+                    "last school_class":last_school_class(i),
+                    "transfer certificate":transfer_certificate(i),
+                    "reason of leaving":reason_of_leaving(i),
+                    "report card":report_card(i),
+                    "last school result percentage":last_school_result_percentage(i),
+                    "transfer number":transfer_number(i),
+                    "transfer date":transfer_date(i),
+                })
+               
+
+        return response
+
+
+class SchoolCodeFetch(APIView):
+    permission_classes = [IsSchool]
+
+    def post(self, request):
+        school = SchoolProfile.objects.get(pk=request.user.current_school)
+        serializer = serializers.SchoolCodeSerializer(data=request.data)
+        if serializer.is_valid():
+            data = serializer.validated_data
+            code = data["code"]
+            if SchoolVerificationCode.objects.filter(
+                    code=code, active=False).exists():
+                d = SchoolVerificationCode.objects.get(code=code, active=False)
+                data = serializers.SchoolCodeSerializer(d).data
+                return Response(data, status=status.HTTP_200_OK)
+            else:
+                error_logger(f"{self.__class__.__name__} Not Found for code {code} userid {request.user.id}")
+                return Response({"detail": "Not found."},
+                                status=status.HTTP_404_NOT_FOUND)
+        else:
+            error_logger(f"{self.__class__.__name__} Serializer Invalid for userid {request.user.id}")
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST)
+
+
+class SchoolCodeVerify(APIView):
+    permission_classes = [IsSchool]
+
+    def post(self, request):
+        school = SchoolProfile.objects.get(user=request.user)
+        serializer = serializers.SchoolCodeSerializer(data=request.data)
+        if serializer.is_valid():
+            data = serializer.validated_data
+            code = data["code"]
+            d = SchoolVerificationCode.objects.get(code=code)
+            school.is_verified = True
+            school.save()
+            d.active = True
+            d.save()
+            info_logger(f"{self.__class__.__name__} Account Activated for userid {request.user.id}")
+            return Response(
+                {"status": "Account activated successfully!"}, status=status.HTTP_200_OK)
+        else:
+            error_logger(f"{self.__class__.__name__} Serializer Invalid for userid {request.user.id}")
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST)
+
+
+class SchoolCodeRequest(APIView):
+    permission_classes = [IsSchool]
+
+    def post(self, request):
+        school = SchoolProfile.objects.get(user=request.user)
+        send_school_code_request_mail.delay(school.id)
+        return Response({}, status=status.HTTP_200_OK)
+
+
+class FeaturedSchoolListView(generics.ListAPIView):
+    serializer_class = serializers.FeaturedSchoolSerializer
+
+    def get_queryset(self):
+        return SchoolProfile.objects.only(
+            "name", "slug", "logo", "city").filter(
+            is_featured=True).annotate(
+            views_count=Count("views")).order_by("-views_count")
+
+
+class SchoolProfileSitemapData(APIView):
+    def get(self, request, format=False):
+        data = list(SchoolProfile.objects.filter(is_verified=True,
+                                                 is_active=True).values_list("slug", flat=True))
+        return Response(data, status=status.HTTP_200_OK)
+
+
+class ActivityTypeAutocompleteView(generics.ListAPIView):
+    serializer_class = serializers.ActivityTypeAutocompleteSerializer
+    queryset = ActivityTypeAutocomplete.objects.all()
+
+
+class ActivityAutocompleteView(generics.ListAPIView):
+    serializer_class = serializers.ActivityAutocompleteSerializer
+    queryset = ActivityAutocomplete.objects.all()
+    filterset_fields = ["activity_type", "name"]
+
+
+class AgeCriteriaView(SchoolPerformCreateUpdateMixin, generics.ListCreateAPIView):
+    permission_classes = [IsSchoolOrReadOnly, ]
+
+    def get_queryset(self):
+        school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+        queryset = AgeCriteria.objects.filter(school=school).select_related(
+            "class_relation").order_by("class_relation__rank")
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.AgeCriteriaSerializer
+        if self.request.method == "POST":
+            return serializers.AgeCriteriaCreateUpdateSerializer
+
+
+class AgeCriteriaDetailView(SchoolPerformCreateUpdateMixin, generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [HasSchoolObjectPermission, ]
+
+    def get_queryset(self):
+        school = SchoolProfile.objects.get(slug=self.kwargs.get("slug"))
+        queryset = AgeCriteria.objects.filter(school=school).select_related(
+            "class_relation").order_by("class_relation__rank")
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method == "GET":
+            return serializers.AgeCriteriaSerializer
+        if self.request.method in ["PUT", "PATCH"]:
+            return serializers.AgeCriteriaCreateUpdateSerializer
+
+class SGCLASS(BasePermission):
+     def has_permission(self, request, view):
+        # if (request.META['HTTP_X_REAL_IP'] == '15.207.216.11') or request.user.is_authenticated:
+        #    return True
+        f= open("myfile.txt", "w")
+        f.write(str(request.headers))
+        return True
+
+
+
+class SchoolDocumentView(DocumentViewSet):
+    permission_classes = [SGCLASS]
+    document = SchoolProfileDocument
+    serializer_class = SchoolDocumentSerializer
+    pagination_class = LimitOffsetPagination
+    filter_backends = [
+        FilteringFilterBackend,
+        OrderingFilterBackend,
+    #    FacetedSearchFilterBackend,
+        DefaultOrderingFilterBackend,
+        NestedFilteringFilterBackend,
+        GeoSpatialFilteringFilterBackend,
+        GeoSpatialOrderingFilterBackend,
+        CompoundSearchFilterBackend,
+        HighlightBackend,
+        SuggesterFilterBackend,
+        IdsFilterBackend
+    ]
+    lookup_field = 'id'
+    search_fields = {
+        "name": {"fuzziness": "4"},
+        "school_city":{"fuzziness": "4"}
+    }
+    nested_filter_fields = {
+       "fee_price": {
+           "field": "school_fee_structure.fee_price",
+           "path": "school_fee_structure",
+           "lookups":[
+               LOOKUP_QUERY_GTE,
+               LOOKUP_QUERY_LTE
+           ],
+           "default_lookup": LOOKUP_QUERY_LTE
+       },
+      "open_class":{
+          "field":"admmissionopenclasses_set.class_relation.id",
+          "path":"admmissionopenclasses_set",
+          "lookups":[MATCHING_OPTION_MUST,LOOKUP_QUERY_IN],
+          "default_lookup":MATCHING_OPTION_MUST
+          },
+     "feature_exist":{
+        "field":"feature_set.filter_string",
+        "path":"feature_set",
+        "lookups":[MATCHING_OPTION_MUST,LOOKUP_QUERY_IN],
+        "default_lookup":MATCHING_OPTION_MUST
+     },
+    }
+
+    highlight_fields = {
+        'name': {
+            'enabled': True,
+            'options': {
+                'pre_tags': ["<b>"],
+                'post_tags': ["</b>"],
+            }
+        }
+    }
+
+    suggester_fields = {
+        'name_suggest': {
+            'field': 'name.suggest',
+            'suggesters': [
+                SUGGESTER_COMPLETION,
+            ],   
+        },
+        'school_city':{
+            'field':'school_city.name.suggest',
+            'suggesters': [
+                SUGGESTER_COMPLETION,
+            ],   
+        }
+    }
+
+
+
+    filter_fields = {
+        "active":  {
+            "field": "is_active",
+            "lookups": [
+                MATCHING_OPTION_MUST
+            ],
+            "default_lookup": MATCHING_OPTION_MUST
+        },
+        "verified": {
+            "field": "is_verified",
+            "lookups": [
+                MATCHING_OPTION_MUST
+            ],
+            "default_lookup": MATCHING_OPTION_MUST
+        },
+        "type": {
+            "field": "school_type.slug",
+            "lookups": [
+                MATCHING_OPTION_MUST
+            ],
+            "default_lookup": MATCHING_OPTION_MUST
+        },
+
+        "school_category":{
+            "field":"school_category",
+            "lookups":[
+                MATCHING_OPTION_MUST,
+                ],
+            "default_lookup":MATCHING_OPTION_MUST
+            },
+
+        "school_country": {
+            "field": "school_country.slug",
+            "lookups": [
+                LOOKUP_FILTER_PREFIX,
+                LOOKUP_FILTER_WILDCARD,
+                LOOKUP_QUERY_IN,
+                LOOKUP_QUERY_EXCLUDE,
+            ],
+            "default_lookup": MATCHING_OPTION_MUST
+        },
+        "school_state": {
+            "field": "school_state.slug",
+            "lookups": [
+                LOOKUP_FILTER_PREFIX,
+                LOOKUP_FILTER_WILDCARD,
+                LOOKUP_QUERY_IN,
+                LOOKUP_QUERY_EXCLUDE,
+            ],
+        },
+        "max_fees":{
+            "field":"max_fees",
+            "lookups":[
+                MATCHING_OPTION_MUST,
+                LOOKUP_FILTER_RANGE,
+                LOOKUP_QUERY_GTE,
+                LOOKUP_QUERY_LTE
+                ],
+        },
+        "min_fees":{
+            "field":"min_fees",
+            "lookups":[
+                MATCHING_OPTION_MUST,
+                LOOKUP_FILTER_RANGE,
+                LOOKUP_QUERY_GTE,
+                LOOKUP_QUERY_LTE
+                ],
+        },
+        "school_city": {
+            "field": "school_city.slug",
+            "lookups": [
+                LOOKUP_FILTER_PREFIX,
+                LOOKUP_FILTER_WILDCARD,
+                LOOKUP_QUERY_IN,
+                LOOKUP_QUERY_EXCLUDE,
+            ],
+        },
+        "region": {
+            "field": "region.slug",
+            "lookups": [
+                LOOKUP_FILTER_PREFIX,
+                LOOKUP_FILTER_WILDCARD,
+                LOOKUP_QUERY_IN,
+                LOOKUP_QUERY_EXCLUDE,
+            ],
+        },
+        "district": {
+            "field": "district.slug",
+            "lookups": [
+                LOOKUP_FILTER_PREFIX,
+                LOOKUP_FILTER_WILDCARD,
+                LOOKUP_QUERY_IN,
+                LOOKUP_QUERY_EXCLUDE,
+            ],
+        },
+
+        "district_region": {
+            "field": "district_region.slug",
+            "lookups": [
+                LOOKUP_FILTER_PREFIX,
+                LOOKUP_FILTER_WILDCARD,
+                LOOKUP_QUERY_IN,
+                LOOKUP_QUERY_EXCLUDE,
+            ],
+        },
+        "board": {
+            "field": "school_boardss.slug",
+            "lookups": [
+                MATCHING_OPTION_MUST
+            ],
+            "default_lookup": MATCHING_OPTION_MUST
+        },
+        "format": {
+            "field": "school_format.slug",
+            "lookups": [
+                MATCHING_OPTION_MUST
+            ],
+            "default_lookups": MATCHING_OPTION_MUST
+        },
+        "category": {
+            "field": "school_category",
+            "lookups": [
+                MATCHING_OPTION_MUST
+            ],
+            "default_lookups": MATCHING_OPTION_MUST
+        },
+    }
+    
+   # faceted_search_fields = {
+  #  'feature_name': {
+ #         'field': 'feature_set.features.name',
+#
+       #   #  'facet': TermsFacet,  # But we can define it explicitly
+      #      'enabled': True,
+     #   },
+    #'feature_exist':{
+      #   'field': 'feature_set.exist',
+     #    'enabled':True
+    #    }
+   # }
+
+    geo_spatial_filter_fields = {
+        "location": {
+            "field": "geocoords",
+            "lookups": [
+                LOOKUP_FILTER_GEO_DISTANCE,
+            ],
+        },
+    }
+
+    geo_spatial_ordering_fields = {
+        'location': {
+            'field': 'geocoords',
+        }
+    }
+
+    ordering_fields = {
+        "location": "geocoords",
+        "global_rank":"global_rank",
+        "region_rank":"region_rank",
+        "district_rank":"district_rank",
+        "district_region_rank":"district_region_rank",
+        "collab":"collab",
+        "admissionclasses_open_count":"admissionclasses_open_count",
+        "total_views":"total_views",
+    }
+
+
+class SchoolViewExcelExport(APIView):
+    permission_classes = [
+        IsSchoolOrReadOnly,
+    ]
+
+    def get(self, request, slug, format=None):
+        queryset = SchoolView.objects.select_related(
+            "user", "school").filter(
+            school__pk=self.request.user.current_school)
+        list_of_ids=[]
+        for obj in queryset:
+                    if ChildSchoolCart.objects.filter(child__user=obj.user, school=self.request.user.current_school).exists():
+                        list_of_ids.append(obj.id)
+        queryset = SchoolView.objects.filter(id__in = list_of_ids)
+        data = SchoolViewResource().export(queryset=queryset).csv
+        response = HttpResponse(data, content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="SchoolViewsList.csv"'
+        return response
+
+
+class SchoolEnquiryExcelExport(APIView):
+    permission_classes = [
+        IsSchoolOrReadOnly,
+    ]
+
+    def get(self, request, slug, format=None):
+        enquiries = SchoolEnquiry.objects.select_related(
+            "school", "user").filter(school__pk=self.request.user.current_school)
+        data = SchoolEnquiryResource().export(queryset=enquiries).csv
+        response = HttpResponse(data, content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="SchoolEnquiryList.csv"'
+        return response
+
+
+class SchoolAdmissionAlertSubscribeView(generics.CreateAPIView):
+    serializer_class = serializers.SchoolAdmissionAlertSerializer
+    queryset = SchoolAdmissionAlert.objects.all()
+    permission_classes = [IsParent, ]
+
+    def perform_create(self, serializer):
+        user = self.request.user
+        serializer.save(user=user)
+
+
+class SchoolAdmissionAlertDeleteView(generics.DestroyAPIView):
+    serializer_class = serializers.SchoolAdmissionAlertSerializer
+    queryset = SchoolAdmissionAlert.objects.all()
+    permission_classes = [IsParent, ]
+
+
+class SchoolSubscribeListView(generics.ListAPIView):
+    serializer_class = serializers.SchoolAdmissionAlertSerializer
+    permission_classes = [IsParent, ]
+
+    def get_queryset(self):
+        id = self.kwargs.get("pk")
+        school = SchoolProfile.objects.filter(id = id).first()
+        schoolAdmissionAlert = SchoolAdmissionAlert.objects.filter(user=self.request.user,school_relation=school)
+        return schoolAdmissionAlert
+
+class SchoolAdmissionFormFeeListView(generics.ListAPIView):
+    serializer_class = serializers.SchoolAdmissionFormFeeSerializer
+    permission_classes = [HasSchoolChildModelPermissionOrReadOnly, ]
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        queryset = SchoolAdmissionFormFee.objects.filter(school_relation=school)
+        return queryset
+
+class SchoolAdmissionFormFeeCreateView(APIView):
+    serializer_class = serializers.SchoolAdmissionFormFeeSerializer
+    permission_classes = [HasSchoolChildModelPermissionOrReadOnly,]
+
+    def post(self,request,slug,format=None):
+        serializer = serializers.SchoolAdmissionFormFeeSerializer(data=request.data)
+        if serializer.is_valid():
+            data=serializer.validated_data
+            slug = self.kwargs.get("slug", None)
+            school = generics.get_object_or_404(SchoolProfile, slug=slug)
+            form_fee_obj,boolean = SchoolAdmissionFormFee.objects.get_or_create(class_relation=data['class_relation'],school_relation=school)
+            form_fee_obj.form_price=data['form_price']
+            form_fee_obj.save()
+            info_logger(f"{self.__class__.__name__} Form Fee Updating for user id {request.user.id}")
+            return Response(
+                {"status": "Form fee updated successfully!"}, status=status.HTTP_200_OK)
+        error_logger(f"{self.__class__.__name__} Serializer Invalid for userid {request.user.id}")
+        return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+
+
+
+class CustomValidation(APIException):
+    """
+     To rise custom validation errors
+    """
+    status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+    default_detail = 'A server error occurred.'
+
+    def __init__(self, detail, field, status_code):
+        if status_code is not None:self.status_code = status_code
+        if detail is not None:
+            self.detail = {field: force_text(detail)}
+        else: self.detail = {'detail': force_text(self.default_detail)}
+
+class SchoolUploadCsvView(generics.ListCreateAPIView):
+    serializer_class = serializers.SchoolUploadCsvSerializer
+  
+    def get_queryset(self):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        queryset = AppliedSchoolSelectedCsv.objects.filter(school_relation=school)
+        return queryset
+
+    def post(self, request, *args, **kwargs):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        serializer = serializers.SchoolUploadCsvSerializer(data=self.request.data)
+        if serializer.is_valid():
+            doc=serializer.save()
+            csv = pd.read_csv(doc.csv_file)
+            if (('RECEIPT ID' in csv.columns) and ("APPLICANT'S NAME" in csv.columns)):
+                add_selected_child_data_from_csv(school.id,doc.id)
+                return Response({"status": "file uploaded successfully"}, status=status.HTTP_200_OK)
+            else:
+                return Response({"status": "file doesnt have required fields"}, status=status.HTTP_400_BAD_REQUEST)
+                
+
+    
+
+
+def add_selected_child_data_from_csv1(school_id,doc_id):
+    school = generics.get_object_or_404(SchoolProfile, id=school_id)
+    doc = generics.get_object_or_404(AppliedSchoolSelectedCsv,id=doc_id,school_relation=school)
+    csv = pd.read_csv(doc.csv_file)
+    for index, row in csv.iterrows():
+        SelectedStudentFromCsv.objects.create(document=doc,school_relation=school,receipt_id=row['RECEIPT ID'],child_name=row["APPLICANT'S NAME"])
+    processed_list = [preprocess_text(i) for i in csv['RECEIPT ID']]
+    Applications=SchoolApplication.objects.filter(uid__in=processed_list)
+    if Applications:
+        for i in Applications:
+            ApplicationStatusLog.objects.create(status_id=4,application=i)
+    return True
+
+
+
+class SchoolFeatureApiView(APIView):
+    serializer_class = serializers.SchoolFeaturesSerializer
+    
+    def get(self, request, slug, format=None):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        queryset = Feature.objects.filter(school=school).order_by("features__parent__id")
+        serializer = serializers.SchoolFeaturesSerializer(queryset ,many=True)
+        return  Response(serializer.data,status=status.HTTP_200_OK)
+
+
+    def put(self,request,slug,format=None):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        data = json.loads(request.body)
+        for i in data:
+            feature=Feature.objects.get(id=i['id'])
+            feature.exist=i['exist']
+            feature.filter_string=str(feature.features.name)+"_"+str(feature.exist)
+            feature.save()
+        queryset = Feature.objects.filter(school=school).order_by("features__parent__id")
+        serializer = serializers.SchoolFeaturesSerializer(queryset ,many=True)
+        return Response(serializer.data,status=status.HTTP_200_OK)
+
+
+
+
+class SchoolFeatureStrApiView(APIView):
+    serializer_class = serializers.SchoolFeaturesSerializer
+    
+    def get(self, request, slug, format=None):
+        slug = self.kwargs.get("slug", None)
+        school = generics.get_object_or_404(SchoolProfile, slug=slug)
+        count=Feature.objects.filter(school=school).count()
+        if(count==0):
+            return Response([],status=status.HTTP_200_OK)
+        feature_list = FeatureName.objects.all()
+        response_list=[]
+        for j in feature_list:
+            print(j)
+            data={}
+            data['feature'] = j.name
+            nesteddata_query = Feature.objects.filter(school=school,features__parent=j)
+            sub_feature=[]
+            for i in nesteddata_query:
+                nesteddata={}
+                nesteddata['id']= i.features.id
+                nesteddata['name']=i.features.name
+                nesteddata['exist']= i.exist
+                sub_feature.append(nesteddata)
+            data['subfeature']=sub_feature
+            response_list.append(data)
+        return Response(response_list,status=status.HTTP_200_OK)

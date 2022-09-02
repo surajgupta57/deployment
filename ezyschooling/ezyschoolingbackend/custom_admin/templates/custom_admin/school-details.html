@@ -1,0 +1,160 @@
+{% extends 'custom_admin/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<a class="btn btn-primary mt-4" href="{{request.META.HTTP_REFERER}}">Back</a>
+<div class="row">
+    <div class="col-6 pt-3 pb-2">
+        <h2> School Details </h2>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>Username</th>
+        <td>{{ object.user.name }}</td>
+    </tr>
+    <tr>
+        <th>School Name</th>
+        <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+        <th>School Short Name</th>
+        <td>{{ object.short_name }}</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>{{ object.email }}</td>
+    </tr>
+    <tr>
+        <th>Slug</th>
+        <td>{{ object.slug }}</td>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <td>{{ object.phone_no }}</td>
+    </tr>
+    <tr>
+        <th>Website</th>
+        <td>
+        {% if object.website %}
+        <a href={{ object.website }}>{{ object.website }}</a>
+        {% else %}
+        {{ object.website }}
+        {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th>School Timings</th>
+        <td>{{ object.school_timings }}</td>
+    </tr>
+    <tr>
+        <th>School Type</th>
+        <td>{{ object.school_type.name }}</td>
+    </tr>
+    <tr>
+        <th>School Board</th>
+        <td>{{ object.school_board.name }}</td>
+        <td>{{ object.school_boardss.all|join:", "}}</td>
+    </tr>
+    <tr>
+        <th>Latitude</th>
+        <td>{{ object.latitude }}</td>
+    </tr>
+    <tr>
+        <th>Longitude</th>
+        <td>{{ object.longitude }}</td>
+    </tr>
+    <tr>
+        <th>Short Address</th>
+        <td>{{ object.short_address }}</td>
+    </tr>
+    <tr>
+        <th>Street Address</th>
+        <td>{{ object.street_address }}</td>
+    </tr>
+    <tr>
+        <th>City</th>
+        <td>{{ object.city }}</td>
+    </tr>
+    <tr>
+        <th>Region</th>
+        <td>{{ object.region.name }}</td>
+    </tr>
+    <tr>
+        <th>State</th>
+        <td>{{ object.state.name }}</td>
+    </tr>
+    <tr>
+        <th>Zipcode</th>
+        <td>{{ object.zipcode }}</td>
+    </tr>
+    <tr>
+        <th>Class Relation</th>
+        <td>{{ object.class_relation.all|join:", "}}</td>
+    </tr>
+    <tr>
+        <th>Collab</th>
+        <td>{{ object.collab|yesno:"Yes,No" }}</td>
+    </tr>
+    <tr>
+        <th>Rank</th>
+        <td>{{ object.rank }}</td>
+    </tr>
+    <tr>
+        <th>Year Established</th>
+        <td>{{ object.year_established }}</td>
+    </tr>
+    <tr>
+        <th>School Category</th>
+        <td>{{ object.school_category }}</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td class="width: 50%%">{{ object.description }}</td>
+    </tr>
+    <tr>
+        <th>Student Teacher Ratio</th>
+        <td>{{ object.student_teacher_ratio }}</td>
+    </tr>
+    <tr>
+        <th>Is Active</th>
+        <td>{{ object.is_active }}</td>
+    </tr>
+    <tr>
+        <th>Form Price</th>
+        <td>{{ object.form_price }}</td>
+    </tr>
+    <tr>
+        <th>Point System</th>
+        <td>{{ object.point_system|yesno:"Yes,No" }}</td>
+    </tr>
+    <tr>
+        <th>Verifird</th>
+        <td>{{ object.is_verified|yesno:"Yes,No" }}</td>
+    </tr>
+    <tr>
+        <th>View Permission</th>
+        <td>{{ object.views_permission|yesno:"Yes,No" }}</td>
+    </tr>
+    <tr>
+        <th>Enquiry Permission</th>
+        <td>{{ object.enquiry_permission|yesno:"Yes,No" }}</td>
+    </tr>
+    <tr>
+        <th>TimeStamp</th>
+        <td>{{ object.timestamp }}</td>
+    </tr>
+    <tr>
+        <th>Updated At</th>
+        <td>{{ object.updated_at }}</td>
+    </tr>
+    <tr>
+        <th>School Logo</th>
+        <td><img src="{{ object.logo.url }}"></td>
+    </tr>
+    <tr>
+        <th>School Cover</th>
+        <td><img src="{{ object.cover.url }}"></td>
+    </tr>
+</table>
+{% endblock %}

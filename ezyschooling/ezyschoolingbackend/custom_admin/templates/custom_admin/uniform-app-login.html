@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light ">
+    <div class="navbar nav mr-auto">
+    <a class="navbar-brand mx-4 " href="#">Ezyschooling</a>
+  </div>
+</nav>
+    
+    <div class="container py-4">
+        <h2 class="text-center pt-5">Login Uniform-app Analytics</h2>
+        {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    {% endfor %}
+        <form action="" method="post">
+           {% load crispy_forms_tags %}
+        {{ form.media }}
+            {% csrf_token %}
+                    {{ form | crispy }}
+            <input type="submit" value="Submit" class="btn btn-primary btn-block">
+        </form>
+    </div>
+
+</body>
+</html>
+

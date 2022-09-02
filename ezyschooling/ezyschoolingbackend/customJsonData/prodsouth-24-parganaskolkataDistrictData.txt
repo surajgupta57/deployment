@@ -1,0 +1,1 @@
+{"areas": [{"name": "Purbalok", "slug": "purbalok", "city": "Kolkata", "city_slug": "kolkata", "district": "South 24 Parganas", "district_slug": "south-24-parganas"}, {"name": "Thakurpukur", "slug": "thakurpukur", "city": "Kolkata", "city_slug": "kolkata", "district": "South 24 Parganas", "district_slug": "south-24-parganas"}]}

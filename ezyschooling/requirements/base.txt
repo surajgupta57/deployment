@@ -1,0 +1,59 @@
+django-cors-headers==3.2.1
+Pillow==7.0.0  # https://github.com/python-pillow/Pillow
+whitenoise==5.0.1  # https://github.com/evansd/whitenoise
+redis==3.4.1  # https://github.com/antirez/redis
+xhtml2pdf==0.2.4 # https://github.com/xhtml2pdf/xhtml2pdf
+drf-yasg==1.17.0 # https://github.com/axnsan12/drf-yasg
+packaging==20.1 # for drf-yasg
+gspread==3.6.0 # https://github.com/burnash/gspread
+Faker==4.0.0  # for dump data in database for testing
+
+# Django
+# ------------------------------------------------------------------------------
+Django==2.2.10  # https://github.com/django/django
+python-decouple==3.3 # https://github.com/henriquebastos/python-decouple/
+dj-database-url==0.5.0 # https://github.com/jacobian/dj-database-url
+django-import-export==2.0.1 # https://github.com/django-import-export/django-import-export
+django-taggit==1.2.0 # https://github.com/jazzband/django-taggit
+django-filter==2.2 # https://github.com/carltongibson/django-filter/
+django-guardian==2.2.0 # https://github.com/django-guardian/django-guardian
+django-extensions==2.2.6  # https://github.com/django-extensions/django-extensions
+django-crispy-forms==1.8.1
+django-ckeditor==5.9.0
+geopy==1.21.0 # https://github.com/geopy/geopy
+googlemaps==4.4.2 # https://github.com/googlemaps/google-maps-services-python
+django-allauth==0.41.0 # https://github.com/pennersr/django-allauth/
+django-notifications-hq==1.5.0 # https://github.com/django-notifications/django-notifications/
+django-nested-admin==3.2.4  # https://github.com/theatlantic/django-nested-admin
+django-tables2==2.3.1 # https://github.com/jieter/django-tables2/
+django-autocomplete-light==3.5.1 # https://github.com/yourlabs/django-autocomplete-light
+django-bootstrap4==2.2.0 # https://github.com/zostera/django-bootstrap4
+django-bootstrap-datepicker-plus==3.0.5 # https://github.com/monim67/django-bootstrap-datepicker-plus
+django-admin-rangefilter==0.6.3 #https://github.com/silentsokolov/django-admin-rangefilter
+# Django REST Framework
+djangorestframework==3.11.0  # https://github.com/encode/django-rest-framework
+django-rest-auth==0.9.5 # https://github.com/Tivix/django-rest-auth
+Markdown==3.1.1 # https://github.com/Python-Markdown/markdown/
+
+django-redis==4.11.0  # https://github.com/niwinz/django-redis
+flower==0.9.3  # https://github.com/mher/flower
+celery==4.4.0  # pyup: < 5.0  # https://github.com/celery/celery
+django-celery-beat==1.6.0  # https://github.com/celery/django-celery-beat
+#argon2-cffi==19.1.0  # https://github.com/hynek/argon2_cffi
+
+django-user-agents==0.4.0 # https://github.com/selwin/django-user_agents
+
+django-webpush==0.3.2 # https://github.com/safwanrahman/django-webpush
+beautifulsoup4==4.8.2 # https://code.launchpad.net/beautifulsoup
+
+pyotp==2.4.1 # https://github.com/pyauth/pyotp
+razorpay==1.2.0
+
+#django-silk==4.0.0 # https://github.com/jazzband/django-silk
+
+django-elasticsearch-dsl==7.1.1
+django-elasticsearch-dsl-drf==0.20.9
+elasticsearch==7.5.1
+elasticsearch-dsl==7.1.0
+
+taggit-selectize==2.7.1

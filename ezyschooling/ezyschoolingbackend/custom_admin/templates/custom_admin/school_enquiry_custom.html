@@ -1,0 +1,454 @@
+{% extends "custom_admin/base_custom.html" %}
+{% load static %}
+
+{% load render_table from django_tables2 %}
+{% load export_url from django_tables2 %}
+{{ filter.form.media.css }}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% block title_main %}School Enquiry{% endblock %}
+{% block body_main %}
+{% include 'partials/_js.html' %}
+
+<script>
+  $(document).ready(function () {
+    function cbDropdown(column) {
+      return $('<ul>', {
+        'class': 'cb-dropdown'
+      }).appendTo($('<div>', {
+        'class': 'cb-dropdown-wrap'
+      }).appendTo(column));
+    }
+
+    //table1 = School Enquiry With Parent Info Present
+    table1 = $('#tableId').DataTable({
+      dom: 'Blfrtip',
+      lengthMenu: [[10, 100, 1000, -1], [10, 100, 1000, "All"]],
+        buttons: [
+        { 
+            extend: 'excelHtml5',
+            text: 'Genrate Excel Sheet'
+            } 
+        ],
+        "scrollX": true,
+        "order": [[2, "asc"]],
+      initComplete: function () {
+        this.api().columns().every(function () {
+          var column = this;
+          if (column.header().id === 'pincode' || column.header().id === 'class' || column.header().id === 'monthly' || column.header().id === 'schoolapplied' || column.header().id === 'city') {
+            var ddmenu = cbDropdown($(column.header()))
+              .on('change', ':checkbox', function () {
+                var active;
+                var vals = $(':checked', ddmenu).map(function (index, element) {
+                  active = true;
+                  return $.fn.dataTable.util.escapeRegex($(element).val());
+                }).toArray().join('|');
+
+                column
+                  .search(vals.length > 0 ? '^(' + vals + ')$' : '', true, false)
+                  .draw();
+                if (this.checked) {
+                  $(this).closest('li').addClass('active');
+                } else {
+                  $(this).closest('li').removeClass('active');
+                }
+                var active2 = ddmenu.parent().is('.active');
+                if (active && !active2) {
+                  ddmenu.parent().addClass('active');
+                } else if (!active && active2) {
+                  ddmenu.parent().removeClass('active');
+                }
+              });
+
+            column.data().unique().sort().each(function (d, j) {
+              var // wrapped
+                $label = $('<label>'),
+                $text = $('<span>', {
+                  text: d
+                }),
+                $cb = $('<input>', {
+                  type: 'checkbox',
+                  value: d
+                });
+
+              $text.appendTo($label);
+              $cb.appendTo($label);
+
+              ddmenu.append($(`<li>`).append($label));
+            });
+          }
+        });
+      }
+    });
+
+    //table2 = School Enquiry data of parents where monthly budget is not present
+    table2 = $('#no_address_table').DataTable({
+      dom: 'Blfrtip',
+      lengthMenu: [[10, 100, 1000, -1], [10, 100, 1000, "All"]],
+        buttons: [
+        { 
+            extend: 'excelHtml5',
+            text: 'Genrate Excel Sheet'
+            } 
+        ],
+        "scrollX": true,
+        "order": [[2, "asc"]],
+      initComplete: function () {
+        this.api().columns().every(function () {
+          var column = this;
+          if (column.header().id === 'schoolapplied')  {
+            var ddmenu = cbDropdown($(column.header()))
+              .on('change', ':checkbox', function () {
+                var active;
+                var vals = $(':checked', ddmenu).map(function (index, element) {
+                  active = true;
+                  return $.fn.dataTable.util.escapeRegex($(element).val());
+                }).toArray().join('|');
+
+                column
+                  .search(vals.length > 0 ? '^(' + vals + ')$' : '', true, false)
+                  .draw();
+                if (this.checked) {
+                  $(this).closest('li').addClass('active');
+                } else {
+                  $(this).closest('li').removeClass('active');
+                }
+                var active2 = ddmenu.parent().is('.active');
+                if (active && !active2) {
+                  ddmenu.parent().addClass('active');
+                } else if (!active && active2) {
+                  ddmenu.parent().removeClass('active');
+                }
+              });
+
+            column.data().unique().sort().each(function (d, j) {
+              var // wrapped
+                $label = $('<label>'),
+                $text = $('<span>', {
+                  text: d
+                }),
+                $cb = $('<input>', {
+                  type: 'checkbox',
+                  value: d
+                });
+              $text.appendTo($label);
+              $cb.appendTo($label);
+              ddmenu.append($(`<li>`).append($label));
+            });
+          }
+        });
+      }
+   });
+  
+   //date filter for table1
+    $('#filter_button_table_1').click( function() {
+        table1.draw();
+    });
+
+    //clear filter button for table1
+    $('#clear_button_table_1').click( function() {
+      $('#min_table_1').val('')
+      $('#max_table_1').val('')
+      table1.search('').draw()
+    });   
+
+    //date filter for table2
+    $('#filter_button_table_2').click( function() {
+        table2.draw();
+    });
+
+    //clear button for table2
+    $('#clear_button_table_2').click( function() {
+  	  $('#min_table_2').val('')
+  	  $('#max_table_2').val('')
+	    table2.search('').draw()
+    }); 
+
+   $.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+
+      //date search filter for table2
+	    if(settings.sTableId === 'no_address_table'){
+        var min = $('#min_table_2').val().split('-')
+        var max = $('#max_table_2').val().split('-')
+        var age = data[0].split(' ')[1].split('/')
+        min = new Date(parseInt(min[0]),parseInt(min[1])-1,parseInt(min[2]))
+        max = new Date(parseInt(max[0]),parseInt(max[1])-1,parseInt(max[2]))
+        age = new Date(parseInt(age[2]),parseInt(age[1])-1,parseInt(age[0]))
+        if ( ( isNaN( min ) && isNaN( max ) ) ||
+              ( isNaN( min ) && age <= max ) ||
+              ( min <= age   && isNaN( max ) ) ||
+            ( min <= age   && age <= max ) )
+        {
+            return true;
+        }
+        return false;
+    	}
+
+      //date search filter for table1
+	    else if(settings.sTableId === 'tableId'){
+        var min = $('#min_table_1').val().split('-')
+        var max = $('#max_table_1').val().split('-')
+        var age = data[0].split(' ')[1].split('/')
+        min = new Date(parseInt(min[0]),parseInt(min[1])-1,parseInt(min[2]))
+        max = new Date(parseInt(max[0]),parseInt(max[1])-1,parseInt(max[2]))
+        age = new Date(parseInt(age[2]),parseInt(age[1])-1,parseInt(age[0]))
+
+        if ( ( isNaN( min ) && isNaN( max ) ) ||
+          ( isNaN( min ) && age <= max ) ||
+          ( min <= age   && isNaN( max ) ) ||
+        ( min <= age   && age <= max ) ) {
+                  return true;
+        }
+        return false;
+      }
+	});
+});
+</script>
+{% include "partials/_sidebar_main.html" %}
+<div class="main-content" id="panel">
+  {% include "partials/_navbar_main.html" %}
+  <div class="row mt-4">
+        <div class="col-xl-6">
+          <div class="card bg-default">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center"><div class="col"><h5 class="h3 text-white mb-0 text-center">This Month's Data</h5><div class="chart-container" style="position: relative; height:300px; width:400px"><canvas id="myChart" class="chart-canvas chartjs-render-monitor" width="400" height="300"></canvas></div></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="card bg-default">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">  <div class="col"><h5 class="h3 text-white mb-0 text-center">This Year's Data</h5><div class="chart-container" style="position: relative; height:300px; width:400px"><canvas id="myChart2" class="chart-canvas chartjs-render-monitor" width="400" height="300"></canvas></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <hr />
+  <hr />
+  <div class="text-center mt-3">
+    <h1>School Enquiry With Parent Info Present<h2>
+  </div>
+  <table border="0" cellspacing="5" cellpadding="5">
+     <tbody>
+	      <tr>
+            <td>Minimum date:</td>
+            <td><input type="date" id="min_table_1" name="min"></td>
+        </tr>
+        <tr>
+            <td>Maximum date:</td>
+            <td><input type="date" id="max_table_1" name="max"></td>
+        </tr>
+	      <tr>
+            <td class="mt-2"><button type="submit" class="btn-sm btn-primary ml-2 mr-2" id="filter_button_table_1">Filter</button> <button class="btn-sm btn-primary ml-2 mr-2" type="submit" id="clear_button_table_1">Clear</button></td>
+        </tr>
+    </tbody>
+</table>
+  <table id="tableId">
+    <thead>
+      <tr>
+        <th class="" id="time" scope="">TimeStamp</th>
+        <th class="" id="parentname" scope="">parentname</th>
+        <th class="" id="parentemail" scope="">phone no</th>
+        <th class="" id="parentphone" scope="">query</th>
+        <th class="" id="childname" scope="">email</th>
+        <th class="" id="schoolapplied" scope="">schoolname</th>
+        <th class="" id="city" scope="">city</th>
+        <th class="" id="pincode" scope="">pincode</th>
+        <th class="" id="monthly" scope="">monthlybudget</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in dataset %}
+      <tr>
+        <td><p style="display:none;">{{i.10}}<p> {{i.8}}</td>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td>{{i.2}}</td>
+        <td>{{i.3}}</td>
+        <td>{{i.4}}</td>
+        <td>{{i.5}}</td>
+        <td>{{i.6}}</td>
+        <td>{{i.7}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <hr />
+  <hr />
+  <div class="text-center mt-3">
+    <h1>School Enquiry data of parents where monthly budget is not present<h2>
+  </div>
+<table border="0" cellspacing="5" cellpadding="5">
+    <tbody>
+	      <tr>
+            <td>Minimum date:</td>
+            <td><input type="date" id="min_table_2" name="min"></td>
+        </tr>
+        <tr>
+            <td>Maximum date:</td>
+            <td><input type="date" id="max_table_2" name="max"></td>
+        </tr>
+	      <tr>
+            <td class="mt-2"><button type="submit" class="btn-sm btn-primary ml-2 mr-2" id="filter_button_table_2">Filter</button> <button class="btn-sm btn-primary ml-2 mr-2" type="submit" id="clear_button_table_2">Clear</button></td>
+        </tr>
+    </tbody>
+</table>
+  <table id="no_address_table">
+    <thead>
+      <tr>
+        <th class="" id="time" scope="">TimeStamp</th>
+
+        <th class="" id="parentname" scope="">parentname</th>
+        <th class="" id="parentemail" scope="">phone no</th>
+        <th class="" id="parentphone" scope="">query</th>
+        <th class="" id="email" scope="">email</th>
+        <th class="" id="schoolapplied" scope="">schoolname</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in no_address_dataset %}
+      <tr>
+        <td><p style="display:none;">{{i.6}}</p> {{i.5}}</td>
+        <td>{{i.0}}</td>
+        <td>{{i.1}}</td>
+        <td>{{i.2}}</td>
+        <td>{{i.3}}</td>
+        <td>{{i.4}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script>
+  function loadGraph(labels, data, data_title) {
+    var label = "Number Of Enquiries"
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: label,
+          data: data,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rba(54, 162, 235, 1)',
+            'rgba(255 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rba(54, 162, 235, 1)',
+            'rgba(255 206, 86, 1)',
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: data_title,
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  }
+  
+  function loadGraph2(labels, data, data_title) {
+    var label = "Number Of Enquiries"
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: label,
+          data: data,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rba(54, 162, 235, 1)',
+            'rgba(255 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rba(54, 162, 235, 1)',
+            'rgba(255 206, 86, 1)',
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        title: {
+        display: true,
+          text: data_title,
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  }  
+
+  function fetchData() {
+    fetch(`/custom-admin/get-school-enquiry-graph-data?filter=year`)
+      .then(res => res.json())
+      .then(data => {
+        loadGraph2(data.labels, data.count, data.data_title)
+      })
+
+    fetch(`/custom-admin/get-school-enquiry-graph-data?filter=month`)
+      .then(res => res.json())
+      .then(data => {
+        loadGraph(data.labels, data.count, data.data_title)
+      })
+  }
+
+  document.onload = fetchData('month')
+</script>
+{% endblock %}

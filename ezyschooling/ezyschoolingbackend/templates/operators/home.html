@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %} | Operator</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% load render_table from django_tables2 %}
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    {% include 'operators/_navbar.html'  %}
+
+    
+    
+    <div class="container pt-5">
+        <h2 class="pt-4">Hi, {{operator.name}}</h2>
+        <h2>Credits: {{operator.credit}}</h2>
+        <h2 class="text-center">List of schools</h2>
+        {% if filter %}
+            <form action="" method="get" class="form form-inline">
+                {% bootstrap_form filter.form layout='inline' %}
+                {% bootstrap_button 'filter' %}
+            <a class="btn btn-warning ml-3" href="/operators/all-applications/">All Applications</a>
+            </form>
+        {% endif %}
+        {% render_table schools%}
+    </div>
+    {% endblock content %}
+
+    {% bootstrap_javascript jquery='full' %}
+    {% block script %}
+    {% endblock script %}
+</body>
+
+</html>

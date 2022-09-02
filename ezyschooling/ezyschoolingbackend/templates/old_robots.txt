@@ -1,0 +1,57 @@
+User-agent: *
+Allow: /
+
+User-agent: googlebot
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: sogou spider
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Sosospider
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: googleplusshare
+Allow: /
+
+User-agent: Facebookexternalhit
+Allow: /
+
+User-agent: Googlefeedfetcher
+Allow: /
+
+Disallow: /checkout
+Disallow: /dashboard
+Disallow: /form/:id1/:id2
+Disallow: /forms
+Disallow: /common-admission-form
+Disallow: /receipt/:index
+Disallow: /profile
+Disallow: /schset
+Disallow: /formset
+Disallow: /updatePass
+Disallow: /simOffForm
+Disallow: /ZipUpload
+Disallow: /formManager
+Disallow: /schooldashboard
+Disallow: /viewForm/:id
+Disallow: /simOffForm
+Disallow: /offFormsMenu
+Disallow: /allOffForms
+Disallow: /editOffForm
+Disallow: /viewOffForm
+Disallow: /offFormHist
+Disallow: /loading
+Disallow: /pdfDownload/:formId
+Disallow: /activation/:uid/:token

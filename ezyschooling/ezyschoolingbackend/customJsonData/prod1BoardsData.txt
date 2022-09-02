@@ -1,0 +1,1 @@
+{"boards": [{"name": "CBSE", "slug": "cbse"}, {"name": "CISCE", "slug": "cisce"}, {"name": "Cambridge", "slug": "cambridge"}, {"name": "IB Board", "slug": "ib-board"}, {"name": "ICSE", "slug": "icse"}, {"name": "IEYC", "slug": "ieyc"}, {"name": "IGCSE", "slug": "igcse"}, {"name": "No Board", "slug": "no-board"}, {"name": "State Board", "slug": "state-board"}]}

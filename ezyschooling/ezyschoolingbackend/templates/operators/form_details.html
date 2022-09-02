@@ -1,0 +1,177 @@
+{% extends 'operators/home.html' %}
+{% block title %}Application Form{% endblock %}
+
+{% block head %}
+{{ form.media.css }}
+{% endblock %}
+{% block content %}
+{% include 'operators/_navbar.html' %}
+<style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #2196F3;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+    
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+    
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    .parentdiv{
+        float: right;
+        display: flex;
+        
+    }
+    .buttons_download{
+        background-color: #188bcd;
+        border: none;
+        padding: 5px;
+        border-radius: 3px;
+        color:white;
+        float: right;
+        margin-left: 10px;
+    }
+    .edit {
+    color: #188bcd;
+    margin-top: 5px;
+    margin-right: 20px;
+    font-size: 18px;
+    }
+    </style>
+<div class="container py-4">
+ 
+    <h1 class="text-center pt-5">Application Form</h1>
+    <a href="#" id="schoolapp" onclick="f2()">Back to School Applications Form</a>
+    <ul class="nav nav-tabs my-4">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Common Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if object.father is None %} disabled{% endif %} " href="/operators/parent-form/{{object.father.id}}">Father Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if object.mother is None %} disabled{% endif %} " href="/operators/parent-form/{{object.mother.id}}">Mother Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if object.guardian is None %} disabled{% endif %} " href="/operators/parent-form/{{object.guardian.id}}">Guardian Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if object.child is None %} disabled{% endif %} " href="/operators/child-form/{{object.child.id}}">Child Details</a>
+        </li>
+    </ul>
+
+
+       
+       <div class="parentdiv">
+        <div class="edit">Edit</div>
+        <label class="switch">
+          <input type="checkbox" onclick="toggle()">
+          <span class="slider"></span>
+        </label>
+       </div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+    {% endfor %}
+    <form enctype="multipart/form-data" action="" method="post">
+        {% load crispy_forms_tags %}
+        {% csrf_token %}
+        {{ form | crispy }}
+        <input type="submit" value="Submit" class="btn btn-primary btn-block">
+    </form>
+    <script>
+        let testBool = true; 
+        disable_called()
+        function disable_called() {
+             var x = document.forms[0];
+             var elements = x.elements;
+             for (var i = 0, len = elements.length; i < len; ++i) {
+                 elements[i].disabled=true
+              }
+         }
+     
+        function enable(){
+             
+             var x = document.forms[0];
+             var elements = x.elements;
+             for (var i = 0, len = elements.length; i < len; ++i) {
+                 elements[i].disabled=false
+              }
+        
+        }
+        function toggle() { 
+                 testBool = !testBool; 
+                 if(testBool==true){
+                     disable_called()
+                 }
+                 if(testBool==false){
+                     enable()
+                 }
+             }
+             testurl=window.location.pathname
+             sessionStorage.setItem("backurl",testurl)
+        function f2(){
+          var schoolapp = sessionStorage.getItem("schoolappurl");
+           document.getElementById("schoolapp").href= schoolapp;
+        }
+     </script>
+</div>
+
+{% endblock %}
+{% block script %}
+{{ form.media.js }}
+{% endblock %}
+

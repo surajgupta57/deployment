@@ -1,0 +1,1 @@
+{"areas": [{"name": "Madinat Al Mataar", "slug": "madinat-al-mataar", "city": "Dubai", "city_slug": "dubai", "district": "Madinat Al Maktoum", "district_slug": "madinat-al-maktoum"}]}

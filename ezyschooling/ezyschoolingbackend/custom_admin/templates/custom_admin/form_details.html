@@ -1,0 +1,138 @@
+{% extends "custom_admin/base.html" %}
+
+{% block title %}
+Form Details
+{% endblock %}
+
+{% block content %}
+<a class="btn btn-primary mt-4" href="{{request.META.HTTP_REFERER}}">Back</a>
+<div class="main">
+  <hr>Applicants Details<hr>
+<div class="row mt-4">
+
+  <div class="col">
+    <p><span class="font-weight-bold">{{ "Child"|title }}: </span>{{ parent_form.child.name }}</p>
+    <p><span class="font-weight-bold">{{ "father"|title }}: </span>{{ parent_form.father.name }}</p>
+    <p><span class="font-weight-bold">{{ "mother"|title }}: </span>{{ parent_form.mother.name }}</p>
+    <p><span class="font-weight-bold">{{ "timestamp"|title }}: </span>{{ parent_form.timestamp }}</p>
+    <p><span class="font-weight-bold">{{ "apply_for"|title }}: </span>{{ parent_form.child.class_applying_for }}</p>
+    <p><span class="font-weight-bold">{{ "date_of_birth"|title }}: </span>{{ parent_form.child.date_of_birth }}</p>
+    <p><span class="font-weight-bold">{{ "short_address"|title }}: </span>{{ parent_form.short_address }}</p>
+    <p><span class="font-weight-bold">{{ "address"|title }}: </span>{{ parent_form.street_address }}</p>
+    <p><span class="font-weight-bold">{{ "city"|title }}: </span>{{ parent_form.city }}</p>
+    <p><span class="font-weight-bold">{{ "state"|title }}: </span>{{ parent_form.state }}</p>
+    <p><span class="font-weight-bold">{{ "pincode"|title }}: </span>{{ parent_form.pincode }}</p>
+    <p><span class="font-weight-bold">{{ "country"|title }}: </span>{{ parent_form.country }}</p>
+    <p><span class="font-weight-bold">{{ "gender"|title }}: </span>{{ parent_form.child.gender }}</p>
+    <p><span class="font-weight-bold">{{ "sibling1_alumni_name"|title }}: </span>{{ parent_form.sibling1_alumni_name }}</p>
+    <p><span class="font-weight-bold">{{ "sibling1_alumni_school_name"|title }}: </span>{{ parent_form.sibling1_alumni_school_name.name }}</p>
+    <p><span class="font-weight-bold">{{ "sibling2_alumni_name"|title }}: </span>{{ parent_form.sibling2_alumni_name }}</p>
+    <p><span class="font-weight-bold">{{ "sibling2_alumni_school_name"|title }}: </span>{{ parent_form.sibling2_alumni_school_name.name }}</p>
+    <p><span class="font-weight-bold">{{ "mother_tongue"|title }}: </span>{{ parent_form.mother_tongue }}</p>
+   </div>
+
+  <div class="col">
+    <p><span class="font-weight-bold">{{ "category"|title }}: </span>{{ parent_form.category }}</p>
+    <p><span class="font-weight-bold">{{ "email"|title }}: </span>{{ parent_form.email }}</p>
+    <p><span class="font-weight-bold">{{ "phone_no"|title }}: </span>{{ parent_form.phone_no }}</p>
+    <p><span class="font-weight-bold">{{ "blood_group"|title }}: </span>{{ parent_form.child.blood_group }}</p>
+    <p><span class="font-weight-bold">{{ "religion"|title }}: </span>{{ parent_form.child.religion }}</p>
+    <p><span class="font-weight-bold">{{ "nationality"|title }}: </span>{{ parent_form.child.nationality }}</p>
+    <p><span class="font-weight-bold">{{ "single_child"|title }}: </span>{{ parent_form.single_child|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "first_child"|title }}: </span>{{ parent_form.first_child|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "single_parent"|title }}: </span>{{ parent_form.single_parent|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "first_girl_child"|title }}: </span>{{ parent_form.first_girl_child|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "is_christian"|title }}: </span>{{ parent_form.child.is_christian|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "minority_points"|title }}: </span>{{ parent_form.child.minority_points|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "student_with_special_needs_points"|title }}: </span>{{ parent_form.child.student_with_special_needs_points|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "children_of_armed_force_points"|title }}: </span>{{ parent_form.child.armed_force_points|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "no_parent"|title }}: </span>{{ parent_form.child.orphan|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "staff_ward"|title }}: </span>{{ parent_form.staff_ward|yesno:"Yes,No" }}</p>
+    <p><span class="font-weight-bold">{{ "lockstatus"|title }}: </span>{{ parent_form.lockstatus|yesno:"Yes,No" }}</p>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col">
+    <hr>
+    <h3>Father Details</h3>
+    <hr>
+    <p><span class="font-weight-bold">{{ "father_name"|title }}: </span>{{ parent_form.father.name }}</p>
+    <p><span class="font-weight-bold">{{ "father_education"|title }}: </span>{{ parent_form.father.education }}</p>
+    <p><span class="font-weight-bold">{{ "father_occupation"|title }}: </span>{{ parent_form.father.occupation }}</p>
+    <p><span class="font-weight-bold">{{ "father_income"|title }}: </span>{{ parent_form.father.income }}</p>
+    <p><span class="font-weight-bold">{{ "father_office_address"|title }}: </span>{{ parent_form.father.office_address }}</p>
+    <p><span class="font-weight-bold">{{ "father_office_number"|title }}: </span>{{ parent_form.father.office_number }}</p>
+    <p><span class="font-weight-bold">{{ "father_mobile_number"|title }}: </span>{{ parent_form.father.phone }}</p>
+    <p><span class="font-weight-bold">{{ "father_email"|title }}: </span>{{ parent_form.father.email }}</p>
+    <p><span class="font-weight-bold">{{ "father_alumni_school_name"|title }}: </span>{{ parent_form.father.alumni_school_name }}</p>
+    <p><span class="font-weight-bold">{{ "father_alumni_year_of_passing"|title }}: </span>{{ parent_form.father.alumni_year_of_passing }}</p>
+    <p><span class="font-weight-bold">{{ "father_passing_class"|title }}: </span>{{ parent_form.father.passing_class }}</p>
+    <p><span class="font-weight-bold">{{ "father_companyname"|title }}: </span>{{ parent_form.father.companyname }}</p>
+  </div>
+
+  <div class="col">
+    <hr>
+    <h3>Mother Details</h3>
+    <hr>
+    <p><span class="font-weight-bold">{{ "mother_full_name"|title }}: </span>{{ parent_form.mother.name }}</p>
+    <p><span class="font-weight-bold">{{ "mother_education"|title }}: </span>{{ parent_form.mother.education }}</p>
+    <p><span class="font-weight-bold">{{ "mother_occupation"|title }}: </span>{{ parent_form.mother.occupation }}</p>
+    <p><span class="font-weight-bold">{{ "mother_income"|title }}: </span>{{ parent_form.mother.income }}</p>
+    <p><span class="font-weight-bold">{{ "mother_office_address"|title }}: </span>{{ parent_form.mother.office_address }}</p>
+    <p><span class="font-weight-bold">{{ "mother_office_number"|title }}: </span>{{ parent_form.mother.office_number }}</p>
+    <p><span class="font-weight-bold">{{ "mother_mobile_number"|title }}: </span>{{ parent_form.mother.phone }}</p>
+    <p><span class="font-weight-bold">{{ "mother_email"|title }}: </span>{{ parent_form.mother.email }}</p>
+    <p><span class="font-weight-bold">{{ "mother_alumni_school_name"|title }}: </span>{{ parent_form.mother.alumni_school_name }}</p>
+    <p><span class="font-weight-bold">{{ "mother_alumni_year_of_passing"|title }}: </span>{{ parent_form.mother.alumni_year_of_passing }}</p>
+    <p><span class="font-weight-bold">{{ "mother_passing_class"|title }}: </span>{{ parent_form.mother.passing_class }}</p>
+    <p><span class="font-weight-bold">{{ "mother_companyname"|title }}: </span>{{ parent_form.mother.companyname }}</p>
+    </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col">
+    {%if parent_form.child.orphan %}
+    <h3>Guardians deails</h3>
+    <p><span class="font-weight-bold">{{ "guardian_full_name"|title }}: </span>{{ parent_form.guardian.name }}</p>
+    <p><span class="font-weight-bold">{{ "guardian_education"|title }}: </span>{{ parent_form.guardian.education }}</p>
+    <p><span class="font-weight-bold">{{ "guardian_occupation"|title }}: </span>{{ parent_form.guardian.occupation }}</p>
+    <p><span class="font-weight-bold">{{ "guardian_income"|title }}: </span>{{ parent_form.guardian.income }}</p>
+    <p><span class="font-weight-bold">{{ "guardian_office_address"|title }}: </span>{{ parent_form.guardian.office_address }}</p>
+    <p><span class="font-weight-bold">{{ "guardian_office_number"|title }}: </span>{{ parent_form.guardian.office_number }}</p>
+    <p><span class="font-weight-bold">{{ "guardian_mobile_number"|title }}: </span>{{ parent_form.guardian.mobile_number }}</p>
+    <p><span class="font-weight-bold">{{ "guardian_email"|title }}: </span>{{ parent_form.guardian.email }}</p>
+    <p><span class="font-weight-bold">{{ "guardian_companyname"|title }}: </span>{{ parent_form.guardian.companyname }}</p>
+    {%endif%}
+  </div>
+</div>
+  <div class="col">
+    <hr>
+    <h3>Documents</h3>
+    <hr>
+    <p><span class="font-weight-bold">{{ "child_photo"|title }}: </span><img src="{{ parent_form.child.photo.url }}"></p>
+    <p><span class="font-weight-bold">{{ "mothers_photo"|title }}: </span><img src="{{ parent_form.mother.photo.url }}"></p>
+    <p><span class="font-weight-bold">{{ "fathers_photo"|title }}: </span><img src="{{ parent_form.father.photo.url }}"></p>
+    <p><span class="font-weight-bold">{{ "child_birth_certificate"|title }}: </span><img src="{{ parent_form.child.birth_certificate.url }}"></p>
+    <p><span class="font-weight-bold">{{ "address_proof"|title }}: </span><img src="{{ parent_form.child.address_proof.url }}"></p>
+    <p><span class="font-weight-bold">{{ "address_proof2"|title }}: </span><img src="{{ parent_form.child.address_proof2.url }}"></p>
+    <p><span class="font-weight-bold">{{ "minority_proof"|title }}: </span><img src="{{ parent_form.child.minority_proof.url }}"></p>
+    <p><span class="font-weight-bold">{{ "first_child_affidavit"|title }}: </span><img src="{{ parent_form.child.first_child_affidavit.url }}"></p>
+    <p><span class="font-weight-bold">{{ "sibling1_alumni_proof"|title }}: </span><img src="{{ parent_form.sibling1_alumni_proof.url }}"></p>
+    <p><span class="font-weight-bold">{{ "sibling2_alumni_proof"|title }}: </span><img src="{{ parent_form.sibling2_alumni_proof.url }}"></p>
+
+    <p><span class="font-weight-bold">{{ "family_photo"|title }}: </span><img src="{{ parent_form.family_photo.url }}"></p>
+    <p><span class="font-weight-bold">{{ "distance_affidavit"|title }}: </span><img src="{{ parent_form.distance_affidavit.url }}"></p>
+    <p><span class="font-weight-bold">{{ "baptism_certificate"|title }}: </span><img src="{{ parent_form.baptism_certificate.url }}"></p>
+    <p><span class="font-weight-bold">{{ "parent_signature_upload"|title }}: </span><img src="{{ parent_form.parent_signature_upload.url }}"></p>
+    <p><span class="font-weight-bold">{{ "differently_abled_proof"|title }}: </span><img src="{{ parent_form.differently_abled_proof.url }}"></p>
+
+    <p><span class="font-weight-bold">{{ "armed_force_proof"|title }}: </span><img src="{{ parent_form.child.armed_force_proof.url }}"></p>
+    <p><span class="font-weight-bold">{{ "aadhaar_card_proof"|title }}: </span><img src="{{ parent_form.child.aadhaar_card_proof.url }}"></p>
+
+    <p><span class="font-weight-bold">{{ "child_vaccination_card"|title }}: </span><img src="{{ parent_form.child.vaccination_card.url }}"></p>
+    <p><span class="font-weight-bold">{{ "father_alumni_proof"|title }}: </span><img src="{{parent_form.father.alumni_proof}}"></p>
+    <p><span class="font-weight-bold">{{ "mother_alumni_proof"|title }}: </span><img src="{{parent_form.mother.alumni_proof}}"></p>
+  </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <title>Admission Form</title>
+    <style>
+        
+        @page { margin: 10px; }
+        body { margin: 0px; }
+        /* .docs {
+            max-width: 300px;
+            max-height: 400px;
+        } */
+      
+
+        .text-center {
+            text-align: center;
+        }
+        div{
+            font-size: 15px;
+        }
+        td.child {
+        width: 40%;
+        }
+        td.pic{
+        width: 20%;
+        }
+        #school {
+            font-size: 1.5em;
+            padding-bottom: 0px;
+        }
+
+        #address {
+            padding: 0px;
+        }
+
+        .header {
+            font-size: 1.4em;
+            font-weight: bold;
+            /* text-align: center; */
+            border-bottom: solid 1px #455A64;
+            /* border-top: solid 1px #455A64; */
+            margin: 8px 0px;
+        }
+        .key{
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+  <div id="printableArea">
+    <div class="text-center">
+        <img src="{{ app.school.logo }}" alt="Logo" width="150" height="150" />
+        <div id="school"><strong>{{ app.school.name }}</strong></div>
+        <span id="address"> {{ app.school.short_address | title }}, {{ app.school.street_address }}, {{ app.school.city }}, {{ app.school.zipcode }}, {{ app.school.state.name }}</span>
+        <div id="address"> {{ app.school.phone_no | default_if_none:""}} </div>
+    </div>
+    <div>
+            <div class="header">Applicant's Details</div>
+            <table>
+                <tr>
+                    <td>
+                        <div><strong>Form id:&nbsp; </strong> {{ app.uid }}</div>
+                        <div><strong>Full Name: &nbsp;</strong> {{ app.form.child.name }}</div>
+            
+                        <div><strong>Applied Class: &nbsp;</strong> {{ app.apply_for }}</div>
+                        
+                        <div><strong>Date of Birth: &nbsp;</strong> {{ app.form.child.date_of_birth }}</div>
+                        
+                        <div>
+                            <strong>Gender:</strong> {{ app.form.child.gender | title }}
+                        </div>
+                    
+                        {% if app.form.category %}
+                        <div>
+                            <strong>Category:</strong> {{ app.form.category }}
+                        </div>
+                        {% endif %}
+                        
+                        {% if app.form.child.blood_group %}
+                        <div>
+                            <strong>Blood Group:</strong> {{ app.form.child.blood_group }}
+                        </div>
+                        {% endif %}
+                        
+                        <div>
+                            <strong>Religion:</strong> {{ app.form.child.religion }}
+                        </div>
+                        
+                        <div>
+                            <strong>Nationality:</strong> {{ app.form.child.nationality }}
+                        </div>
+                        <div><strong>Address:&nbsp;</strong> {{ app.form.short_address}}, {{ app.form.street_address }}</div>
+                        
+                        <div><strong>City:&nbsp;</strong> {{ app.form.city }}</div>
+            
+                        <div><strong>Zip Code:&nbsp;</strong> {{ app.form.pincode }}</div>
+                        
+                        <div><strong>State:&nbsp;</strong> {{ app.form.state }}</div>
+                    </td>
+                    <td>
+                        <div><strong>Country:&nbsp;</strong> {{ app.form.country }}</div>
+                        <div>
+                            <strong>Orphan :&nbsp;</strong> {{ app.form.child.orphan | yesno:"Yes,No" }}
+                        </div>
+                        {% if app.form.child.aadhaar_number %}
+                        <div>
+                            <strong>Addhaar number :&nbsp;</strong> {{ app.form.child.aadhaar_number }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.child.transport_facility_required %}
+                        <div><strong> Transport facility Required:&nbsp;</strong> {{ app.form.transport_facility_required | yesno:"Yes,No" }}</div>
+                        {% endif %}
+                        
+                        {% if app.form.first_child == True or app.form.first_child == False %}
+                        <div>
+                            <strong>First child:&nbsp;</strong> {{ app.form.first_child | yesno:"Yes,No" }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.staff_ward == True or app.form.staff_ward == False %}
+                        <div>
+                            <strong>Staff ward:&nbsp;</strong> {{ app.form.staff_ward | yesno:"Yes,No" }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.single_child == True or app.form.single_child == False %}
+                        <div>
+                            <strong>Single child:&nbsp;</strong> {{ app.form.single_child | yesno:"Yes,No" }}
+                        </div>
+                        {% endif %}
+                        
+                        
+                        {% if app.form.sibling1_alumni_name %}
+                        {% if app.sibling1_alumni_school_name == app.school.name  %}
+                        <div>
+                            <strong>Sibling Name(1):&nbsp;</strong> {{ app.form.sibling1_alumni_name }}
+                        </div>
+                        <div>
+                            <strong>Sibling School Name(1):&nbsp;</strong> {{ app.sibling1_alumni_school_name }}
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                        
+                        {% if app.form.sibling2_alumni_name %}
+                        {% if app.sibling2_alumni_school_name == app.school.name  %}
+                        <div>
+                            <strong>Sibling Name(2):&nbsp;</strong> {{ app.form.sibling2_alumni_name }}
+                        </div>
+                        <div>
+                            <strong>Sibling School Name(2):&nbsp;</strong> {{ app.sibling2_alumni_school_name }}
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                        
+                        {% if app.form.child.is_christian == False or app.form.child.is_christian == True %}
+                        <div>
+                            <strong>Christian :&nbsp;</strong> {{ app.form.child.is_christian | yesno:"Yes,No" }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.child.minority_points == True or app.form.child.minority_points == False %}
+                        <div>
+                            <strong>Minority Points :&nbsp;</strong> {{ app.form.child.minority_points }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.child.student_with_special_needs_points == False or app.form.child.student_with_special_needs_points == True %}
+                        <div>
+                            <strong>Student with special needs :&nbsp;</strong> {{ app.student_with_special_needs_points | yesno:"Yes,No" }}
+                        </div>
+                        {% endif %} 
+                    </td>
+                    <td class="pic">
+                        {% if app.form.child.photo %}
+                        <div style="padding-left: 15px">
+                            <img src="{{ app.form.child.photo }}" alt="photo" width="100" height="125" />
+                            <!-- <div style="font-size: 1.4em">Child's Photo</div> -->
+                            <br>
+                        </div>
+                        {% endif %}
+                    </td>
+                </tr>     
+            </table>
+        </div>
+    </div>
+
+    {% if app.form.child.orphan %}   
+    <div id="Guardian" ref="guardian">
+        <div class="header">Guardian's Details</div>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                    <div><strong>Name:&nbsp;</strong> {{ app.form.guardian.name }}</div>
+                    
+                    <div><strong>Date of Birth: &nbsp;</strong> {{ app.form.guardian.date_of_birth }}</div>
+                    
+                    <div><strong>Phone Number:&nbsp;</strong> {{ app.form.guardian.phone }}</div>
+                    
+                    <div><strong>Email:&nbsp;</strong> {{ app.form.guardian.email }}</div>
+                    {% if app.form.guardian.aadhaar_number %}
+                    <div>
+                        <strong>Addhaar number :&nbsp;</strong> {{ app.form.guardian.aadhaar_number }}
+                    </div>
+                    {% endif %}
+
+                    {% if app.form.guardian_education %}
+                    <div><strong>Education:&nbsp;</strong> {{ app.form.guardian_education }}</div>
+                    {% endif %}
+                    
+                    {% if app.form.guardian.occupation %}
+                    <div><strong>Occupation:&nbsp;</strong> {{ app.form.guardian.occupation }}</div>
+                    {% endif %}
+                    
+                    {% if app.form.guardian.office_address %}
+                    <div><strong>Office address:&nbsp;</strong> {{ app.form.guardian.office_address }}</div>
+                    {% endif %}
+                    
+                    {% if app.form.guardian.office_number %}
+                    <div><strong>Office number:&nbsp;</strong> {{ app.form.guardian.office_number }}</div>
+                    {% endif %}
+                    </td>
+                    <td>
+                       
+
+                        {% if app.form.guardian.profession %}
+                        <div>
+                            <strong>Profession :&nbsp;</strong> {{ app.form.guardian.profession }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.guardian.transferable_job %}
+                        <div>
+                            <strong>Transferable Job :&nbsp;</strong> {{ app.form.guardian.transferable_job }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.guardian.designation %}
+                        <div>
+                            <strong>Designation :&nbsp;</strong> {{ app.form.guardian.designation }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.guardian.special_ground %}
+                        <div>
+                            <strong>Special Ground :&nbsp;</strong> {{ app.form.guardian.special_ground }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.guardian.companyname %}
+                        <div>
+                            <strong>Company Name:&nbsp;</strong> {{ app.form.guardian.companyname }}
+                        </div>
+                        {% endif %}
+
+                        {% if app.form.guardian.income %}
+                        <div><strong>Annual income:&nbsp;</strong> {{ app.form.guardian.income }}</div>
+                        {% endif %}
+                        {% if app.form.guardian.alumni_school_name %}
+                        {% if app.guardian_alumni_school_name == app.school.name  %}
+                        <div><strong>Guardian School Name:&nbsp;</strong> {{ app.guardian_alumni_school_name }}</div>
+                        
+                        <div><strong>Guardian Year of Passing:&nbsp;</strong> {{ app.form.guardian.alumni_year_of_passing }}</div>
+                        
+                        <div><strong>Guardian Passing Class:&nbsp;</strong> {{ app.form.guardian.passing_class }}</div>
+                        {% endif %}
+                        {% endif %}
+                    </td>
+                    <td>
+                        <div class="img_class">  
+                            {% if app.form.child.orphan  %}
+                            <div style="padding-left: 15px">
+                                <img src="{{ app.form.guardian.photo }}" alt="photo" width="100" height="125" />
+                                <!-- <div style="font-size: 1.4em">Guardian's Photo</div><br> -->
+                            </div>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+            </table>      
+        </div>
+    </div>
+    
+    <br>
+
+    {%else%}
+    
+    <div id="Father">
+        <div class="header">Fathers's Details</div>
+        <table>
+            <tr>
+                <td>
+                    <div><strong>Name:&nbsp;</strong> {{ app.form.father.name }}</div>
+                    <div><strong>Date of Birth: &nbsp;</strong> {{ app.form.father.date_of_birth }}</div>
+                    
+                    <div><strong>Phone Number:&nbsp;</strong> {{ app.form.father.phone }}</div>
+                    
+                    <div><strong>Email:&nbsp;</strong> {{ app.form.father.email }}</div>
+                    {% if app.form.father.education %}
+                    <div><strong>Education:&nbsp;</strong> {{ app.form.father.education }}</div>
+                    {% endif %}
+
+                    {% if app.form.father.occupation %}
+                    <div><strong>Occupation:&nbsp;</strong> {{ app.form.father.occupation }}</div>
+                    {% endif %}
+                    
+                    {% if app.form.father.office_address %}
+                    <div><strong>Office address:&nbsp;</strong> {{ app.form.father.office_address }}</div>
+                    {% endif %}
+                    
+                    {% if app.form.father.office_number %}
+                    <div><strong>Office number:&nbsp;</strong> {{ app.form.father.office_number }}</div>
+                    {% endif %}
+                    
+                    {% if app.form.father.income %}
+                    <div><strong>Annual income:&nbsp;</strong> {{ app.form.father.income }}</div>
+                    {% endif %}
+                </td>
+                <td>
+                   
+                    {% if app.form.father.aadhaar_number %}
+                    <div>
+                        <strong>Addhaar number :&nbsp;</strong> {{ app.form.father.aadhaar_number }}
+                    </div>
+                    {% endif %}
+                    {% if app.form.father.companyname %}
+                    <div>
+                        <strong>Company Name:&nbsp;</strong> {{ app.form.father.companyname }}
+                    </div>
+                    {% endif %}
+
+                    {% if app.form.father.profession %}
+                    <div>
+                        <strong>Profession :&nbsp;</strong> {{ app.form.father.profession }}
+                    </div>
+                    {% endif %}
+                    {% if app.form.father.transferable_job %}
+                    <div>
+                        <strong>Transferable Job :&nbsp;</strong> {{ app.form.father.transferable_job }}
+                    </div>
+                    {% endif %}
+                    {% if app.form.father.designation %}
+                    <div>
+                        <strong>Designation :&nbsp;</strong> {{ app.form.father.designation }}
+                    </div>
+                    {% endif %}
+                    {% if app.form.father.special_ground %}
+                    <div>
+                        <strong>Special Ground :&nbsp;</strong> {{ app.form.father.special_ground }}
+                    </div>
+                    {% endif %}
+                    {% if app.form.father.alumni_school_name %}
+                    {% if app.father_alumni_school_name == app.school.name  %}
+                    <div><strong>Father School Name:&nbsp;</strong> {{ app.father_alumni_school_name }}</div>
+                    
+                    <div><strong>Father Year of Passing:&nbsp;</strong> {{ app.form.father.alumni_year_of_passing }}</div>
+                    
+                    <div><strong>Father Passing Class:&nbsp;</strong> {{ app.form.father.passing_class }}</div>
+                    {% endif %}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if app.form.father.photo %}
+                    <div style="padding-left: 15px">
+                        <img src="{{ app.form.father.photo }}" alt="photo" width="100" height="125" />
+                        <!-- <div style="font-size: 1.4em">Mother's Photo</div><br> -->
+                    </div>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+
+    <div id="Mother">
+        <div class="header">Mother's Details</div>
+        <table>
+            <tr>
+                <td>
+                    <div><strong> Name:&nbsp;</strong> {{ app.form.mother.name }}</div>
+                    <div><strong>Date of Birth: &nbsp;</strong> {{ app.form.mother.date_of_birth }}</div>
+                    
+                    <div><strong>Phone Number:&nbsp;</strong> {{ app.form.mother.phone }}</div>
+                    
+                    <div><strong>Email:&nbsp;</strong> {{ app.form.mother.email }}</div>
+                    {% if app.form.mother.aadhaar_number %}
+                    <div>
+                        <strong>Addhaar number :&nbsp;</strong> {{ app.form.mother.aadhaar_number }}
+                    </div>
+                    {% endif %}
+                    {% if app.form.mother.education %}
+                    <div><strong>Education:&nbsp;</strong> {{ app.form.mother.education }}</div>
+                    {% endif %}
+
+                    {% if app.form.mother.occupation %}
+                        <div><strong>Occupation:&nbsp;</strong> {{ app.form.mother.occupation }}</div>
+                        {% endif %}
+                        
+                        {% if app.form.mother.office_address %}
+                        <div><strong>Office address:&nbsp;</strong> {{ app.form.mother.office_address }}</div>
+                        {% endif %}
+                        
+                        {% if app.form.mother.office_number %}
+                        <div><strong>Office number:&nbsp;</strong> {{ app.form.mother.office_number }}</div>
+                        {% endif %}
+                        
+                        {% if app.form.mother.income %}
+                        <div><strong>Annual income:&nbsp;</strong> {{ app.form.mother.income }}</div>
+                        {% endif %}
+                </td>
+                <td>
+                    
+                        {% if app.form.mother.profession %}
+                        <div>
+                            <strong>Profession :&nbsp;</strong> {{ app.form.mother.profession }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.mother.transferable_job %}
+                        <div>
+                            <strong>Transferable Job :&nbsp;</strong> {{ app.form.mother.transferable_job }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.mother.companyname %}
+                        <div>
+                            <strong>Company Name:&nbsp;</strong> {{ app.form.mother.companyname }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.mother.designation %}
+                        <div>
+                            <strong>Designation :&nbsp;</strong> {{ app.form.mother.designation }}
+                        </div>
+                        {% endif %}
+                        {% if app.form.mother.special_ground %}
+                        <div>
+                            <strong>Special Ground :&nbsp;</strong> {{ app.form.mother.special_ground }}
+                        </div>
+                        {% endif %}
+                        
+                        {% if app.form.mother.alumni_school_name %}
+                        {% if app.mother_alumni_school_name == app.school.name  %}
+                        <div><strong>Mother School Name:&nbsp;</strong> {{ app.mother_alumni_school_name }}</div>
+                        
+                        <div><strong>Mother Year of Passing:&nbsp;</strong> {{ app.form.mother.alumni_year_of_passing }}</div>
+                        
+                        <div><strong>Mother Passing Class:&nbsp;</strong> {{ app.form.mother.passing_class }}</div>
+                        {% endif %}
+                        {% endif %}
+                </td>
+                <td>
+                    {% if app.form.mother.photo %}
+                    <div style="padding-left: 15px">
+                        <img src="{{ app.form.mother.photo }}" alt="photo" width="100" height="125" />
+                        <!-- <div style="font-size: 1.4em">Mother's Photo</div><br> -->
+                    </div>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    {% endif %}
+    
+    {%  if app.form.child.last_school_name or app.last_school_board or app.last_school_class or  app.form.last_school_addres or app.form.last_school_result_percentage or app.form.reason_of_leaving or app.form.transfer_date or app.form.transfer_number %}
+    <div class="header">Previous School Details</div>
+    <div><strong> Last School Name:&nbsp;</strong> {{ app.form.last_school_name }}</div>
+    {% if app.last_school_board %}
+    <div><strong> Last School Board:&nbsp;</strong> {{ app.last_school_board }}</div>
+    {% endif %}
+    {% if app.last_school_class %}
+    <div><strong> Last School Class:&nbsp;</strong> {{ app.last_school_class }}</div>
+    {% endif %}
+    
+    <div><strong> Last School Address:&nbsp;</strong> {{ app.form.last_school_address }}</div>
+    <div><strong> Last School percentage:&nbsp;</strong> {{ app.form.last_school_result_percentage }}</div>
+    <div><strong> Reason of Leaving:&nbsp;</strong> {{ app.form.reason_of_leaving }}</div>
+    <div><strong> Transfer Date:&nbsp;</strong> {{ app.form.transfer_date }}</div>
+    <div><strong> Transfer Number:&nbsp;</strong> {{ app.form.transfer_number }}</div>
+    {% endif %}
+
+    {% if app.form.extra_questions %}
+    <div class="header">Medical Questions</div>
+    <div>
+    {% for dict_item in app.form.extra_questions %}
+    {% for key, value in dict_item.items %}
+    <span class="key"><strong> Question</strong>:{{key}}<br></span>
+    <span class="key"><strong> Answer</strong>:{{value}}<br></span>
+    {% endfor %}
+    {% endfor %}
+    </div>
+    {% endif %}
+
+    {%  if app.form.child.birth_certificate or app.form.child.address_proof or app.form.child.address_proof2  or app.form.father.alumni_proof  or app.form.mother.alumni_proof or app.form.sibling1_alumni_proof or app.form.sibling2_alumni_proof or app.form.child.vaccination_card or app.first_child_affidavit  %}
+    <div class="pagebreak">
+    <div class="header">Documents</div>
+    {% endif %}
+    <div style="display: block; text-align:center;">
+        {% if app.form.transfer_certificate %}
+        <div>
+            <img src="{{ app.form.transfer_certificate }}" alt="transfer certificate" class="docs">
+            <div style="font-size: 1.4em">Transfer Certificate</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.single_parent_proof %}
+        <div>
+            <img src="{{ app.form.single_parent_proof }}" alt="transfer certificate" class="docs">
+            <div style="font-size: 1.4em">Single Parent Proof</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.family_photo %}
+        <div>
+            <img src="{{ app.form.family_photo }}" alt="transfer certificate" class="docs">
+            <div style="font-size: 1.4em">Family Photo</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.distance_affidavit %}
+        <div>
+            <img src="{{ app.form.distance_affidavit }}" alt="transfer certificate" class="docs">
+            <div style="font-size: 1.4em">Distance Affidavit</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.baptism_certificate %}
+        <div>
+            <img src="{{ app.form.baptism_certificate }}" alt="transfer certificate" class="docs">
+            <div style="font-size: 1.4em">Baptism Certificate</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.parent_signature_upload %}
+        <div>
+            <img src="{{ app.form.parent_signature_upload }}" alt="transfer certificate" class="docs">
+            <div style="font-size: 1.4em">Parent Signature</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.differently_abled_proof %}
+        <div>
+            <img src="{{ app.form.differently_abled_proof }}" alt="transfer certificate" class="docs">
+            <div style="font-size: 1.4em">Differently Abled Proof</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.report_card %}
+        <div>
+            <img src="{{ app.form.report_card }}" alt="report card" class="docs">
+            <div style="font-size: 1.4em">Report card</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.child.birth_certificate %}
+        <div>
+            <img src="{{ app.form.child.birth_certificate }}" alt="birth certificate" class="docs">
+            <div style="font-size: 1.4em">Child Birth Certificate</div><br>
+        </div>
+        {% endif %}
+
+
+        {% if app.form.child.address_proof %}
+        <div>
+            <img src="{{ app.form.child.address_proof }}" alt="address proof" class="docs">
+            <div style="font-size: 1.4em">Address Proof</div><br>
+        </div>
+        {% endif %}
+        {% if app.form.child.address_proof2 %}
+        <div>
+            <img src="{{ app.form.child.address_proof2 }}" alt="address proof" class="docs">
+            <div style="font-size: 1.4em">Address Proof</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.father_alumni_school_name == app.school.name  %}
+        {% if app.form.father.alumni_proof %}
+        <div>
+            <img src="{{ app.form.father.alumni_proof }}" class="docs">
+            <div style="font-size: 1.4em">Father Alumni Proof</div><br>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if app.form.father.parent_aadhar_card %}
+        <div>
+            <img src="{{ app.form.father.parent_aadhar_card }}" class="docs">
+            <div style="font-size: 1.4em">Father Aadhar Card</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.father.pan_card_proof %}
+        <div>
+            <img src="{{ app.form.father.pan_card_proof }}" class="docs">
+            <div style="font-size: 1.4em">Father Pan Card</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.mother_alumni_school_name == app.school.name  %}
+        {% if app.form.mother.alumni_proof %}
+        <div>
+            <img src="{{ app.form.mother.alumni_proof }}" class="docs">
+            <div style="font-size: 1.4em">Mother Alumni Proof</div><br>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if app.form.mother.parent_aadhar_card %}
+        <div>
+            <img src="{{ app.form.mother.parent_aadhar_card }}" class="docs">
+            <div style="font-size: 1.4em">Mother Aadhar Card</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.mother.pan_card_proof %}
+        <div>
+            <img src="{{ app.form.mother.pan_card_proof }}" class="docs">
+            <div style="font-size: 1.4em">Mother Pan Card</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.sibling1_alumni_school_name == app.school.name  %}
+        {% if app.form.sibling1_alumni_proof %}
+        <div>
+            <img src="{{ app.form.sibling1_alumni_proof }}" class="docs">
+            <div style="font-size: 1.4em">Sibling1 Proof</div><br>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if app.sibling2_alumni_school_name == app.school.name  %}
+        {% if app.form.sibling2_alumni_proof %}
+        <div>
+            <img src="{{ app.form.sibling2_alumni_proof }}" class="docs">
+            <div style="font-size: 1.4em">Sibling2 Proof</div><br>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if app.form.guardian.parent_aadhar_card %}
+        <div>
+            <img src="{{ app.form.guardian.parent_aadhar_card }}" class="docs">
+            <div style="font-size: 1.4em">Guardian Aadhar Card</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.guardian.pan_card_proof %}
+        <div>
+            <img src="{{ app.form.guardian.pan_card_proof }}" class="docs">
+            <div style="font-size: 1.4em">Guardian Pan Card</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.guardian_alumni_school_name == app.school.name  %}
+        {% if app.form.guardian.alumni_proof %}
+        <div>
+            <img src="{{ app.form.guardian.alumni_proof }}" class="docs">
+            <div style="font-size: 1.4em">Guardian Alumni Proof</div><br>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if app.form.child.vaccination_card %}
+        <div>
+            <img src="{{ app.form.child.vaccination_card }}" class="docs">
+            <div style="font-size: 1.4em">Child Vaccination Card</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.first_child_affidavit %}
+        <div>
+            <img src="{{ app.first_child_affidavit }}" class="docs">
+            <div style="font-size: 1.4em">First child affidavit</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.child.minority_proof %}
+        <div>
+            <img src="{{ app.minority_proof }}" class="docs">
+            <div style="font-size: 1.4em">Minority proof</div><br>
+        </div>
+        {% endif %}
+
+        {% if app.form.father.special_ground_proof %}
+            <div>
+                <img src="{{ app.form.father.special_ground_proof }}" class="docs">
+                <div style="font-size: 1.4em">Father Special Ground Proof</div><br>
+            </div>
+        {% endif %}
+
+        {% if app.form.mother.special_ground_proof %}
+            <div>
+                <img src="{{ app.form.mother.special_ground_proof }}" class="docs">
+                <div style="font-size: 1.4em"> Mother Special Ground Proof</div><br>
+            </div>
+        {% endif %}
+
+        {% if app.form.guardian.special_ground_proof %}
+            <div>
+                <img src="{{ app.form.guardian.special_ground_proof }}" class="docs">
+                <div style="font-size: 1.4em">Guardian Special Ground Proof</div><br>
+            </div>
+        {% endif %}
+
+        {% if app.armed_force_proof %}
+        <div>
+            <img src="{{ app.armed_force_proof }}" class="docs">
+            <div style="font-size: 1.4em">Child Armed Force proof</div><br>
+        </div>
+        {% endif %}
+        
+        {% if app.aadhaar_card_proof %}
+        <div>
+            <img src="{{ app.aadhaar_card_proof }}" class="docs">
+            <div style="font-size: 1.4em">Child Aadhaar Card Proof</div><br>
+        </div>
+        {% endif %}
+    </div> </div>
+   
+</div>
+</body>
+</html>
+

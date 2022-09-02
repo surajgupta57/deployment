@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Daily Updates</title>
+</head>
+<body>
+    <p>Respected Ma’am/Sir,</p>
+    <p>Greetings from EzySchooling!</p>
+    <p>As part of weekly updates, we would like to inform you that your school profile has received -</p>
+    <ul>
+        {% if views_count > 0 %}<li>Number of views : {{ views_count }}</li>{% endif %}
+        {% if enquiries_count > 0 %}<li>Number of enquiries for admission : {{ enquiries_count }}</li>{% endif %}
+        {% if forms_count > 0 %}<li>Number of forms have been submitted: {{ forms_count }}</li>{% endif %}
+    </ul>
+    <p> Please log into <a href="https://ezyschooling.com/login">https://ezyschooling.com/login</a> through login credentials provided to check updates on your profile.</p>
+    <p>For an assistance feel free to call +91 8766340463 or drop mail at query@ezyschooling.com</p>
+
+<p>Regards<br>
+Team EzySchooling</p>
+</body>
+</html>

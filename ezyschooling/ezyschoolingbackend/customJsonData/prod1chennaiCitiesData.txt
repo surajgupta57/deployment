@@ -1,0 +1,1 @@
+{"areas": [{"name": "Thoraipakkam", "slug": "thoraipakkam", "city": "Chennai", "city_slug": "chennai", "district": "Chennai", "district_slug": "chennai"}]}

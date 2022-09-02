@@ -1,0 +1,66 @@
+EMAIL_HOST="smtp-pulse.com"
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER="ezyschooling@gmail.com"
+EMAIL_HOST_PASSWORD="Nq3q4QZsYZ"
+
+ELASTICSEARCH_DSL_HOST="65.0.50.198:9200"
+ELASTIC_USER="elastic"
+ELASTIC_PASSWORD="testing"
+
+ZOHO_API_KEY="d6c3eb32d5c0e223a7cd051c54db803d"
+ZOHO_LIST_KEY="8538e168b6cdae9c971ce6b1313456c6894375f7a7d2d66f"
+
+REDIS_URL=redis://localhost:6379
+CELERY_BROKER_URL='redis://localhost:6379'
+
+RAZORPAY_ID="rzp_live_ivZcK6l1xiKKWg"
+RAZORPAY_KEY="0dXEi5of42XDVt5AzUij8rdY"
+
+
+GOOGLE_API_KEY='AIzaSyCJbAJT1DcvuKGDncrTs3Q4pY3hWAixOYI'
+GOOGLE_MAP_API_KEY='AIzaSyDdsg_M9CSP1MIO3N5cBRRakTKiXw68Ohs'
+
+
+SENTRY_DSN="https://ba30d989d7b1424d8c1e1ab51aae3099@o444924.ingest.sentry.io/5420509"
+SENTRY_ENVIRONMENT="production"
+
+GOOGLE_SHEET_ID='1yzojSeSdSMkkdljto0yvzHVp9dLC1xmSlaYubJjAJc8'
+FRESHMARKETER_API_KEY='2t0v07bv8a19ehdpec4f7crscevbbu7j8ek7i9s4'
+FRESHMARKETER_LIST_ID=22556
+SMS_API_KEY="17136ArsacKzBRwm65f5b38aaP15"
+OTP_VALIDITY_TIME=300
+GOOGLE_MAP_API_KEY='AIzaSyDdsg_M9CSP1MIO3N5cBRRakTKiXw68Ohs'
+
+DJANGO_SECRET_KEY='23r=4e=i$4tjt48w2o1-9^&r!m3ahh_83hh85ffl8=plekgxm5'
+
+SECRET_KEY='23r=4e=i$4tjt48w2o1-9^&r!m3ahh_83hh85ffl8=plekgxm5'
+
+DEBUG=True
+
+ALLOWED_HOSTS=127.0.0.1,192.168.1.12,localhost,api.main.ezyschooling.com,api.dev.ezyschooling.com
+
+#these are some way to add database
+#DataBases
+#Local Database of Developement
+#DATABASE_URL=postgres://postgres:user@postgres@localhost:5432/ezy_dev_local
+#Local Database of Production
+#DATABASE_URL=postgres://postgres:user@postgres@localhost:5432/ezy_prod1_local
+# Production Database 1
+#DATABASE_URL=postgres://postgres:auL5iYV5kWvUJhV@ezyadmissions.cpwmjg2puupv.ap-south-#1.rds.amazonaws.com:5432/ezyadmissions
+# Production Database 2
+DATABASE_URL=postgres://postgres:auL5iYV5kWvUJhV@ezyadmissions.cpwmjg2puupv.ap-south-1.rds.amazonaws.com:5432/ezyschooling_prod
+# Devlopment Database
+#DATABASE_URL=postgres://postgres:password@api.dev.ezyschooling.com:5433/dev_ezy_sg
+DJANGO_AWS_ACCESS_KEY_ID='AKIAVABBCKSSS7OAOE66'
+DJANGO_AWS_SECRET_ACCESS_KEY='xOpSwun8sbLNbuIzO5aYFPcP9w6KxVr3rszR0
+qtR'
+DJANGO_AWS_STORAGE_BUCKET_NAME='ezyschooling-1'
+AWS_QUERYSTRING_AUTH=False
+DJANGO_ADMIN_URL='admin/'
+DEFAULT_FROM_EMAIL='Ezyschooling <query@ezyschooling.com>'
+DJANGO_EMAIL_SUBJECT_PREFIX='[Ezyschooling] '
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+
+FRESHMARKETER_API_KEY="freshmarket-api-key"
+FRESHMARKETER_LIST_ID="list-id"

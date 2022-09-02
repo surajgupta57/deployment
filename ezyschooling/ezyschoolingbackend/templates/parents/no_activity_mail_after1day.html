@@ -1,0 +1,554 @@
+{% load replace_media_with_bucket %}
+<!DOCTYPE html>
+<html lang="en" style="box-sizing: border-box; margin: 0; padding: 0">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body
+    style="
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: none;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    "
+  >
+    <div
+      class="main"
+      style="
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        background: rgb(254, 192, 2, 0.3);
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      "
+    >
+      <!-- logo-->
+      <table
+        style="
+          border: 0;
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 0;
+          border-radius: 25px;
+          overflow: hidden;
+        "
+      >
+        <tr
+          style="line-height: 5%; box-sizing: border-box; margin: 0; padding: 0"
+        >
+          <td style="box-sizing: border-box; margin: 0; padding: 0">
+            <table style="box-sizing: border-box; margin: 0 auto; padding: 0">
+              <tr style="box-sizing: border-box; margin: 0; padding: 0">
+                <td style="box-sizing: border-box; margin: 0; padding: 0">
+                  <a
+                    href="https://ezyschooling.com/"
+                    target="_blank"
+                    style="box-sizing: border-box; margin: 0; padding: 0"
+                  >
+                    <img
+                      width="80%"
+                      style="margin: 2em 0 1em"
+                      src="https://drive.google.com/uc?id=1HzXMo5YdoRbJ-cZ2BGlR833DFPFJVmr4"
+                      alt=""
+                  /></a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <table
+        class="wrapper"
+        style="
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 0;
+          background: #fff;
+        "
+      >
+        <!-- banner -->
+
+        <tr>
+          <td>
+            <table
+              style="width: 100%; max-width: 600px; margin: 0 auto; padding: 0"
+            >
+              <tr>
+                <td>
+                  <img
+                    width="100%"
+                    style="margin: 0"
+                    src="https://drive.google.com/uc?id=1MpKqYCBKRDFJxuRF3sqjnIo16fNl_Zb3"
+                    alt="banner"
+                  />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- starting content -->
+        <tr>
+          <td>
+            <div class="content" style="padding: 0 1em 1em; text-align: left">
+              <p style="margin: 0; font-weight: 500">
+                <span style="font-size: 20px; font-weight: 700; color: #7454c3"
+                  >Dear {{username}},</span
+                >
+                <br />
+                <br />
+                We know that the school admissions procedure is frenzied and
+                takes a toll, especially on the parents, but we are here to
+                help.
+
+                <br />
+                <br />
+                As your signing-up process is complete on Ezyschooling, you can
+                now start applying to the schools of your choice.
+              </p>
+            </div>
+          </td>
+        </tr>
+
+        <!-- end of main table -->
+      </table>
+
+      <!-- school layout -->
+
+      <!-- 1st row -->
+      <table
+        align="center"
+        border="0"
+        cellpadding="0"
+        cellspacing="0"
+        style="
+          max-width: 600px;
+          color: #6488d4;
+          background-color: #fff;
+          width: 100%;
+        "
+      >
+        <tr>
+          <td>
+            <hr
+              style="
+                height: 0.5px;
+                border: none;
+                background-color: #7454c3;
+                margin: 0.5em auto;
+                width: 90%;
+              "
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div
+              style="
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+                padding: 1em 0.5em;
+              "
+            >
+              New schools added to Ezyschooling this week
+            </div>
+          </td>
+        </tr>
+        <tbody>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="10" width="100%">
+                <tbody>
+                {% for chunks in school_list %}
+                <tr>
+                    {% for i in chunks %}
+                    <td style="width: 25%" width="25%">
+                      <div
+                        style="
+                          border: 1px solid #e4e4e4;
+                          border-radius: 4px;
+                          padding: 5px;
+                          height: 200px;
+                        "
+                      >
+                        <div style="text-align: center">
+                          <a
+                            href="https://ezyschooling.com/school/profile/{{i.slug}}"
+                            rel="noreferrer"
+                            target="_blank"
+                            ><img
+                              alt="
+                                      School"
+                              src="{{i.logo|replace_media_with_bucket}}"
+                              style="width: 70px; height: 70px"
+                              class="CToWUd"
+                          /></a>
+                        </div>
+                        <div
+                          style="
+                            font-size: 11px;
+                            text-align: center;
+                            padding: 5px 0;
+                            font-weight: 600;
+                            height: 60px;
+                          "
+                        >
+                        {{i.name}} <br />
+
+                        </div>
+                        <div
+                          style="
+                            font-size: 11px;
+                            text-align: center;
+                            padding: 13px 0 5px;
+                          "
+                        >
+                          <a
+                            href="https://ezyschooling.com/school/profile/{{i.slug}}"
+                            rel="noreferrer"
+                            style="
+                              color: #fff;
+                              font-size: 11px;
+                              background: #6488d4;
+                              padding: 3px 8px;
+                              font-weight: 600;
+                              display: inline-block;
+                              text-decoration: none;
+                              border-radius: 10px;
+                            "
+                            target="_blank"
+                            >Apply Now</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    {% endfor %}
+                  </tr>
+                  {% endfor %}
+                  <tr>
+                    <td colspan="4">
+                      <div
+                        align="center"
+                        style="padding-top: 1rem; padding-bottom: 1rem"
+                      >
+                        <a
+                          href="https://ezyschooling.com/admissions?id=47289c79-04aa-4e4c-ab51-f22685c9e7a3"
+                          style="
+                            text-decoration: none;
+                            display: inline-block;
+                            color: #fff;
+                            background: #6488d4;
+
+                            border-radius: 25px;
+                            width: auto;
+
+                            padding-top: 5px;
+                            padding-bottom: 5px;
+
+                            text-align: center;
+                            mso-border-alt: none;
+                            word-break: keep-all;
+                          "
+                          target="_blank"
+                          ><span
+                            style="
+                              padding-left: 30px;
+                              padding-right: 30px;
+                              font-size: 13px;
+                              display: inline-block;
+                              letter-spacing: normal;
+                            "
+                            ><span
+                              style="
+                                font-size: 16px;
+                                line-height: 2;
+                                mso-line-height-alt: 32px;
+                              "
+                              ><span
+                                data-mce-style="font-size: 13px; line-height: 26px;"
+                                style="font-size: 13px; line-height: 26px"
+                                ><strong>EXPLORE EZYSCHOOLING</strong></span
+                              ></span
+                            ></span
+                          ></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- pros -->
+      <table
+        width="100%"
+        style="
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 0;
+          background: #fff;
+        "
+      >
+        <tr>
+          <td>
+            <table
+              width="100%"
+              style="
+                padding: 0 20px;
+                border-radius: 10px;
+                background-color: #7454c3;
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+              "
+            >
+              <tr>
+                <td>
+                  <div style="color: #fff; width: 100%; padding: 10px 0">
+                    <h1 style="font-size: 20px; font-weight: 700">
+                      Why Choose Ezyschooling?
+                    </h1>
+
+                    <hr
+                      style="
+                        border: none;
+                        background-color: #fff;
+                        height: 0.5px;
+                        width: 90%;
+                      "
+                    />
+
+                    <ul
+                      style="
+                        text-align: left;
+                        line-height: 1.6;
+                        padding: 0 1em;
+                        font-weight: 500;
+                        width: 100%;
+                        max-width: 400px;
+                        list-style: none;
+                        margin: 16px auto;
+                      "
+                    >
+                      <li style="margin: 15px 0">
+                        <img
+                          src="https://drive.google.com/uc?id=1tq8ttxwzboXrcvWpT_75J2N4AsNa6ksp"
+                          alt="checkmark"
+                          style="
+                            width: 15px;
+                            height: 15px;
+                            display: inline-block;
+                          "
+                        />
+                        <i>Easy application to multiple schools</i>
+                      </li>
+                      <li style="margin: 15px 0">
+                        <img
+                          src="https://drive.google.com/uc?id=1tq8ttxwzboXrcvWpT_75J2N4AsNa6ksp"
+                          alt="checkmark"
+                          style="
+                            width: 15px;
+                            height: 15px;
+                            display: inline-block;
+                          "
+                        />
+                        <i>Opportunity to apply in 500+ renowned schools </i>
+                      </li>
+                      <li style="margin: 15px 0; width: 100%">
+                        <img
+                          src="https://drive.google.com/uc?id=1tq8ttxwzboXrcvWpT_75J2N4AsNa6ksp"
+                          alt="checkmark"
+                          style="
+                            width: 15px;
+                            height: 15px;
+                            display: inline-block;
+                          "
+                        />
+                        <i> Admission-related updates through Email and SMS </i>
+                      </li>
+                      <p style="margin: 15px 0">
+                        <img
+                          src="https://drive.google.com/uc?id=1tq8ttxwzboXrcvWpT_75J2N4AsNa6ksp"
+                          alt="checkmark"
+                          style="
+                            width: 15px;
+                            height: 15px;
+                            display: inline-block;
+                          "
+                        />
+                        <i
+                          >Application Tracking through a tech-enabled
+                          dashboard</i
+                        >
+                      </p>
+                      <li style="margin: 15px 0">
+                        <img
+                          src="https://drive.google.com/uc?id=1tq8ttxwzboXrcvWpT_75J2N4AsNa6ksp"
+                          alt="checkmark"
+                          style="
+                            width: 15px;
+                            height: 15px;
+                            display: inline-block;
+                          "
+                        />
+                        <i>Information related to all schools in one place </i>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <table
+        style="width: 100%; max-width: 600px; margin: 0 auto; background: #fff"
+      >
+        <tr>
+          <td>
+            <div style="color: #7454c3; font-size: 20px; font-weight: 700">
+              <h1 style="font-size: 20px">
+                Here is what a happy parent has to say about their experience
+                with us:
+              </h1>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Testimony -->
+      <table
+        style="
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 0 1em;
+          background: #fff;
+          padding: 20px 10px 40px;
+        "
+      >
+        <!-- header -->
+
+        <tr>
+          <td>
+            <a href="https://youtu.be/-zKR_RZmMhc" target="_blank">
+              <img
+                style="
+                  width: 100%;
+                  max-width: 450px;
+                  border: 0.2px solid #7454c3;
+                  border-radius: 9px;
+                  overflow: hidden;
+                "
+                height="100%"
+                width="100%"
+                src="https://drive.google.com/uc?id=1UhqltQu1QjZVfjsm6E-yF29Z5vfmkiMJ"
+                alt=""
+              />
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <!-- footer -->
+      <table style="width: 100%; max-width: 600px; margin: 0 auto; padding: 0">
+        <tr>
+          <td>
+            <table
+              width="100%"
+              style="
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 2em 0;
+                vertical-align: middle;
+                text-align: center;
+              "
+            >
+              <!-- socials -->
+              <tr>
+                <td>
+                  <a
+                    href="https://www.facebook.com/ezyschooling"
+                    target="_blank"
+                    ><img
+                      style="max-width: 1.5em; margin: 0 10px"
+                      src="https://drive.google.com/uc?id=1LZzZtYMSKGZmaQG80SKLn5_9GBE08no2"
+                      alt="facebook"
+                  /></a>
+                  <a
+                    href="https://twitter.com/ezyschooling?lang=en&utm_source=automatic"
+                    target="_blank"
+                    ><img
+                      style="width: 1.5em; border-radius: 5px; margin: 0 10px"
+                      src="https://drive.google.com/uc?id=1npz2m99r1NCioXS9LARAfc0ACxfhJZLZ"
+                      alt="twitter"
+                  /></a>
+                  <a
+                    href="https://www.linkedin.com/company/ezyschooling/"
+                    target="_blank"
+                    ><img
+                      style="width: 1.5em; margin: 0 10px"
+                      src="https://drive.google.com/uc?id=14iTLUkU-n7UrFfwOsgNmV7c-thoV9AVE"
+                      alt="linkdin"
+                  /></a>
+                  <a
+                    href="https://www.instagram.com/ezyschooling/"
+                    target="_blank"
+                    ><img
+                      style="width: 1.5em; margin: 0 10px"
+                      src="https://drive.google.com/uc?id=1EmJ_i8Uwrw2ORuSF65MiYR9tvnPXUTn6"
+                      alt="instagram"
+                  /></a>
+                </td>
+              </tr>
+              <!-- end of tr -->
+
+              <!-- site and unsub link -->
+              <tr>
+                <td>
+                  <unsubscribe
+                    style="
+                      color: #333;
+                      font-family: Open Sans, Helvetica, Arial, sans serif;
+                      font-size: 14px;
+                      font-weight: 400;
+                      line-height: 160%;
+                      text-decoration: underline;
+                    "
+                    >Unsubscribe</unsubscribe
+                  >
+                  <a
+                    style="color: #333"
+                    href="https://ezyschooling.com/"
+                    target="_blank"
+                  >
+                    Visit ezyschooling.com</a
+                  >
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+{"areas": [{"name": "The Palm Deira", "slug": "the-palm-deira", "city": "Dubai", "city_slug": "dubai", "district": "Nakhlat Deira", "district_slug": "nakhlat-deira"}]}

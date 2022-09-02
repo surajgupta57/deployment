@@ -1,0 +1,1 @@
+{"areas": [{"name": "Barasat", "slug": "barasat", "city": "Kolkata", "city_slug": "kolkata", "district": "North 24 Parganas", "district_slug": "north-24-parganas"}]}

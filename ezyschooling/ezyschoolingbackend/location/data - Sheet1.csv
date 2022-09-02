@@ -1,0 +1,3199 @@
+country_id,country,state,city,district,area,pincode
+1,India,Delhi,Delhi,North Delhi,Aruna Nagar,110054
+1,India,Delhi,Delhi,North Delhi,Avantika,110085
+1,India,Delhi,Delhi,North Delhi,Baratooti,110006
+1,India,Delhi,Delhi,North Delhi,Burari,110084
+1,India,Delhi,Delhi,North Delhi,C.C.I.,110007
+1,India,Delhi,Delhi,North Delhi,Chandni Chowk,110006
+1,India,Delhi,Delhi,North Delhi,Chawri Bazar,110006
+1,India,Delhi,Delhi,North Delhi,Civil Lines,110054
+1,India,Delhi,Delhi,North Delhi,Dareeba,110006
+1,India,Delhi,Delhi,North Delhi,Delhi G.P.O.,110006
+1,India,Delhi,Delhi,North Delhi,Delhi Sadar Bazar,110006
+1,India,Delhi,Delhi,North Delhi,Delhi University,110007
+1,India,Delhi,Delhi,North Delhi,District Courts,110054
+1,India,Delhi,Delhi,North Delhi,Gulabi Bagh,110007
+1,India,Delhi,Delhi,North Delhi,Jagatpur,110084
+1,India,Delhi,Delhi,North Delhi,Jawahar Nagar,110007
+1,India,Delhi,Delhi,North Delhi,Jharoda Majraa,110084
+1,India,Delhi,Delhi,North Delhi,Kamla Nagar,110007
+1,India,Delhi,Delhi,North Delhi,Kashmiri Gate,110006
+1,India,Delhi,Delhi,North Delhi,Majnu ka Tila,110054
+1,India,Delhi,Delhi,North Delhi,Malka Ganj,110007
+1,India,Delhi,Delhi,North Delhi,Padam Nagar,110007
+1,India,Delhi,Delhi,North Delhi,Patrachar Vidyalay,110054
+1,India,Delhi,Delhi,North Delhi,R.C.A.O.,110007
+1,India,Delhi,Delhi,North Delhi,Rana Pratap Bagh,110007
+1,India,Delhi,Delhi,North Delhi,Roop Nagar,110007
+1,India,Delhi,Delhi,North Delhi,Roshan Ara Road,110007
+1,India,Delhi,Delhi,North Delhi,S.T. Road,110006
+1,India,Delhi,Delhi,North Delhi,Shakti Nagar,110007
+1,India,Delhi,Delhi,North Delhi,Timarpur,110054
+1,India,Delhi,Delhi,North Delhi,Wazirabad,110084
+1,India,Uttar Pradesh,Lucknow,Lucknow,32 Bn PAC,226023
+1,India,Uttar Pradesh,Lucknow,Lucknow,A N L Colony,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,A P Sabha,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,Aashiana,226012
+1,India,Uttar Pradesh,Lucknow,Lucknow,Adampur Janubi,226303
+1,India,Uttar Pradesh,Lucknow,Lucknow,Adarsh Nagar,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Ain,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Ain,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Aishbagh,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,Akariakalan,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Alambagh,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Alamnagar,226017
+1,India,Uttar Pradesh,Lucknow,Lucknow,Aliganj Extension,226024
+1,India,Uttar Pradesh,Lucknow,Lucknow,Aliganj,226024
+1,India,Uttar Pradesh,Lucknow,Lucknow,Amaniganj,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Amausi Ad,226009
+1,India,Uttar Pradesh,Lucknow,Lucknow,Amausi,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,Amberganj,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Amethi,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Amethia Salempur,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Aminabad Park,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,Amraigaon,226028
+1,India,Uttar Pradesh,Lucknow,Lucknow,Anandnagar,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Anaura Kalan,226028
+1,India,Uttar Pradesh,Lucknow,Lucknow,Antagarhi,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Arjunganj,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Arjunpur,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Arya Nagar,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,Asti,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Atari,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Ateswa,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Aurawan,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Avas Vikas Colony,226017
+1,India,Uttar Pradesh,Lucknow,Lucknow,B R A University,226025
+1,India,Uttar Pradesh,Lucknow,Lucknow,Badiyan,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bahargaon,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bahrauli,226303
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bahroo,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bakkash,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bakshi Ka Talab,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Balrampur Hospital,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bani,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Banthra,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Baragaon,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Barauna,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Barawan Kalan,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Barha,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Barwalia,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Basha,226026
+1,India,Uttar Pradesh,Lucknow,Lucknow,Batha Sabauli,226021
+1,India,Uttar Pradesh,Lucknow,Lucknow,Baurumau,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bazargaron,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Beerpur,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Begariamau,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Behta,226026
+1,India,Uttar Pradesh,Lucknow,Lucknow,Benti,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Benti,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bhadeswa,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bhadrukh,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bhadwana,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bhagwantpur,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bharwara,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bhatgaon,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bhatgaon,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bhauli,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bhilampur,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bibipur,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Bijnaur,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Blunt Square,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,C B Lines,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,C E School,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,C&w Work Shop,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Canal Colony,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,Chakganjaria,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Chandganj,226024
+1,India,Uttar Pradesh,Lucknow,Lucknow,Chandrawal,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Charbagh,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,Chatauni,226303
+1,India,Uttar Pradesh,Lucknow,Lucknow,Chaupatiyan,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Chinhat,226028
+1,India,Uttar Pradesh,Lucknow,Lucknow,Cimap,226015
+1,India,Uttar Pradesh,Lucknow,Lucknow,CPMG Campus,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,D M Road,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,D S Bazar,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Daliganj,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,Darul Safa,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,Daulatpur,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,Dayalpur,226302
+1,India,Uttar Pradesh,Lucknow,Lucknow,Deoti,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Dhendhemau,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Diguria,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,Dilawarnagar,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Dilkusha,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Distt. Jail,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Dona,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,FFTC Indaurabagh,226202
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gahdon,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Ganesh Ganj,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,Garhi Chunauti,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gaunda,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,Ghaila,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,Ghazipur,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gohramau,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Goila,226028
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gokhley Marg,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,Golaganj,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gomtinagar,226010
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gomtinagar Vistar,226010
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gopramau,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gosainganj,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Guramba,226026
+1,India,Uttar Pradesh,Lucknow,Lucknow,Gurdwara,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,H C Bench,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,H E School,226006
+1,India,Uttar Pradesh,Lucknow,Lucknow,Hal,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Harauni,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Hasanpur Keoli,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Hasnain Market,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Hasnapur,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Husainabad,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Iim Mubarakpur,226013
+1,India,Uttar Pradesh,Lucknow,Lucknow,IIT Dasauli,226026
+1,India,Uttar Pradesh,Lucknow,Lucknow,Ind.Area Sarojininagar,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,Indara,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Indira Nagar,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Indiranagar Sec-14,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Indiranagar Sec-18,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Indiranagar Sec-21,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Industria Area Chinhat,226019
+1,India,Uttar Pradesh,Lucknow,Lucknow,Industrial Area,226009
+1,India,Uttar Pradesh,Lucknow,Lucknow,Int Gaon,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,Itaunja,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jabrauli,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jagdishpur,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jaitikhera,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jamkhanwa,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jamolia,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jankipuram Extension,226031
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jankipuram,226021
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jawahar Bhawan,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,Jindaur,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,Juggaur,226028
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kahla,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kakori,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kakrabad,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kalli Pacchim,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kalyanpur,226022
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kamlabad Badauli,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kankaha,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Karora,226303
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kasimpur Biruha,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kasmandi Kalan,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kasmandi Khurd,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Katauli,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kathwara,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kathwara,226202
+1,India,Uttar Pradesh,Lucknow,Lucknow,Keoli,226303
+1,India,Uttar Pradesh,Lucknow,Lucknow,Khalispur,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Khantari,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kharika,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kharsara,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Khushalganj,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kotwa,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kumharawan.,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Kusmaura,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,L D A Colony,226012
+1,India,Uttar Pradesh,Lucknow,Lucknow,Lalbagh,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,Laulai,226010
+1,India,Uttar Pradesh,Lucknow,Lucknow,Laulai,226028
+1,India,Uttar Pradesh,Lucknow,Lucknow,Locomotive W Shop,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Lonikatra,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,Lucknow Chowk,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Lucknow G.P.O.,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,M N Colony,226006
+1,India,Uttar Pradesh,Lucknow,Lucknow,Madiyaon,226021
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mahanagar,226006
+1,India,Uttar Pradesh,Lucknow,Lucknow,Maharishi Vidya Mandir,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mahigawan,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mahmoodnagar,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mahona,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Malesemau,226010
+1,India,Uttar Pradesh,Lucknow,Lucknow,Malha,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Malhaur,226028
+1,India,Uttar Pradesh,Lucknow,Lucknow,Malihabad,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mall,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Manaknagar,226011
+1,India,Uttar Pradesh,Lucknow,Lucknow,Manasnagar,226023
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mansoor Nagar,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mastipur,226302
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mati,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Maunda,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mawai Kalan,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mawai Khurd,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mawai Padiyana,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,Medical College,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Meeraknagar,226302
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mehmoodpur,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Military Hospital,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mill Road,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mohanlalganj,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Mohari Khurd,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Munnu Khera,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Nabipanah,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Nadan Mahal,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Nadwa,226007
+1,India,Uttar Pradesh,Lucknow,Lucknow,Nagram,226303
+1,India,Uttar Pradesh,Lucknow,Lucknow,Narain Nagar,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Narosa,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Naubasta,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Navinmandi,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,Naya Gaon,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,Neewan,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,New Ganeshganj,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,New Hyderabad,226007
+1,India,Uttar Pradesh,Lucknow,Lucknow,Nigohan,226302
+1,India,Uttar Pradesh,Lucknow,Lucknow,Nilmatha,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Niralanagar,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,Paharpur,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Pandariba,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,Pateona,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Pawanpuri,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Piparsand,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,Purseni,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,R A College,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,R B Colony,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,R G C Mill,226017
+1,India,Uttar Pradesh,Lucknow,Lucknow,R P Line,226007
+1,India,Uttar Pradesh,Lucknow,Lucknow,Raghunathpur,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rahim Nagar Padiana,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rahimabad,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rahimnagar Padiyana,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Raitha,226202
+1,India,Uttar Pradesh,Lucknow,Lucknow,Raja Bazar,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rajajipuram,226017
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rajauli,226026
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rajendranagar,226004
+1,India,Uttar Pradesh,Lucknow,Lucknow,Ranipara,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rasoolpur Saadat,226028
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rasoolpur Tikaniamau,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rehman Khera,226101
+1,India,Uttar Pradesh,Lucknow,Lucknow,Rusena,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,Saadatganj,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sadrauna,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sahijana,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sairpur,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Salehnagar,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Salempur,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Samesi,226303
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sanatan Dharam Vidya Peeth,226026
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sant Market,226006
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sarai Damu,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sarai Gudauli,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sarai Mali Khan,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Saraura,226201
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sarfraj,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sarojini Nagar,226008
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sarvoday Nagar,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sathwara,226501
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sec-B Indira Nagar,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sec-d Indiranagar,226016
+1,India,Uttar Pradesh,Lucknow,Lucknow,Secretariat,226001
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sgpgi,226014
+1,India,Uttar Pradesh,Lucknow,Lucknow,Shia Lines,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Shivaji Marg,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,Singar Nagar,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Singhamau,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Singhrawa,226102
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sisendi,226301
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sujanpura,226005
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sunderbagh,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,Sushant Golf City,226030
+1,India,Uttar Pradesh,Lucknow,Lucknow,Suspen,226103
+1,India,Uttar Pradesh,Lucknow,Lucknow,T. Tib,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Thakurganj,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Thari,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Thawar,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Tirwa,226401
+1,India,Uttar Pradesh,Lucknow,Lucknow,Topkhana Bazar,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Triveni Nagar,226020
+1,India,Uttar Pradesh,Lucknow,Lucknow,U P Governer Camp,226027
+1,India,Uttar Pradesh,Lucknow,Lucknow,Umrawal,226104
+1,India,Uttar Pradesh,Lucknow,Lucknow,Usarana,226203
+1,India,Uttar Pradesh,Lucknow,Lucknow,Utrathia,226002
+1,India,Uttar Pradesh,Lucknow,Lucknow,Utrawan,226302
+1,India,Uttar Pradesh,Lucknow,Lucknow,Victoriaganj,226003
+1,India,Uttar Pradesh,Lucknow,Lucknow,Vikas Nagar,226022
+1,India,Uttar Pradesh,Lucknow,Lucknow,Vineet Khand,226010
+1,India,Uttar Pradesh,Lucknow,Lucknow,Vishwas Khand,226010
+1,India,Uttar Pradesh,Lucknow,Lucknow,Vrinda Van Colony,226029
+1,India,Uttar Pradesh,Lucknow,Lucknow,Wazirganj,226018
+1,India,Uttar Pradesh,Lucknow,Lucknow,Yahiaganj,226003
+1,India,Delhi,Delhi,Central Delhi,A.G.C.R.,110002
+1,India,Delhi,Delhi,Central Delhi,A.K.market,110055
+1,India,Delhi,Delhi,Central Delhi,Ajmeri Gate,110002
+1,India,Delhi,Delhi,Central Delhi,Anand Parbat,110005
+1,India,Delhi,Delhi,Central Delhi,Anand Parbat indl. area,110005
+1,India,Delhi,Delhi,Central Delhi,Bank Street,110005
+1,India,Delhi,Delhi,Central Delhi,Baroda House,110001
+1,India,Delhi,Delhi,Central Delhi,Bengali Market,110001
+1,India,Delhi,Delhi,Central Delhi,Bhagat Singh market,110001
+1,India,Delhi,Delhi,Central Delhi,Connaught Place,110001
+1,India,Delhi,Delhi,Central Delhi,Constitution House,110001
+1,India,Delhi,Delhi,Central Delhi,Dada Ghosh bhawan,110008
+1,India,Delhi,Delhi,Central Delhi,Darya Ganj,110002
+1,India,Delhi,Delhi,Central Delhi,Delhi High court,110003
+1,India,Delhi,Delhi,Central Delhi,Desh Bandhu gupta road,110005
+1,India,Delhi,Delhi,Central Delhi,Election Commission,110001
+1,India,Delhi,Delhi,Central Delhi,Gandhi Smarak nidhi,110002
+1,India,Delhi,Delhi,Central Delhi,Guru Gobind singh marg,110005
+1,India,Delhi,Delhi,Central Delhi,Gym Khana club,110011
+1,India,Delhi,Delhi,Central Delhi,Hauz Qazi,110006
+1,India,Delhi,Delhi,Central Delhi,I.A.R.I,110012
+1,India,Delhi,Delhi,Central Delhi,I.P.estate,110002
+1,India,Delhi,Delhi,Central Delhi,Inderpuri,110012
+1,India,Delhi,Delhi,Central Delhi,Indraprastha,110002
+1,India,Delhi,Delhi,Central Delhi,Jama Masjid,110006
+1,India,Delhi,Delhi,Central Delhi,Janpath,110001
+1,India,Delhi,Delhi,Central Delhi,Karol Bagh,110005
+1,India,Delhi,Delhi,Central Delhi,Krishi Bhawan,110001
+1,India,Delhi,Delhi,Central Delhi,Lady Harding medical college,110001
+1,India,Delhi,Delhi,Central Delhi,Master Prithvi nath marg,110005
+1,India,Delhi,Delhi,Central Delhi,Minto Road,110002
+1,India,Delhi,Delhi,Central Delhi,Multani Dhanda,110055
+1,India,Delhi,Delhi,Central Delhi,National Physical laboratory,110012
+1,India,Delhi,Delhi,Central Delhi,Nirman Bhawan,110011
+1,India,Delhi,Delhi,Central Delhi,North Avenue,110001
+1,India,Delhi,Delhi,Central Delhi,Pahar Ganj,110055
+1,India,Delhi,Delhi,Central Delhi,Pandara Road,110003
+1,India,Delhi,Delhi,Central Delhi,Parliament House,110001
+1,India,Delhi,Delhi,Central Delhi,Patel Nagar (Central Delhi),110008
+1,India,Delhi,Delhi,Central Delhi,Patel Nagar south,110008
+1,India,Delhi,Delhi,Central Delhi,Patel Nagar west,110008
+1,India,Delhi,Delhi,Central Delhi,Patiala House,110001
+1,India,Delhi,Delhi,Central Delhi,Pragati Maidan,110001
+1,India,Delhi,Delhi,Central Delhi,Rail Bhawan,110001
+1,India,Delhi,Delhi,Central Delhi,Rajender Nagar,110060
+1,India,Delhi,Delhi,Central Delhi,Rajghat Power house,110002
+1,India,Delhi,Delhi,Central Delhi,Rashtrapati Bhawan,110004
+1,India,Delhi,Delhi,Central Delhi,Sansad Marg,110001
+1,India,Delhi,Delhi,Central Delhi,Sansadiya Soudh,110001
+1,India,Delhi,Delhi,Central Delhi,Sat Nagar,110005
+1,India,Delhi,Delhi,Central Delhi,Secretariat North,110001
+1,India,Delhi,Delhi,Central Delhi,Shastri Bhawan,110001
+1,India,Delhi,Delhi,Central Delhi,South Avenue,110011
+1,India,Delhi,Delhi,Central Delhi,Supreme Court,110001
+1,India,Delhi,Delhi,Central Delhi,Swami Ram tirth nagar,110055
+1,India,Delhi,Delhi,Central Delhi,Udyog Bhawan,110011
+1,India,Delhi,Delhi,Central Delhi,Union Public service commission,110069
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Aimnabad,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Alpha Commercial Belt,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Alpha I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Alpha II,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,AWHO III,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Badalpur,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Beta I,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Beta II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Bironda,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Birondi,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Bodaki,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Bulandshahr,203202
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Chhapraula,201009
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Dadha,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Dadri,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Dankaur,203201
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Delta I,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Delta II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Delta III,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Dhoom Manikpur,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech 12,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech 13,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech 14,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech 15,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech 16,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech 16A,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech Extn,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech I Extn,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech II,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech III,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech Industrial Area,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech IX,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech VI,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech VII,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech VIII,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech X,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech XI,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech XI A,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Ecotech XII,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Gamma I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Gamma II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Gulistanpur,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Habibpur,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Jaitpur Village,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Jalpura,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Kappa I,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Kasna,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Khadar Ke Marhiya,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Knowledge Park I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Knowledge Park II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Knowledge Park III,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Knowledge Park IV,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Knowledge Park V,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Kulesara,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Lakhnawali,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,LAMBDA I,241125
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,LAMBDA II,241125
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omega I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omega II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omega III,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omega IV,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omicron I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omicron IA,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omicron II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omicron III,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Omicron IV,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Pari Chowk,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,R1 Scheme Pocket P3,201307
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,R1 Scheme Pocket P4,201307
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Rampur Jagir,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 1,201318
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 10,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 11,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 12,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 12A,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 13,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 14,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 15,201307
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 16,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 16B,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 16C,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 17,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 18,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 18A,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 19,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 2,201305
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 20,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 21,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 22,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 23,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 24,201307
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 25,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 26,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 27,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 3,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 31,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 34,201307
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 36,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 37,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 4,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 41,201303
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 5,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 6,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 7,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 8,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector 9,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Chi I,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Chi II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Chi III,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Chi IV,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Chi Phi,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Chi V,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Ekanki,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector ETA I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector ETA II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector IOTA I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector IOTA II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector MU,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector MU I,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector MU II,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector P 1,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector P 2,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector P 3,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector P 4,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Pi I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Pi II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector RHO I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector RHO II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector Tau,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector XU I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector XU II,203207
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sector XU III,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sigma I,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sigma II,201308
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sigma III,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sigma IV,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Sikandrabad,203205
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Surajpur,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Surajpur Site IV,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Surajpur Site V,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Swarn Nagri,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Tech Zone,203201
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Tech Zone II,201305
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Tech Zone III,201305
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Tech Zone IV,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Theta II,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Tilapta,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Tugalpur Village,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Tusiana Village,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Tusyana,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,UPSIDC Site A,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,UPSIDC Site B,201306
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,UPSIDC Site C,201310
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Zeta I,201301
+1,India,Uttar Pradesh,Greater Noida,Gautam Buddh Nagar,Zeta II,201308
+1,India,Delhi,Delhi,East Delhi,Azad Nagar,110051
+1,India,Delhi,Delhi,East Delhi,Anand Vihar Colony,110092
+1,India,Delhi,Delhi,East Delhi,Babarpur,110032
+1,India,Delhi,Delhi,East Delhi,Bahubali Enclave,110092
+1,India,Delhi,Delhi,East Delhi,Balbir Nagar,110032
+1,India,Delhi,Delhi,East Delhi,Dallupura,110096
+1,India,Delhi,Delhi,East Delhi,Dayanand Vihar,110092
+1,India,Delhi,Delhi,East Delhi,Dilshad colony,110095
+1,India,Delhi,Delhi,East Delhi,Dilshad Garden,110095
+1,India,Delhi,Delhi,East Delhi,Durga Puri,110032
+1,India,Delhi,Delhi,East Delhi,East Vinod Nagar,110091
+1,India,Delhi,Delhi,East Delhi,Gandhi Nagar,110031
+1,India,Delhi,Delhi,East Delhi,Ganesh Nagar,110092
+1,India,Delhi,Delhi,East Delhi,Gazipur,110096
+1,India,Delhi,Delhi,East Delhi,Geeta Colony,110031
+1,India,Delhi,Delhi,East Delhi,Gujarat Vihar,110092
+1,India,Delhi,Delhi,East Delhi,Hans Apartment,110051
+1,India,Delhi,Delhi,East Delhi,Jagatpuri,110051
+1,India,Delhi,Delhi,East Delhi,Jhilmil colony,110095
+1,India,Delhi,Delhi,East Delhi,Jyoti Nagar(east),110094
+1,India,Delhi,Delhi,East Delhi,Jyoti Nagar(west),110094
+1,India,Delhi,Delhi,East Delhi,Kanti nagar,110051
+1,India,Delhi,Delhi,East Delhi,Kalyan Puri,110091
+1,India,Delhi,Delhi,East Delhi,Khureji khas,110051
+1,India,Delhi,Delhi,East Delhi,Krishna Nagar,110051
+1,India,Delhi,Delhi,East Delhi,Laxmi Nagar (Delhi),110092
+1,India,Delhi,Delhi,East Delhi,Mandaoli,110093
+1,India,Delhi,Delhi,East Delhi,Mandawali,110092
+1,India,Delhi,Delhi,East Delhi,Mayur Vihar Phase - 1,110091
+1,India,Delhi,Delhi,East Delhi,Mayur Vihar Phase - 3,110096
+1,India,Delhi,Delhi,East Delhi,New Ashok Nagar,110018
+1,India,Delhi,Delhi,East Delhi,New Gobind Pura,110051
+1,India,Delhi,Delhi,East Delhi,New Kondli,110096
+1,India,Delhi,Delhi,East Delhi,New Layalpur Colony,110051
+1,India,Delhi,Delhi,East Delhi,Nirman Vihar,110092
+1,India,Delhi,Delhi,East Delhi,Old anarkali,110051
+1,India,Delhi,Delhi,East Delhi,Pandav Nagar,110092
+1,India,Delhi,Delhi,East Delhi,Patparganj (I.P.Extension),110092
+1,India,Delhi,Delhi,East Delhi,Preet Vihar,110092
+1,India,Delhi,Delhi,East Delhi,Pushpanjali,110092
+1,India,Delhi,Delhi,East Delhi,Saini Enclave,110092
+1,India,Delhi,Delhi,East Delhi,Savita Vihar,110092
+1,India,Delhi,Delhi,East Delhi,Shahdara,110032
+1,India,Delhi,Delhi,East Delhi,Shakarpur,110092
+1,India,Delhi,Delhi,East Delhi,Shreshtha vihar,110092
+1,India,Delhi,Delhi,East Delhi,Surajmal Vihar,110092
+1,India,Delhi,Delhi,East Delhi,Surya Niketan,110092
+1,India,Delhi,Delhi,East Delhi,Tahirpur,110095
+1,India,Delhi,Delhi,East Delhi,Trilokpuri,110091
+1,India,Delhi,Delhi,East Delhi,Vasundhara Enclave,110096
+1,India,Delhi,Delhi,East Delhi,Vishwas Nagar,110032
+1,India,Delhi,Delhi,East Delhi,Vivek Vihar,110095
+1,India,Delhi,Delhi,East Delhi,Vigyan Vihar,110092
+1,India,Delhi,Delhi,East Delhi,West Vinod Nagar,110092
+1,India,Delhi,Delhi,East Delhi,Yamuna Vihar,110053
+1,India,Delhi,Delhi,East Delhi,Yojana Vihar,110095
+1,India,Delhi,Delhi,East Delhi,kirari suleman nagar,110086
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Achheja,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Bambawar,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Behhrampur,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Dadri,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Dhoomedso,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Dujana,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Jarcha,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Kachera Versabad,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Kalaunda,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Khatana,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Kheri Bhanauta,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Pali,203207
+1,India,Uttar Pradesh,Greater Noida West,Gautam Buddh Nagar,Vedpura,203207
+1,India,Delhi,Delhi,West Delhi,Ashok Nagar (West Delhi),110018
+1,India,Delhi,Delhi,West Delhi,Ashoka Park Extn.,110026
+1,India,Delhi,Delhi,West Delhi,Bakkarwala,110041
+1,India,Delhi,Delhi,West Delhi,Chand Nagar,110018
+1,India,Delhi,Delhi,West Delhi,Chaukhandi,110018
+1,India,Delhi,Delhi,West Delhi,D. K. Mohan Garden,110059
+1,India,Delhi,Delhi,West Delhi,D.E.S.U. Colony,110058
+1,India,Delhi,Delhi,West Delhi,Delhi Industrial Area,110015
+1,India,Delhi,Delhi,West Delhi,ESI,110015
+1,India,Delhi,Delhi,West Delhi,Fateh Nagar,110018
+1,India,Delhi,Delhi,West Delhi,GGSIP University,110078
+1,India,Delhi,Delhi,West Delhi,Hari Nagar (West Delhi),110064
+1,India,Delhi,Delhi,West Delhi,Hari Nagar BE Block,110064
+1,India,Delhi,Delhi,West Delhi,Hari Nagar Dadb Block,110064
+1,India,Delhi,Delhi,West Delhi,Hastal Village,110059
+1,India,Delhi,Delhi,West Delhi,Hirankudna,110041
+1,India,Delhi,Delhi,West Delhi,Jail Road (West Delhi),110058
+1,India,Delhi,Delhi,West Delhi,Janakpuri A-3,110058
+1,India,Delhi,Delhi,West Delhi,Janakpuri B-1,110058
+1,India,Delhi,Delhi,West Delhi,Janakpuri C-4,110058
+1,India,Delhi,Delhi,West Delhi,Janta Market,110027
+1,India,Delhi,Delhi,West Delhi,Jawala Heri,110063
+1,India,Delhi,Delhi,West Delhi,Jeevan Park,110059
+1,India,Delhi,Delhi,West Delhi,Jwala Puri,110087
+1,India,Delhi,Delhi,West Delhi,Karam Pura,110015
+1,India,Delhi,Delhi,West Delhi,Khyala Phase - I,110018
+1,India,Delhi,Delhi,West Delhi,Khyala Phase - II,110018
+1,India,Delhi,Delhi,West Delhi,L. M. Nagar Indl. Area,110015
+1,India,Delhi,Delhi,West Delhi,M.B.S. Nagar,110018
+1,India,Delhi,Delhi,West Delhi,Madipur Slum Quarter,110063
+1,India,Delhi,Delhi,West Delhi,Madipur Village,110063
+1,India,Delhi,Delhi,West Delhi,Mahabir Nagar,110018
+1,India,Delhi,Delhi,West Delhi,Mansarover Garden,110015
+1,India,Delhi,Delhi,West Delhi,Matiala,110059
+1,India,Delhi,Delhi,West Delhi,Mundka,110041
+1,India,Delhi,Delhi,West Delhi,N.I.Area,110015
+1,India,Delhi,Delhi,West Delhi,Nangloi,110041
+1,India,Delhi,Delhi,West Delhi,Nangloi - II,110041
+1,India,Delhi,Delhi,West Delhi,Nangloi - III,110041
+1,India,Delhi,Delhi,West Delhi,Nilothi,110041
+1,India,Delhi,Delhi,West Delhi,Palam Extn (Harijan Basti),110077
+1,India,Delhi,Delhi,West Delhi,Paschim Vihar,110063
+1,India,Delhi,Delhi,West Delhi,Paschim Vihar B Block,110063
+1,India,Delhi,Delhi,West Delhi,Peeragarhi,110063
+1,India,Delhi,Delhi,West Delhi,Punjabi Bagh,110026
+1,India,Delhi,Delhi,West Delhi,Punjabi Bagh Sec - III,110026
+1,India,Delhi,Delhi,West Delhi,Rajouri Garden J-6,110027
+1,India,Delhi,Delhi,West Delhi,Rajouri Market,110027
+1,India,Delhi,Delhi,West Delhi,Ramesh Nagar H.O,110015
+1,India,Delhi,Delhi,West Delhi,Ranhola,110041
+1,India,Delhi,Delhi,West Delhi,Shivaji Park (West Delhi),110026
+1,India,Delhi,Delhi,West Delhi,Subhash Nagar (West Delhi),110027
+1,India,Delhi,Delhi,West Delhi,Subhash Nagar West,110027
+1,India,Delhi,Delhi,West Delhi,Sunder Vihar,110087
+1,India,Delhi,Delhi,West Delhi,Tagore Garden,110027
+1,India,Delhi,Delhi,West Delhi,Tikri Kalan,110041
+1,India,Delhi,Delhi,West Delhi,Tilak Nagar (West Delhi),110018
+1,India,Delhi,Delhi,West Delhi,Tilak Nagar East,110018
+1,India,Delhi,Delhi,West Delhi,Uttam Nagar,110059
+1,India,Delhi,Delhi,West Delhi,Vikas Puri,110018
+1,India,Delhi,Delhi,West Delhi,Vishnu Garden,110018
+1,India,Delhi,Delhi,West Delhi,Zakhira,110015
+1,India,Delhi,Delhi,South Delhi,Abul Fazal Enclave-I,110025
+1,India,Delhi,Delhi,South Delhi,Air Force Station Tugalkabad,110062
+1,India,Delhi,Delhi,South Delhi,Alaknanda,110019
+1,India,Delhi,Delhi,South Delhi,Ali,110019
+1,India,Delhi,Delhi,South Delhi,Aliganj (South Delhi),110003
+1,India,Delhi,Delhi,South Delhi,Amar Colony,110024
+1,India,Delhi,Delhi,South Delhi,Andrewsganj,110049
+1,India,Delhi,Delhi,South Delhi,Badarpur (South Delhi),110044
+1,India,Delhi,Delhi,South Delhi,BSF Camp Tigri,110062
+1,India,Delhi,Delhi,South Delhi,BTPS (South Delhi),110044
+1,India,Delhi,Delhi,South Delhi,C G O Complex,110003
+1,India,Delhi,Delhi,South Delhi,C R R I (South Delhi),110020
+1,India,Delhi,Delhi,South Delhi,Chittranjan Park,110019
+1,India,Delhi,Delhi,South Delhi,Dakshinpuri Phase-I,110062
+1,India,Delhi,Delhi,South Delhi,Dakshinpuri Phase-II,110062
+1,India,Delhi,Delhi,South Delhi,Dakshinpuri Phase-III,110062
+1,India,Delhi,Delhi,South Delhi,Dargah Sharif,110013
+1,India,Delhi,Delhi,South Delhi,Defence Colony (South Delhi),110024
+1,India,Delhi,Delhi,South Delhi,Deoli,110062
+1,India,Delhi,Delhi,South Delhi,Dr. Ambedkar Nagar (South Delhi),110062
+1,India,Delhi,Delhi,South Delhi,East Of Kailash,110065
+1,India,Delhi,Delhi,South Delhi,East Of Kailash Phase-I,110065
+1,India,Delhi,Delhi,South Delhi,Gautam Nagar,110049
+1,India,Delhi,Delhi,South Delhi,Golf Links,110003
+1,India,Delhi,Delhi,South Delhi,Greater Kailash,110048
+1,India,Delhi,Delhi,South Delhi,Gulmohar Park,110049
+1,India,Delhi,Delhi,South Delhi,Hamdard Nagar,110062
+1,India,Delhi,Delhi,South Delhi,Hari Nagar Ashram,110014
+1,India,Delhi,Delhi,South Delhi,Hazrat Nizamuddin,110013
+1,India,Delhi,Delhi,South Delhi,Jaitpur,110044
+1,India,Delhi,Delhi,South Delhi,Jaitpur (South Delhi),110044
+1,India,Delhi,Delhi,South Delhi,Jamia Nagar,110025
+1,India,Delhi,Delhi,South Delhi,Jeevan Nagar,110014
+1,India,Delhi,Delhi,South Delhi,Jungpura,110014
+1,India,Delhi,Delhi,South Delhi,Kailash Colony,110048
+1,India,Delhi,Delhi,South Delhi,Kalkaji H.O,110019
+1,India,Delhi,Delhi,South Delhi,Kasturba Nagar (South Delhi),110003
+1,India,Delhi,Delhi,South Delhi,Khanpur (South Delhi),110062
+1,India,Delhi,Delhi,South Delhi,Krishna Market,110024
+1,India,Delhi,Delhi,South Delhi,Lajpat Nagar (South Delhi),110024
+1,India,Delhi,Delhi,South Delhi,Lal Kuan,110019
+1,India,Delhi,Delhi,South Delhi,Lodi Road H.O,110003
+1,India,Delhi,Delhi,South Delhi,Madanpur Khadar,110076
+1,India,Delhi,Delhi,South Delhi,Malviya Nagar (South Delhi),110017
+1,India,Delhi,Delhi,South Delhi,Masjid Moth,110048
+1,India,Delhi,Delhi,South Delhi,MMTC/STC Colony,110017
+1,India,Delhi,Delhi,South Delhi,Molarband,110044
+1,India,Delhi,Delhi,South Delhi,Nehru Nagar (South Delhi),110065
+1,India,Delhi,Delhi,South Delhi,Nehru Place,110019
+1,India,Delhi,Delhi,South Delhi,New Delhi South Ext-II,110049
+1,India,Delhi,Delhi,South Delhi,New Friends Colony,110025
+1,India,Delhi,Delhi,South Delhi,Okhla Industrial Area Phase-i,110020
+1,India,Delhi,Delhi,South Delhi,Okhla Industrial Estate,110020
+1,India,Delhi,Delhi,South Delhi,Panchsheel Enclave,110017
+1,India,Delhi,Delhi,South Delhi,Pragati Vihar,110003
+1,India,Delhi,Delhi,South Delhi,Pratap Market,110014
+1,India,Delhi,Delhi,South Delhi,Pul Pahladpur,110044
+1,India,Delhi,Delhi,South Delhi,Pushp Vihar,110017
+1,India,Delhi,Delhi,South Delhi,Pushpa Bhawan,110062
+1,India,Delhi,Delhi,South Delhi,Sadiq Nagar,110049
+1,India,Delhi,Delhi,South Delhi,Safdarjung Air Port,110003
+1,India,Delhi,Delhi,South Delhi,Sahpurjat,110049
+1,India,Delhi,Delhi,South Delhi,Saket (South Delhi),110017
+1,India,Delhi,Delhi,South Delhi,Sangam Vihar,110080
+1,India,Delhi,Delhi,South Delhi,Sant Nagar (South Delhi),110065
+1,India,Delhi,Delhi,South Delhi,Sarita Vihar,110076
+1,India,Delhi,Delhi,South Delhi,Sarvodya Enclave,110017
+1,India,Delhi,Delhi,South Delhi,South Malviya Nagar,110017
+1,India,Delhi,Delhi,South Delhi,Sriniwaspuri,110065
+1,India,Delhi,Delhi,South Delhi,Sukhdev Vihar,110025
+1,India,Delhi,Delhi,South Delhi,Talimabad,110062
+1,India,Delhi,Delhi,South Delhi,Tehkhand,110019
+1,India,Delhi,Delhi,South Delhi,Tugalkabad,110019
+1,India,Delhi,Delhi,South Delhi,Tugalkabad Railway Colony,110044
+1,India,Delhi,Delhi,South Delhi,Zakir Nagar,110025
+1,India,Delhi,Delhi,North West Delhi,Adrash Nagar,110033
+1,India,Delhi,Delhi,North West Delhi,Alipur,110036
+1,India,Delhi,Delhi,North West Delhi,Anandvas Shakurpur,110034
+1,India,Delhi,Delhi,North West Delhi,Ashok Vihar,110052
+1,India,Delhi,Delhi,North West Delhi,Auchandi,110039
+1,India,Delhi,Delhi,North West Delhi,Badli,110042
+1,India,Delhi,Delhi,North West Delhi,Bakhtawar Pur,110036
+1,India,Delhi,Delhi,North West Delhi,Bakoli,110036
+1,India,Delhi,Delhi,North West Delhi,Bankner,110040
+1,India,Delhi,Delhi,North West Delhi,Barwala,110039
+1,India,Delhi,Delhi,North West Delhi,Bawana,110039
+1,India,Delhi,Delhi,North West Delhi,Begumpur,110086
+1,India,Delhi,Delhi,North West Delhi,Bhalaswa,110033
+1,India,Delhi,Delhi,North West Delhi,Bhorgarh,110040
+1,India,Delhi,Delhi,North West Delhi,Buddh Vihar,110086
+1,India,Delhi,Delhi,North West Delhi,Buddhpur,110036
+1,India,Delhi,Delhi,North West Delhi,Chand Pur,110081
+1,India,Delhi,Delhi,North West Delhi,Daryapur Kalan,110039
+1,India,Delhi,Delhi,North West Delhi,Delhi Engg. College,110042
+1,India,Delhi,Delhi,North West Delhi,Dr.Mukerjee Nagar,110009
+1,India,Delhi,Delhi,North West Delhi,G.T.B.Nagar,110009
+1,India,Delhi,Delhi,North West Delhi,Ganeshpura,110035
+1,India,Delhi,Delhi,North West Delhi,Gheora,110081
+1,India,Delhi,Delhi,North West Delhi,Ghevra,110081
+1,India,Delhi,Delhi,North West Delhi,Ghoga,110039
+1,India,Delhi,Delhi,North West Delhi,Gujranwala Colony,110009
+1,India,Delhi,Delhi,North West Delhi,H.S.Sangh,110009
+1,India,Delhi,Delhi,North West Delhi,Haiderpur,110088
+1,India,Delhi,Delhi,North West Delhi,Hareveli,110039
+1,India,Delhi,Delhi,North West Delhi,Hiranki,110036
+1,India,Delhi,Delhi,North West Delhi,Holambi Kalan,110082
+1,India,Delhi,Delhi,North West Delhi,Jahangir Puri A Block,110033
+1,India,Delhi,Delhi,North West Delhi,Jahangir Puri D Block,110033
+1,India,Delhi,Delhi,North West Delhi,Jahangir Puri H Block,110033
+1,India,Delhi,Delhi,North West Delhi,Jat Khore,110039
+1,India,Delhi,Delhi,North West Delhi,Jaunti,110081
+1,India,Delhi,Delhi,North West Delhi,Kadipur,110036
+1,India,Delhi,Delhi,North West Delhi,kalyan vihar,110009
+1,India,Delhi,Delhi,North West Delhi,Kanjhawla,110081
+1,India,Delhi,Delhi,North West Delhi,Kanya Gurukul,110040
+1,India,Delhi,Delhi,North West Delhi,Karala,110081
+1,India,Delhi,Delhi,North West Delhi,Katewara,110039
+1,India,Delhi,Delhi,North West Delhi,Keshav Puram,110035
+1,India,Delhi,Delhi,North West Delhi,Khampur,110036
+1,India,Delhi,Delhi,North West Delhi,Khera Kalan,110082
+1,India,Delhi,Delhi,North West Delhi,Khera Khurd,110082
+1,India,Delhi,Delhi,North West Delhi,Kirari Suleman Nagar,110086
+1,India,Delhi,Delhi,North West Delhi,Lad Pur,110081
+1,India,Delhi,Delhi,North West Delhi,Lampur,110040
+1,India,Delhi,Delhi,North West Delhi,MadanPur Dabas,110081
+1,India,Delhi,Delhi,North West Delhi,Majra Dabas,110081
+1,India,Delhi,Delhi,North West Delhi,Mangolpuri A Block,110083
+1,India,Delhi,Delhi,North West Delhi,Mangolpuri I Block,110083
+1,India,Delhi,Delhi,North West Delhi,Mangolpuri N Block,110083
+1,India,Delhi,Delhi,North West Delhi,Mangolpuri S Block,110083
+1,India,Delhi,Delhi,North West Delhi,Maurya Enclave,110034
+1,India,Delhi,Delhi,North West Delhi,Model Town II,110009
+1,India,Delhi,Delhi,North West Delhi,Model Town III,110009
+1,India,Delhi,Delhi,North West Delhi,Mubarak Pur Dabas,110081
+1,India,Delhi,Delhi,North West Delhi,Mukherjee Nagar,110009
+1,India,Delhi,Delhi,North West Delhi,Mukhmelpur,110036
+1,India,Delhi,Delhi,North West Delhi,Mungeshpur,110039
+1,India,Delhi,Delhi,North West Delhi,N.S.Mandi,110033
+1,India,Delhi,Delhi,North West Delhi,Naharpur,110085
+1,India,Delhi,Delhi,North West Delhi,Nangal Poona,110036
+1,India,Delhi,Delhi,North West Delhi,Nangal Thakran,110039
+1,India,Delhi,Delhi,North West Delhi,Narela,110040
+1,India,Delhi,Delhi,North West Delhi,Naya Bans,110082
+1,India,Delhi,Delhi,North West Delhi,New Multan Nagar,110056
+1,India,Delhi,Delhi,North West Delhi,Nimri,110052
+1,India,Delhi,Delhi,North West Delhi,Nirankari Colony,110009
+1,India,Delhi,Delhi,North West Delhi,Nizampur,110081
+1,India,Delhi,Delhi,North West Delhi,Onkar Nagar,110035
+1,India,Delhi,Delhi,North West Delhi,Palla,110036
+1,India,Delhi,Delhi,North West Delhi,Pehlad Pur,110042
+1,India,Delhi,Delhi,North West Delhi,Pitampura,110034
+1,India,Delhi,Delhi,North West Delhi,Pooth Kalan,110086
+1,India,Delhi,Delhi,North West Delhi,Pooth Kalan Resettlement,110086
+1,India,Delhi,Delhi,North West Delhi,Pooth Khurd,110039
+1,India,Delhi,Delhi,North West Delhi,Power House,110035
+1,India,Delhi,Delhi,North West Delhi,Prashant Vihar,110085
+1,India,Delhi,Delhi,North West Delhi,Prem Nagar,110086
+1,India,Delhi,Delhi,North West Delhi,Punjab Khor,110081
+1,India,Delhi,Delhi,North West Delhi,Qutabagarh,110039
+1,India,Delhi,Delhi,North West Delhi,Rampura,110035
+1,India,Delhi,Delhi,North West Delhi,Rani Bagh,110034
+1,India,Delhi,Delhi,North West Delhi,Rani Khera,110081
+1,India,Delhi,Delhi,North West Delhi,Rithala,110085
+1,India,Delhi,Delhi,North West Delhi,Rohini,110085
+1,India,Delhi,Delhi,North West Delhi,Rohini Courts,110085
+1,India,Delhi,Delhi,North West Delhi,Rohini sec-11,110085
+1,India,Delhi,Delhi,North West Delhi,Rohini Sector 15,110089
+1,India,Delhi,Delhi,North West Delhi,Rohini Sector 5,110085
+1,India,Delhi,Delhi,North West Delhi,Rohini Sector-7,110085
+1,India,Delhi,Delhi,North West Delhi,Sabhapur,110094
+1,India,Delhi,Delhi,North West Delhi,Samai Pur,110042
+1,India,Delhi,Delhi,North West Delhi,Sanoth,110040
+1,India,Delhi,Delhi,North West Delhi,Sarai Rohilla,110035
+1,India,Delhi,Delhi,North West Delhi,Saraswati Vihar,110034
+1,India,Delhi,Delhi,North West Delhi,Satyawati Nagar,110052
+1,India,Delhi,Delhi,North West Delhi,Shahbad Daulatpur,110042
+1,India,Delhi,Delhi,North West Delhi,Shakur Basti Depot,110056
+1,India,Delhi,Delhi,North West Delhi,Shakur Pur I Block,110034
+1,India,Delhi,Delhi,North West Delhi,Shakurbasti Rs,110034
+1,India,Delhi,Delhi,North West Delhi,Shalamar,110088
+1,India,Delhi,Delhi,North West Delhi,Shalimar Bagh,110088
+1,India,Delhi,Delhi,North West Delhi,Shastri Nagar,110052
+1,India,Delhi,Delhi,North West Delhi,Singhu,110040
+1,India,Delhi,Delhi,North West Delhi,Siraspur,110042
+1,India,Delhi,Delhi,North West Delhi,Sri Nagar Colony,110034
+1,India,Delhi,Delhi,North West Delhi,Sultanpuri B Block,110086
+1,India,Delhi,Delhi,North West Delhi,Sultanpuri C Block,110086
+1,India,Delhi,Delhi,North West Delhi,Sultanpuri F Block,110086
+1,India,Delhi,Delhi,North West Delhi,Tajpur Kalan,110036
+1,India,Delhi,Delhi,North West Delhi,Tigipur,110006
+1,India,Delhi,Delhi,North West Delhi,Tikri Khurd,110040
+1,India,Delhi,Delhi,North West Delhi,Wazir Pur III,110052
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Bahlolpur,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Baraula,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Bhangel,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Chaukhandi,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Gadarpur,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Hajipur,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Hosiery Complex,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Khora Colony,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Mamura,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Noida Extension,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Parthala Khanjarpur,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sarfabad,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 1,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 10,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 100,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 101,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 102,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 103,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 104,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 105,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 106,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 107,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 108,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 109,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 11,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 110,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 111,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 112,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 113,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 114,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 115,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 116,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 117,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 118,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 119,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 12,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 120,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 121,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 122,201316
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 123,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 124,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 125,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 126,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 127,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 128,201317
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 129,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 130,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 131,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 132,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 133,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 134,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 135,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 136,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 137,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 138,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 139,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 14,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 140,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 140A,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 141,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 142,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 143,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 143A,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 143B,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 144,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 145,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 146,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 147,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 148,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 148A,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 149,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 14A,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 15,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 150,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 151,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 151A,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 152,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 153,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 154,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 155,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 156,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 157,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 158,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 159,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 15A,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 16,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 160,201310
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 161,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 162,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 163,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 164,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 165,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 166,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 167,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 168,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 16B,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 17,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 18,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 19,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 2,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 20,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 21,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 21A,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 22,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 23,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 24,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 25,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 25A,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 26,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 27,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 28,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 29,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 3,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 30,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 31,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 32,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 33,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 33A,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 34,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 35,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 36,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 37,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 38,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 38A,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 39,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 4,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 40,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 41,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 42,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 43,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 44,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 45,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 45A,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 46,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 47,201304
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 48,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 49,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 5,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 50,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 51,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 52,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 53,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 54,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 55,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 56,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 57,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 58,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 59,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 6,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 60,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 61,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 62,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 62A,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 63,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 64,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 65,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 66,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 67,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 68,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 69,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 7,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 70,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 71,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 72,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 73,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 74,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 75,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 76,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 77,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 78,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 79,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 8,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 80,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 81,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 82,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 83,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 84,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 84A,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 84B,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 85,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 86,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 87,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 88,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 89,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 9,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 90,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 91,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 92,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 93,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 93A,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 93B,201305
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 94,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 94A,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 95,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 96,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 97,201301
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 98,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sector 99,201303
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Shital Vihar,201309
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Shiv Park,201307
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Sorkha,201306
+1,India,Uttar Pradesh,Noida,Gautam Buddh Nagar,Yakubpur,201305
+1,India,Haryana,Gurgaon,Gurgaon,Agon,122104
+1,India,Haryana,Gurgaon,Gurgaon,Air Force,122005
+1,India,Haryana,Gurgaon,Gurgaon,Akhera,122107
+1,India,Haryana,Gurgaon,Gurgaon,Ardee City,122011
+1,India,Haryana,Gurgaon,Gurgaon,Arjun Nagar,122001
+1,India,Haryana,Gurgaon,Gurgaon,Ashok Vihar Phase 1,122001
+1,India,Haryana,Gurgaon,Gurgaon,Ashok Vihar Phase 2,122006
+1,India,Haryana,Gurgaon,Gurgaon,Ashok Vihar Phase 3,122006
+1,India,Haryana,Gurgaon,Gurgaon,Baded,122508
+1,India,Haryana,Gurgaon,Gurgaon,Badli,122508
+1,India,Haryana,Gurgaon,Gurgaon,Badshahpur,122101
+1,India,Haryana,Gurgaon,Gurgaon,Baghanki,122105
+1,India,Haryana,Gurgaon,Gurgaon,Basai,122006
+1,India,Haryana,Gurgaon,Gurgaon,Basai Road,122001
+1,India,Haryana,Gurgaon,Gurgaon,Baslambi,122503
+1,India,Haryana,Gurgaon,Gurgaon,Baspadamka,122503
+1,India,Haryana,Gurgaon,Gurgaon,Bewan,122104
+1,India,Haryana,Gurgaon,Gurgaon,Bhadas,122108
+1,India,Haryana,Gurgaon,Gurgaon,Bhangrola,122505
+1,India,Haryana,Gurgaon,Gurgaon,Bhirauti,122103
+1,India,Haryana,Gurgaon,Gurgaon,Bhondsi,122102
+1,India,Haryana,Gurgaon,Gurgaon,Bhorakalan,122413
+1,India,Haryana,Gurgaon,Gurgaon,Bichhor,122508
+1,India,Haryana,Gurgaon,Gurgaon,Bilaspur Khurd,122413
+1,India,Haryana,Gurgaon,Gurgaon,Bisru,122508
+1,India,Haryana,Gurgaon,Gurgaon,Budarpur,122108
+1,India,Haryana,Gurgaon,Gurgaon,Buddhera,122505
+1,India,Haryana,Gurgaon,Gurgaon,Carterpuri,122017
+1,India,Haryana,Gurgaon,Gurgaon,Chakkarpur,122002
+1,India,Haryana,Gurgaon,Gurgaon,Chapera,122103
+1,India,Haryana,Gurgaon,Gurgaon,Cheelarh,122502
+1,India,Haryana,Gurgaon,Gurgaon,Damdama,122102
+1,India,Haryana,Gurgaon,Gurgaon,Daulah,122103
+1,India,Haryana,Gurgaon,Gurgaon,Daultabad,122006
+1,India,Haryana,Gurgaon,Gurgaon,Dhani Chitarsain,122413
+1,India,Haryana,Gurgaon,Gurgaon,Dhankot,122505
+1,India,Haryana,Gurgaon,Gurgaon,DLF Phase I,122008
+1,India,Haryana,Gurgaon,Gurgaon,DLF Phase II,122002
+1,India,Haryana,Gurgaon,Gurgaon,DLF Phase III,122010
+1,India,Haryana,Gurgaon,Gurgaon,DLF Phase IV,122009
+1,India,Haryana,Gurgaon,Gurgaon,DLF Phase V,122003
+1,India,Haryana,Gurgaon,Gurgaon,DLF QE,122002
+1,India,Haryana,Gurgaon,Gurgaon,Doha,122104
+1,India,Haryana,Gurgaon,Gurgaon,Dulawat,122105
+1,India,Haryana,Gurgaon,Gurgaon,Dundahera,122016
+1,India,Haryana,Gurgaon,Gurgaon,Dungerwas,123106
+1,India,Haryana,Gurgaon,Gurgaon,Farrukh Nagar,122506
+1,India,Haryana,Gurgaon,Gurgaon,Fazilpur,122101
+1,India,Haryana,Gurgaon,Gurgaon,Feroz Gandhi Colony,122001
+1,India,Haryana,Gurgaon,Gurgaon,Ferozepur Jhirka,122104
+1,India,Haryana,Gurgaon,Gurgaon,Ferozepur Namak,122107
+1,India,Haryana,Gurgaon,Gurgaon,Galleria DLF-IV,122009
+1,India,Haryana,Gurgaon,Gurgaon,Gandhi Nagar,122004
+1,India,Haryana,Gurgaon,Gurgaon,Garhi Harsaru,122505
+1,India,Haryana,Gurgaon,Gurgaon,Ghamroj,122102
+1,India,Haryana,Gurgaon,Gurgaon,Ghasera,122103
+1,India,Haryana,Gurgaon,Gurgaon,Ghatta Village,122001
+1,India,Haryana,Gurgaon,Gurgaon,Ghungola,122103
+1,India,Haryana,Gurgaon,Gurgaon,Greenwood City,122003
+1,India,Haryana,Gurgaon,Gurgaon,Gulalta,122508
+1,India,Haryana,Gurgaon,Gurgaon,Gurgaon H.O,122001
+1,India,Haryana,Gurgaon,Gurgaon,Gurgaon Kty.,122001
+1,India,Haryana,Gurgaon,Gurgaon,Gurgaon Sector 17,122001
+1,India,Haryana,Gurgaon,Gurgaon,Gurgaon Sector 45,122003
+1,India,Haryana,Gurgaon,Gurgaon,Gurgaon Sector 56,122011
+1,India,Haryana,Gurgaon,Gurgaon,Gurgaon South City I,122001
+1,India,Haryana,Gurgaon,Gurgaon,Gurgaon South City II,122018
+1,India,Haryana,Gurgaon,Gurgaon,Gurgaon Village,122006
+1,India,Haryana,Gurgaon,Gurgaon,Gwal Pahari,122003
+1,India,Haryana,Gurgaon,Gurgaon,Haillymandi,122504
+1,India,Haryana,Gurgaon,Gurgaon,Hans Enclave,122022
+1,India,Haryana,Gurgaon,Gurgaon,Hari Nagar,122001
+1,India,Haryana,Gurgaon,Gurgaon,Hasanpur,122105
+1,India,Haryana,Gurgaon,Gurgaon,Heera Nagar,122001
+1,India,Haryana,Gurgaon,Gurgaon,Hirwari,122104
+1,India,Haryana,Gurgaon,Gurgaon,IMT Manesar,122052
+1,India,Haryana,Gurgaon,Gurgaon,Inchhapuri,122414
+1,India,Haryana,Gurgaon,Gurgaon,Indir Mewat,122103
+1,India,Haryana,Gurgaon,Gurgaon,Industrial Complex Dundahera,122016
+1,India,Haryana,Gurgaon,Gurgaon,Industrial Estate (Gurgaon),122007
+1,India,Haryana,Gurgaon,Gurgaon,Islampur,122018
+1,India,Haryana,Gurgaon,Gurgaon,Jacombpura,122022
+1,India,Haryana,Gurgaon,Gurgaon,Jagat,122502
+1,India,Haryana,Gurgaon,Gurgaon,Jaitpur,122502
+1,India,Haryana,Gurgaon,Gurgaon,Jamalgarh,122508
+1,India,Haryana,Gurgaon,Gurgaon,Jamalpur,122503
+1,India,Haryana,Gurgaon,Gurgaon,Janaula,122503
+1,India,Haryana,Gurgaon,Gurgaon,Jant,122502
+1,India,Haryana,Gurgaon,Gurgaon,Jataula,122504
+1,India,Haryana,Gurgaon,Gurgaon,Jatauli,122504
+1,India,Haryana,Gurgaon,Gurgaon,Jawasi,122105
+1,India,Haryana,Gurgaon,Gurgaon,Jhamuwas,122105
+1,India,Haryana,Gurgaon,Gurgaon,Jharsa,122003
+1,India,Haryana,Gurgaon,Gurgaon,Jyoti Park,122001
+1,India,Haryana,Gurgaon,Gurgaon,Kadipur,122101
+1,India,Haryana,Gurgaon,Gurgaon,Kakoria,122502
+1,India,Haryana,Gurgaon,Gurgaon,Kalwari,122105
+1,India,Haryana,Gurgaon,Gurgaon,Kankarwali Rewari,123401
+1,India,Haryana,Gurgaon,Gurgaon,Karola,122504
+1,India,Haryana,Gurgaon,Gurgaon,Kasan,122051
+1,India,Haryana,Gurgaon,Gurgaon,Khalilpur,122502
+1,India,Haryana,Gurgaon,Gurgaon,Khandewia,122504
+1,India,Haryana,Gurgaon,Gurgaon,Khandsa,122004
+1,India,Haryana,Gurgaon,Gurgaon,Khandsa Road,122001
+1,India,Haryana,Gurgaon,Gurgaon,Khatauli,122414
+1,India,Haryana,Gurgaon,Gurgaon,Khera Khurampur,122506
+1,India,Haryana,Gurgaon,Gurgaon,Kherki Daula,122004
+1,India,Haryana,Gurgaon,Gurgaon,Kherla,122102
+1,India,Haryana,Gurgaon,Gurgaon,KherliLala,122103
+1,India,Haryana,Gurgaon,Gurgaon,Khor,122414
+1,India,Haryana,Gurgaon,Gurgaon,Kiranj,122103
+1,India,Haryana,Gurgaon,Gurgaon,Krishna Colony,122001
+1,India,Haryana,Gurgaon,Gurgaon,Kurthala,122107
+1,India,Haryana,Gurgaon,Gurgaon,Lakhnaula,122004
+1,India,Haryana,Gurgaon,Gurgaon,Laxman Garden,122022
+1,India,Haryana,Gurgaon,Gurgaon,Laxman Vihar,122006
+1,India,Haryana,Gurgaon,Gurgaon,Lohinga Kalan,122508
+1,India,Haryana,Gurgaon,Gurgaon,Lokra,122414
+1,India,Haryana,Gurgaon,Gurgaon,Madan Puri,122006
+1,India,Haryana,Gurgaon,Gurgaon,Mainwali Colony,122006
+1,India,Haryana,Gurgaon,Gurgaon,Malab,122107
+1,India,Haryana,Gurgaon,Gurgaon,Malibu Town,122018
+1,India,Haryana,Gurgaon,Gurgaon,Mandikhera,122108
+1,India,Haryana,Gurgaon,Gurgaon,Manesar,122051
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M1,122051
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M10,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M11,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M12,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M13,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M14,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M15,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M16,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M1A,122001
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M1B,122001
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M1C,122001
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M1D,122001
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M2,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M3,122051
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M3A,122001
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M4,122051
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M5,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M6,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M6A,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M7,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M8,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Sector M9,122052
+1,India,Haryana,Gurgaon,Gurgaon,Manesar Village,122051
+1,India,Haryana,Gurgaon,Gurgaon,Mankdola,122505
+1,India,Haryana,Gurgaon,Gurgaon,Maruthi Kunj,122102
+1,India,Haryana,Gurgaon,Gurgaon,May Field Gardens,122018
+1,India,Haryana,Gurgaon,Gurgaon,Mehchana,122504
+1,India,Haryana,Gurgaon,Gurgaon,Mini Sectt.,122001
+1,India,Haryana,Gurgaon,Gurgaon,Mirpur,122502
+1,India,Haryana,Gurgaon,Gurgaon,Model Town,122001
+1,India,Haryana,Gurgaon,Gurgaon,Mohamadpur Ahir,122105
+1,India,Haryana,Gurgaon,Gurgaon,Mohyal Colony,122022
+1,India,Haryana,Gurgaon,Gurgaon,Moklawas,122413
+1,India,Haryana,Gurgaon,Gurgaon,Moolthan,122108
+1,India,Haryana,Gurgaon,Gurgaon,Nagina (Gurgaon),122108
+1,India,Haryana,Gurgaon,Gurgaon,Naheda,122508
+1,India,Haryana,Gurgaon,Gurgaon,Nai,122508
+1,India,Haryana,Gurgaon,Gurgaon,Nanukalan,122414
+1,India,Haryana,Gurgaon,Gurgaon,Narhera,122503
+1,India,Haryana,Gurgaon,Gurgaon,Narsinghpur,122004
+1,India,Haryana,Gurgaon,Gurgaon,Nathupur,122002
+1,India,Haryana,Gurgaon,Gurgaon,New Basti,122006
+1,India,Haryana,Gurgaon,Gurgaon,New Colony (Gurgaon),122001
+1,India,Haryana,Gurgaon,Gurgaon,New Palam Vihar,122017
+1,India,Haryana,Gurgaon,Gurgaon,Noorgarh,122504
+1,India,Haryana,Gurgaon,Gurgaon,Nsg Camp Manesar,122051
+1,India,Haryana,Gurgaon,Gurgaon,Nuh,122107
+1,India,Haryana,Gurgaon,Gurgaon,Pace City,122004
+1,India,Haryana,Gurgaon,Gurgaon,Pachgaon,122413
+1,India,Haryana,Gurgaon,Gurgaon,Pahari,122502
+1,India,Haryana,Gurgaon,Gurgaon,Palam Road,122015
+1,India,Haryana,Gurgaon,Gurgaon,Palam Vihar (Gurgaon),122017
+1,India,Haryana,Gurgaon,Gurgaon,Paltra,122101
+1,India,Haryana,Gurgaon,Gurgaon,Pataudi,122503
+1,India,Haryana,Gurgaon,Gurgaon,Pataudi Sector 1,122503
+1,India,Haryana,Gurgaon,Gurgaon,Pataudi Sector 2,122503
+1,India,Haryana,Gurgaon,Gurgaon,Pataudi Sector 3,122503
+1,India,Haryana,Gurgaon,Gurgaon,Pataudi Sector 4,122503
+1,India,Haryana,Gurgaon,Gurgaon,Pataudi Sector 5,122503
+1,India,Haryana,Gurgaon,Gurgaon,Pataudi Sector 6,122503
+1,India,Haryana,Gurgaon,Gurgaon,Patel Nagar,122022
+1,India,Haryana,Gurgaon,Gurgaon,Pathreri,122413
+1,India,Haryana,Gurgaon,Gurgaon,Patil R.S.,122506
+1,India,Haryana,Gurgaon,Gurgaon,Pingwan,122508
+1,India,Haryana,Gurgaon,Gurgaon,Punhana,122508
+1,India,Haryana,Gurgaon,Gurgaon,Railwary Road,122006
+1,India,Haryana,Gurgaon,Gurgaon,Raisina,122102
+1,India,Haryana,Gurgaon,Gurgaon,Rajendra Park,122006
+1,India,Haryana,Gurgaon,Gurgaon,Rajiv Nagar,122001
+1,India,Haryana,Gurgaon,Gurgaon,Ram Nagar,122022
+1,India,Haryana,Gurgaon,Gurgaon,Ramgarh,122502
+1,India,Haryana,Gurgaon,Gurgaon,Ratan Vihar,122006
+1,India,Haryana,Gurgaon,Gurgaon,Rathiwas,122105
+1,India,Haryana,Gurgaon,Gurgaon,Ravi Nagar,122001
+1,India,Haryana,Gurgaon,Gurgaon,Rawli,122104
+1,India,Haryana,Gurgaon,Gurgaon,Rethath,122508
+1,India,Haryana,Gurgaon,Gurgaon,Rewasan,122103
+1,India,Haryana,Gurgaon,Gurgaon,Rithoj,122102
+1,India,Haryana,Gurgaon,Gurgaon,Rojka Meo,122103
+1,India,Haryana,Gurgaon,Gurgaon,Rosewood City,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sadar Bazaar,122001
+1,India,Haryana,Gurgaon,Gurgaon,Sakras,122108
+1,India,Haryana,Gurgaon,Gurgaon,Saraswati Kunj,122011
+1,India,Haryana,Gurgaon,Gurgaon,Saraswati Vihar,122009
+1,India,Haryana,Gurgaon,Gurgaon,Sarhaul,122015
+1,India,Haryana,Gurgaon,Gurgaon,Sector 1,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 10,122001
+1,India,Haryana,Gurgaon,Gurgaon,Sector 100,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 101,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 102,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 102A,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 103,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 104,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 105,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 106,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 107,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 108,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 109,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 10A,122001
+1,India,Haryana,Gurgaon,Gurgaon,Sector 11,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 110,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 110A,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 111,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 112,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 113,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 114,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 115,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 11A,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 12,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 12A,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 13,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 14,122007
+1,India,Haryana,Gurgaon,Gurgaon,Sector 15 Part I,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 15 Part II,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 16,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 17,122001
+1,India,Haryana,Gurgaon,Gurgaon,Sector 18,122015
+1,India,Haryana,Gurgaon,Gurgaon,Sector 19,122008
+1,India,Haryana,Gurgaon,Gurgaon,Sector 2,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 20,122016
+1,India,Haryana,Gurgaon,Gurgaon,Sector 21,122016
+1,India,Haryana,Gurgaon,Gurgaon,Sector 22,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 23,122017
+1,India,Haryana,Gurgaon,Gurgaon,Sector 23A,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 24,122010
+1,India,Haryana,Gurgaon,Gurgaon,Sector 25,122008
+1,India,Haryana,Gurgaon,Gurgaon,Sector 25A,122008
+1,India,Haryana,Gurgaon,Gurgaon,Sector 26,122002
+1,India,Haryana,Gurgaon,Gurgaon,Sector 27,122002
+1,India,Haryana,Gurgaon,Gurgaon,Sector 28,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 29,122009
+1,India,Haryana,Gurgaon,Gurgaon,Sector 3,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 30,122022
+1,India,Haryana,Gurgaon,Gurgaon,Sector 31,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 32,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 33,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 34,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 35,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 36,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 37 Part I Industrial,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 37 Part II Industrial,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 37C,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 37D,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 38,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 39,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 3A,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 4,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 40,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 41,122001
+1,India,Haryana,Gurgaon,Gurgaon,Sector 42,122002
+1,India,Haryana,Gurgaon,Gurgaon,Sector 43,122009
+1,India,Haryana,Gurgaon,Gurgaon,Sector 44,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 45,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 46,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 47,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 48,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 49,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 5,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 50,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 51,122413
+1,India,Haryana,Gurgaon,Gurgaon,Sector 52,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 52A,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 53,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sector 54,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 55,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 56,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 57,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 58,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 59,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 6,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 60,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 61,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 62,122413
+1,India,Haryana,Gurgaon,Gurgaon,Sector 63,122011
+1,India,Haryana,Gurgaon,Gurgaon,Sector 64,122102
+1,India,Haryana,Gurgaon,Gurgaon,Sector 65,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 66,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 67,122102
+1,India,Haryana,Gurgaon,Gurgaon,Sector 67A,122102
+1,India,Haryana,Gurgaon,Gurgaon,Sector 68,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 69,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 7,122001
+1,India,Haryana,Gurgaon,Gurgaon,Sector 70,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 70A,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 71,122018
+1,India,Haryana,Gurgaon,Gurgaon,Sector 72,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 72A,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 73,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 74,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 74A,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 75,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 75A,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 76,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 77,122101
+1,India,Haryana,Gurgaon,Gurgaon,Sector 78,122101
+1,India,Haryana,Gurgaon,Gurgaon,Sector 79,122101
+1,India,Haryana,Gurgaon,Gurgaon,Sector 8,122051
+1,India,Haryana,Gurgaon,Gurgaon,Sector 80,122051
+1,India,Haryana,Gurgaon,Gurgaon,Sector 81,122051
+1,India,Haryana,Gurgaon,Gurgaon,Sector 81A,122051
+1,India,Haryana,Gurgaon,Gurgaon,Sector 82,122012
+1,India,Haryana,Gurgaon,Gurgaon,Sector 82A,122012
+1,India,Haryana,Gurgaon,Gurgaon,Sector 83,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 84,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 85,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 86,122051
+1,India,Haryana,Gurgaon,Gurgaon,Sector 87,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 88,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sector 88A,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 88B,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 89,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 89A,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 89B,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 9,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 90,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 91,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 92,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 93,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 94,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 95,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 95A,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 95B,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 96,122503
+1,India,Haryana,Gurgaon,Gurgaon,Sector 97,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 98,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 99,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 99A,122505
+1,India,Haryana,Gurgaon,Gurgaon,Sector 9A,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sector 9B,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sewari,122506
+1,India,Haryana,Gurgaon,Gurgaon,Shahchokha,122508
+1,India,Haryana,Gurgaon,Gurgaon,Shankar Vihar,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sherpur,122502
+1,India,Haryana,Gurgaon,Gurgaon,Shivaji Nagar (Gurgaon),122001
+1,India,Haryana,Gurgaon,Gurgaon,Shivaji Park Colony,122004
+1,India,Haryana,Gurgaon,Gurgaon,Shivpuri,122006
+1,India,Haryana,Gurgaon,Gurgaon,Shivpuri Extn,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sidhrawali,122413
+1,India,Haryana,Gurgaon,Gurgaon,Sihri Singhalheri,122508
+1,India,Haryana,Gurgaon,Gurgaon,Sikanderpur,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sikohpur,122004
+1,India,Haryana,Gurgaon,Gurgaon,Sikrawa,122508
+1,India,Haryana,Gurgaon,Gurgaon,Singar,122508
+1,India,Haryana,Gurgaon,Gurgaon,Smaspur,122003
+1,India,Haryana,Gurgaon,Gurgaon,Sohna,122103
+1,India,Haryana,Gurgaon,Gurgaon,Sohna Adda,122001
+1,India,Haryana,Gurgaon,Gurgaon,South City I,122001
+1,India,Haryana,Gurgaon,Gurgaon,South City II,122018
+1,India,Haryana,Gurgaon,Gurgaon,Subhash Nagar,122006
+1,India,Haryana,Gurgaon,Gurgaon,Sudaka,122107
+1,India,Haryana,Gurgaon,Gurgaon,Sultanpur,122506
+1,India,Haryana,Gurgaon,Gurgaon,Sundh,122105
+1,India,Haryana,Gurgaon,Gurgaon,Surya Vihar,122001
+1,India,Haryana,Gurgaon,Gurgaon,Sushant Lok I,122009
+1,India,Haryana,Gurgaon,Gurgaon,Sushant Lok II,122009
+1,India,Haryana,Gurgaon,Gurgaon,Sushant Lok III,122002
+1,India,Haryana,Gurgaon,Gurgaon,Syed Shahpur,122414
+1,India,Haryana,Gurgaon,Gurgaon,Tain,122107
+1,India,Haryana,Gurgaon,Gurgaon,Tapkan,122107
+1,India,Haryana,Gurgaon,Gurgaon,Tatarpur,122502
+1,India,Haryana,Gurgaon,Gurgaon,Tauru,122105
+1,India,Haryana,Gurgaon,Gurgaon,Teekli,122101
+1,India,Haryana,Gurgaon,Gurgaon,Turkiawas,122502
+1,India,Haryana,Gurgaon,Gurgaon,Udyog Vihar Phase I,122022
+1,India,Haryana,Gurgaon,Gurgaon,Udyog Vihar Phase II,122016
+1,India,Haryana,Gurgaon,Gurgaon,Udyog Vihar Phase III,122016
+1,India,Haryana,Gurgaon,Gurgaon,Udyog Vihar Phase IV,122004
+1,India,Haryana,Gurgaon,Gurgaon,Udyog Vihar Phase V,122008
+1,India,Haryana,Gurgaon,Gurgaon,Udyog Vihar Phase VI,122004
+1,India,Haryana,Gurgaon,Gurgaon,Ujina,122107
+1,India,Haryana,Gurgaon,Gurgaon,Umra,122108
+1,India,Haryana,Gurgaon,Gurgaon,Unchamajra,122503
+1,India,Haryana,Gurgaon,Gurgaon,Urban Estate (Gurgaon),122001
+1,India,Haryana,Gurgaon,Gurgaon,Vishnu Garden,122017
+1,India,Haryana,Gurgaon,Gurgaon,Wazipur,122505
+1,India,Haryana,Gurgaon,Gurgaon,Wazirabad,122003
+1,India,Haryana,Faridabad,Faridabad,Aharwan,121102
+1,India,Haryana,Faridabad,Faridabad,Alawalpur,121102
+1,India,Haryana,Faridabad,Faridabad,Ali Meo,121106
+1,India,Haryana,Faridabad,Faridabad,Alika,121102
+1,India,Haryana,Faridabad,Faridabad,Alipur,121101
+1,India,Haryana,Faridabad,Faridabad,Amarnagar (Faridabad),121003
+1,India,Haryana,Faridabad,Faridabad,Amarpur,121004
+1,India,Haryana,Faridabad,Faridabad,Amroli,121102
+1,India,Haryana,Faridabad,Faridabad,Anangpur,121003
+1,India,Haryana,Faridabad,Faridabad,Andhop,121106
+1,India,Haryana,Faridabad,Faridabad,Asaota,121102
+1,India,Haryana,Faridabad,Faridabad,Asaoti,121102
+1,India,Haryana,Faridabad,Faridabad,Atali,121004
+1,India,Haryana,Faridabad,Faridabad,Aurangabad (Faridabad),121105
+1,India,Haryana,Faridabad,Faridabad,Badarpur Syed,121101
+1,India,Haryana,Faridabad,Faridabad,Baghola,121102
+1,India,Haryana,Faridabad,Faridabad,Bahin,121105
+1,India,Haryana,Faridabad,Faridabad,Ballabgarh,121004
+1,India,Haryana,Faridabad,Faridabad,Bamni Khera,121105
+1,India,Haryana,Faridabad,Faridabad,Banchari,121106
+1,India,Haryana,Faridabad,Faridabad,Banswa,121107
+1,India,Haryana,Faridabad,Faridabad,Baroli,121102
+1,India,Haryana,Faridabad,Faridabad,Baroli,121004
+1,India,Haryana,Faridabad,Faridabad,Bhainsrawali,121101
+1,India,Haryana,Faridabad,Faridabad,Bhandoli,121107
+1,India,Haryana,Faridabad,Faridabad,Bhaskola,121002
+1,India,Haryana,Faridabad,Faridabad,Bhiduki,121107
+1,India,Haryana,Faridabad,Faridabad,Bhuvapur,121101
+1,India,Haryana,Faridabad,Faridabad,Chandpur,121101
+1,India,Haryana,Faridabad,Faridabad,Chant,121102
+1,India,Haryana,Faridabad,Faridabad,Chawla Colony Ballabgarh,121004
+1,India,Haryana,Faridabad,Faridabad,Chhainsa,121004
+1,India,Haryana,Faridabad,Faridabad,Chhainsa,121103
+1,India,Haryana,Faridabad,Faridabad,Chhajju Nagar,121102
+1,India,Haryana,Faridabad,Faridabad,Chirwari,121102
+1,India,Haryana,Faridabad,Faridabad,Dayalpur,121004
+1,India,Haryana,Faridabad,Faridabad,Deeg,121004
+1,India,Haryana,Faridabad,Faridabad,Dhatir,121102
+1,India,Haryana,Faridabad,Faridabad,Dhauj,121004
+1,India,Haryana,Faridabad,Faridabad,Dighot,121105
+1,India,Haryana,Faridabad,Faridabad,E C Dhauj,121004
+1,India,Haryana,Faridabad,Faridabad,Escortsnagar Faridabad,121007
+1,India,Haryana,Faridabad,Faridabad,Factory Area Faridabad,121001
+1,India,Haryana,Faridabad,Faridabad,Faridabad City,121002
+1,India,Haryana,Faridabad,Faridabad,Faridabad NIT H.O,121001
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 12,121007
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 15,121007
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 16,121002
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 16a,121002
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 18,121002
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 22,121005
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 29,121008
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 3,121004
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 7,121006
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 8,121006
+1,India,Haryana,Faridabad,Faridabad,Faridabad Sector 9,121006
+1,India,Haryana,Faridabad,Faridabad,Faridpur,121101
+1,India,Haryana,Faridabad,Faridabad,Fatehpur Billoch,121004
+1,India,Haryana,Faridabad,Faridabad,Fatehpur Tagga,121004
+1,India,Haryana,Faridabad,Faridabad,Feroz Gandhi Nagar Faridabad,121001
+1,India,Haryana,Faridabad,Faridabad,G.T. Road Faridabad,121006
+1,India,Haryana,Faridabad,Faridabad,Gadpuri,121004
+1,India,Haryana,Faridabad,Faridabad,Gehlab,121103
+1,India,Haryana,Faridabad,Faridabad,Gharrot,121103
+1,India,Haryana,Faridabad,Faridabad,Ghori,121102
+1,India,Haryana,Faridabad,Faridabad,Gonchhi,121004
+1,India,Haryana,Faridabad,Faridabad,Gorota,121106
+1,India,Haryana,Faridabad,Faridabad,Gulawad,121107
+1,India,Haryana,Faridabad,Faridabad,Gurukul Indraprashtha,121003
+1,India,Haryana,Faridabad,Faridabad,Hassanpur,121107
+1,India,Haryana,Faridabad,Faridabad,Hathin,121103
+1,India,Haryana,Faridabad,Faridabad,Hodal,121106
+1,India,Haryana,Faridabad,Faridabad,Hurithal,121103
+1,India,Haryana,Faridabad,Faridabad,Industrial Area Faridabad,121001
+1,India,Haryana,Faridabad,Faridabad,Jaindapur,121102
+1,India,Haryana,Faridabad,Faridabad,Janauli,121102
+1,India,Haryana,Faridabad,Faridabad,Jawahar Colony Faridabad,121005
+1,India,Haryana,Faridabad,Faridabad,Jawahar Nagar Palwal,121102
+1,India,Haryana,Faridabad,Faridabad,Jawan,121004
+1,India,Haryana,Faridabad,Faridabad,Khaika,121106
+1,India,Haryana,Faridabad,Faridabad,Khambi,121106
+1,India,Haryana,Faridabad,Faridabad,Khatela Sarai,121105
+1,India,Haryana,Faridabad,Faridabad,Kheri Kalan,121002
+1,India,Haryana,Faridabad,Faridabad,Kondal,121103
+1,India,Haryana,Faridabad,Faridabad,Kot,121103
+1,India,Haryana,Faridabad,Faridabad,Kurali,121101
+1,India,Haryana,Faridabad,Faridabad,Likhi,121107
+1,India,Haryana,Faridabad,Faridabad,Lohina,121106
+1,India,Haryana,Faridabad,Faridabad,Machhgar,121004
+1,India,Haryana,Faridabad,Faridabad,Madnaka,121103
+1,India,Haryana,Faridabad,Faridabad,Malai,121103
+1,India,Haryana,Faridabad,Faridabad,Mandkola,121103
+1,India,Haryana,Faridabad,Faridabad,Manjhawali,121101
+1,India,Haryana,Faridabad,Faridabad,Manpur,121105
+1,India,Haryana,Faridabad,Faridabad,Marraoli,121106
+1,India,Haryana,Faridabad,Faridabad,Mathura Road Faridabad,121003
+1,India,Haryana,Faridabad,Faridabad,Mohna,121004
+1,India,Haryana,Faridabad,Faridabad,N.I.F.M. Faridabad,121001
+1,India,Haryana,Faridabad,Faridabad,N.T.P.C./sector-10 Faridabad,121004
+1,India,Haryana,Faridabad,Faridabad,Nangal Jat,121105
+1,India,Haryana,Faridabad,Faridabad,Neemka,121004
+1,India,Haryana,Faridabad,Faridabad,New Township Palwal,121102
+1,India,Haryana,Faridabad,Faridabad,Nh-2 Faridabad,121001
+1,India,Haryana,Faridabad,Faridabad,Nh-3 Faridabad,121001
+1,India,Haryana,Faridabad,Faridabad,Nh-4 Faridabad,121001
+1,India,Haryana,Faridabad,Faridabad,Nhpc Colony Faridabad,121010
+1,India,Haryana,Faridabad,Faridabad,Pali,121004
+1,India,Haryana,Faridabad,Faridabad,Palwal,121102
+1,India,Haryana,Faridabad,Faridabad,Panhera Khurd,121004
+1,India,Haryana,Faridabad,Faridabad,Pingore,121105
+1,India,Haryana,Faridabad,Faridabad,Prithla,121102
+1,India,Haryana,Faridabad,Faridabad,Rasulpur,121102
+1,India,Haryana,Faridabad,Faridabad,Rupraka,121103
+1,India,Haryana,Faridabad,Faridabad,Sagarpur,121004
+1,India,Haryana,Faridabad,Faridabad,Sec-91,121013
+1,India,Haryana,Faridabad,Faridabad,Sector-21D,121012
+1,India,Haryana,Faridabad,Faridabad,Seeha,121102
+1,India,Haryana,Faridabad,Faridabad,Seekri,121004
+1,India,Haryana,Faridabad,Faridabad,Seoli,121105
+1,India,Haryana,Faridabad,Faridabad,Siaroli,121102
+1,India,Haryana,Faridabad,Faridabad,Sihol,121102
+1,India,Haryana,Faridabad,Faridabad,Sondh,121106
+1,India,Haryana,Faridabad,Faridabad,Surajkund Faridabad,121009
+1,India,Haryana,Faridabad,Faridabad,Tappa Bilochpur,121107
+1,India,Haryana,Faridabad,Faridabad,Teekri Brahman,121102
+1,India,Haryana,Faridabad,Faridabad,Tigaon,121101
+1,India,Haryana,Faridabad,Faridabad,Tilpat,121003
+1,India,Haryana,Faridabad,Faridabad,Uttawar,121103
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Abupur,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Achheja,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Adhyatmic Nagar,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Alamnagar,245208
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Alipur,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Anwarpur,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Arya Nagar (Ghaziabad),201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Asaura,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Ashok Nagar (Ghaziabad),201001
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Athsaini,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Atola,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Ator Nagla,201003
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Atrauli,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Aurangabad Ristal,201003
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,B.B.Nagar,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Babugarh,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bachhlota,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Badshahnpur Siroli,201102
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bagarpur,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bahadurgarh,245208
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bajhera Kalan,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bajhera Khurd,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bankhanda,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Basantpur Sainthli,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Baxur,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Begmabad,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Behta Hazipur,201102
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhadola,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhadoli,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhadsiyana,245208
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhaina Dholpur,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bharat Nagar (Ghaziabad),201010
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bharna,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhatiyana,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhikanpur,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhojpur,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhopura,201005
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bhup Kheri,201003
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Bihuni,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Biraj Ghat,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Chajarsi,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Chamri,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Chander Nagar,201011
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Chhajupur,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Chhaprola,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Chhipyana,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Chikamberpur,201006
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Chirori,201102
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Churiyala,201201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Crossing Republik,201016
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dadri,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dahana,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dasna,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dasna Gate Ed,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dasna R.S.,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Datiyana,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dehpa Azampur,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dehra,245301
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dehra Rampur,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dhana,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dhanaura,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dhaulana,245301
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Didoli,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Doohri,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dosa Banjarpur,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dotai,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Duhai,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Dundahera,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Farid Nagar,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Farrukh Nagar,201003
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Galand,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Gandu Nagla,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Garh Town,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Garhmukhteshwer,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Ghaziabad City,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Ghaziabad H.O,201001
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Ghungrala,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Girdharpur Tmrel,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Gohra Alamgirpur,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Govindpuram,201013
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Govindpuri,201201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Gyan Lok,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Gyaspur,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Haidarpur,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Hapur H.O,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Hapur Mandi,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Harmukhpuri,201201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Harsinghpur,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Hasanpur Bhowapur,201010
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Hassanpur,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Hindan Nagar,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Hindon Air Field,201004
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Hoshdarpur Garhi,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,I.E.Sahibabad,201010
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Iklahdi,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Ingram Institute,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Jakhera Rahmatpur,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Jalalabad,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Jalalpur Dhindar,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Jaoli,201102
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Jharina,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Jindal Nagar,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kaila,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kakra,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kalchina,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kamla Nehru Nagar,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kanauja,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kandaula,245301
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kanya Kalyanpur,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kastala,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kathikhera,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kaushambi,201012
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kavi Nagar,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Khanjarpur,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kharkhari,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Khera,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Khiluai,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Khimawati,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Khindora,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kishan Ganj (Ghaziabad),245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kuchesar Chopla,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kumhera,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Kushlia,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Loni,201102
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Luhari,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Madarsa Sadat,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Mahmoodpur,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Mahmoodpur Palwara,245208
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Makanpur,201014
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Mandola,201102
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Mathurawali,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Matnaurs,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Meerut Road,201003
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Model Town (Ghaziabad),201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Modi Nagar,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Mohan Nagar (Ghaziabad),201007
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Mohd. Pur Khudaliya,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Morta,201003
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Mubarikpur,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Mukeempur,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Murad Nagar (Ghaziabad),201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Murad Nagar Bazar,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Murad Nagar Town,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Muradpur Janupura,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nagla Akhu,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nagola,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nahal,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nali Husainpur,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nan,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nanpur,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nasratpura ED,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nehru Nagar (Ghaziabad),201001
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nek Nanpur Nanai,245208
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nekpur,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,New Market Pilkhauwa,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,New Raj Nagar,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Nistoli,201003
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Niwari,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Noida Sector 27,201301
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Noida Sector 41,201303
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Noorpur,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Old Raj Nagar,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Painga,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Parpa,245301
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Pasonda,201005
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Patla,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Phagota,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Phuldehra,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Pilkhauwa Post Office,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Police Line Harsaon,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Postal Staff College (I),201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Raghunathpur,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Raispur,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Raj Nagar Extension,201017
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Rajapur,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Rajethi,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Rampur Puth,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Ramte Ram Road,201001
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Raoli Kalan,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Rasulpur,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Rly Road Hapur,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Rori,201201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Roza Yakubpur,201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sadarpur,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sadullapur,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sahibabad,201005
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Saidpur,201201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sakhpur,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Salarpur,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Samaipur,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Samana,245301
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sapnawat,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sara,201201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Saunda,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Shah Mohiuddinpur,245101
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Shahjahanpur,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Shahpur,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Shahpur Bamheta,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sharpur,245208
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Shastri Nagar,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Shipra Sun City,201014
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Shyampur Jatt,245205
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sikandarpur Kakori,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sikhera,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sikri Kalan,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sikri Khurd,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Simbhaoli,245207
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Solana,245301
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Sultanpur,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Surana,201206
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Talhata,201201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Tatarpur,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Teela Sahbazpur,201102
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Tibra,201204
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Tronica City,201103
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Tyori,245304
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Udai Rampur Nagla,201015
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Upera,245201
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Vaishali,201019
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Vasundhra,201012
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Vijai Nagar (Ghaziabad),201009
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Vivekanand Nagar,201002
+1,India,Uttar Pradesh,Ghaziabad,Ghaziabad,Wait,245207
+1,India,Maharashtra,Pune,Pune,A.R. shala,411004
+1,India,Maharashtra,Pune,Pune,Afmc,411040
+1,India,Maharashtra,Pune,Pune,Adhale Bk,410506
+1,India,Maharashtra,Pune,Pune,Adivare,410509
+1,India,Maharashtra,Pune,Pune,Agoti,413132
+1,India,Maharashtra,Pune,Pune,Airport,411032
+1,India,Maharashtra,Pune,Pune,Akurdi,411035
+1,India,Maharashtra,Pune,Pune,Ala,412411
+1,India,Maharashtra,Pune,Pune,Alande,412205
+1,India,Maharashtra,Pune,Pune,Alandi Chorachi,412201
+1,India,Maharashtra,Pune,Pune,Alandi Devachi,412105
+1,India,Maharashtra,Pune,Pune,Alegaon,412211
+1,India,Maharashtra,Pune,Pune,Alephata,412411
+1,India,Maharashtra,Pune,Pune,Ambade,412206
+1,India,Maharashtra,Pune,Pune,Ambale,410507
+1,India,Maharashtra,Pune,Pune,Ambarvet,411042
+1,India,Maharashtra,Pune,Pune,Ambavade,412206
+1,India,Maharashtra,Pune,Pune,Ambavane,410401
+1,India,Maharashtra,Pune,Pune,Ambegaon Bk,411046
+1,India,Maharashtra,Pune,Pune,Ambeghar,412206
+1,India,Maharashtra,Pune,Pune,Ambethan,410501
+1,India,Maharashtra,Pune,Pune,Ambi,410507
+1,India,Maharashtra,Pune,Pune,Amble,412211
+1,India,Maharashtra,Pune,Pune,Amboli,410505
+1,India,Maharashtra,Pune,Pune,Amdabad,412218
+1,India,Maharashtra,Pune,Pune,Ammunition Factory khadki,411003
+1,India,Maharashtra,Pune,Pune,Amondi,412408
+1,India,Maharashtra,Pune,Pune,Anandnagar,411051
+1,India,Maharashtra,Pune,Pune,Anantnagar Nigade,412205
+1,India,Maharashtra,Pune,Pune,Andgaon,411042
+1,India,Maharashtra,Pune,Pune,Andhalgaon,412211
+1,India,Maharashtra,Pune,Pune,Ane,412410
+1,India,Maharashtra,Pune,Pune,Anjanavale,410502
+1,India,Maharashtra,Pune,Pune,Anthurne,413114
+1,India,Maharashtra,Pune,Pune,Antroli,412212
+1,India,Maharashtra,Pune,Pune,Aptale,410502
+1,India,Maharashtra,Pune,Pune,Apti,412206
+1,India,Maharashtra,Pune,Pune,Armament,411021
+1,India,Maharashtra,Pune,Pune,Arvi,412401
+1,India,Maharashtra,Pune,Pune,Arvi(haveli),412205
+1,India,Maharashtra,Pune,Pune,Asane,410509
+1,India,Maharashtra,Pune,Pune,Ashtapur,412207
+1,India,Maharashtra,Pune,Pune,Audar,412404
+1,India,Maharashtra,Pune,Pune,Aundh,411007
+1,India,Maharashtra,Pune,Pune,Aundh Camp,411027
+1,India,Maharashtra,Pune,Pune,Aundh T.s.,411007
+1,India,Maharashtra,Pune,Pune,Avasari Bk,412406
+1,India,Maharashtra,Pune,Pune,Avhat,412402
+1,India,Maharashtra,Pune,Pune,Avsari Kh,412405
+1,India,Maharashtra,Pune,Pune,Babhurdi,412204
+1,India,Maharashtra,Pune,Pune,Bahul,410501
+1,India,Maharashtra,Pune,Pune,Bajirao Road,411002
+1,India,Maharashtra,Pune,Pune,Ballalwadi,410502
+1,India,Maharashtra,Pune,Pune,Baner Gaon,411045
+1,India,Maharashtra,Pune,Pune,Baner Road,411007
+1,India,Maharashtra,Pune,Pune,Baramati,413102
+1,India,Maharashtra,Pune,Pune,Baramati Midc,413133
+1,India,Maharashtra,Pune,Pune,Baramati West,413102
+1,India,Maharashtra,Pune,Pune,Barhanpur,413102
+1,India,Maharashtra,Pune,Pune,Bari Bk,412206
+1,India,Maharashtra,Pune,Pune,Bavdhan,411021
+1,India,Maharashtra,Pune,Pune,Bawada,413103
+1,India,Maharashtra,Pune,Pune,Bazarwadi,412206
+1,India,Maharashtra,Pune,Pune,Beam Wirelee station,413801
+1,India,Maharashtra,Pune,Pune,Bebedhol,410506
+1,India,Maharashtra,Pune,Pune,Belawade,412108
+1,India,Maharashtra,Pune,Pune,Belawadi,413104
+1,India,Maharashtra,Pune,Pune,Belha,412410
+1,India,Maharashtra,Pune,Pune,Belsar,412303
+1,India,Maharashtra,Pune,Pune,Bet Narayan maharaj,412203
+1,India,Maharashtra,Pune,Pune,Bhadas,412108
+1,India,Maharashtra,Pune,Pune,Bhamburde,412209
+1,India,Maharashtra,Pune,Pune,Bhandgaon,413103
+1,India,Maharashtra,Pune,Pune,Bhangarwadi,410401
+1,India,Maharashtra,Pune,Pune,Bhavani Peth,411042
+1,India,Maharashtra,Pune,Pune,Bhavaninagar,413104
+1,India,Maharashtra,Pune,Pune,Bhigwan,413130
+1,India,Maharashtra,Pune,Pune,Bhigwan R s,413105
+1,India,Maharashtra,Pune,Pune,Bhimashankar,410509
+1,India,Maharashtra,Pune,Pune,Bhivadi,412301
+1,India,Maharashtra,Pune,Pune,Bhivari,412301
+1,India,Maharashtra,Pune,Pune,Bhodani,413103
+1,India,Maharashtra,Pune,Pune,Bhondave Wadi,412204
+1,India,Maharashtra,Pune,Pune,Bhongavali,412205
+1,India,Maharashtra,Pune,Pune,Bhor,412206
+1,India,Maharashtra,Pune,Pune,Bhorghar,410509
+1,India,Maharashtra,Pune,Pune,Bhorgiri,412402
+1,India,Maharashtra,Pune,Pune,Bhosari I.e.,411026
+1,India,Maharashtra,Pune,Pune,Bhosarigoan,411039
+1,India,Maharashtra,Pune,Pune,Bhose,410501
+1,India,Maharashtra,Pune,Pune,Bhoyare,412106
+1,India,Maharashtra,Pune,Pune,Bhugaon,411042
+1,India,Maharashtra,Pune,Pune,Bhukum,411042
+1,India,Maharashtra,Pune,Pune,Bhusari Colony,411038
+1,India,Maharashtra,Pune,Pune,Bhutonde,412206
+1,India,Maharashtra,Pune,Pune,Bibi,410513
+1,India,Maharashtra,Pune,Pune,Bibvewadi,411037
+1,India,Maharashtra,Pune,Pune,Bijawadi,413106
+1,India,Maharashtra,Pune,Pune,Bopgaon,412301
+1,India,Maharashtra,Pune,Pune,Bori,413104
+1,India,Maharashtra,Pune,Pune,Bori Aindi,412202
+1,India,Maharashtra,Pune,Pune,Bori Bk,412411
+1,India,Maharashtra,Pune,Pune,Bori Paradhi,412203
+1,India,Maharashtra,Pune,Pune,Boribyal,413801
+1,India,Maharashtra,Pune,Pune,Botanical Garden,411003
+1,India,Maharashtra,Pune,Pune,Burunjwadi,412208
+1,India,Maharashtra,Pune,Pune,C D a (o),411001
+1,India,Maharashtra,Pune,Pune,C M e,411031
+1,India,Maharashtra,Pune,Pune,Chakan,410501
+1,India,Maharashtra,Pune,Pune,Chambli,412301
+1,India,Maharashtra,Pune,Pune,Chandkhed,410506
+1,India,Maharashtra,Pune,Pune,Chandoli Bk,410503
+1,India,Maharashtra,Pune,Pune,Charoli Bk,412105
+1,India,Maharashtra,Pune,Pune,Chas,410513
+1,India,Maharashtra,Pune,Pune,Chavand,410502
+1,India,Maharashtra,Pune,Pune,Chikhalgaon,412206
+1,India,Maharashtra,Pune,Pune,Chikhlee,412114
+1,India,Maharashtra,Pune,Pune,Chilewadi,412409
+1,India,Maharashtra,Pune,Pune,Chimbli,412105
+1,India,Maharashtra,Pune,Pune,Chinchani Camp,412211
+1,India,Maharashtra,Pune,Pune,Chincholi,412218
+1,India,Maharashtra,Pune,Pune,Chinchoshi,410505
+1,India,Maharashtra,Pune,Pune,Chinchwad East,411019
+1,India,Maharashtra,Pune,Pune,Chinchwadga0n,411019
+1,India,Maharashtra,Pune,Pune,Cod Dehu road,412101
+1,India,Maharashtra,Pune,Pune,Congress House road,411005
+1,India,Maharashtra,Pune,Pune,Dahitane,412207
+1,India,Maharashtra,Pune,Pune,Dalaj,413132
+1,India,Maharashtra,Pune,Pune,Dapode,412213
+1,India,Maharashtra,Pune,Pune,Dapodi,411001
+1,India,Maharashtra,Pune,Pune,Dapodi Bazar,411012
+1,India,Maharashtra,Pune,Pune,Daund,413801
+1,India,Maharashtra,Pune,Pune,Daund Bazar,413801
+1,India,Maharashtra,Pune,Pune,Daundaj,412305
+1,India,Maharashtra,Pune,Pune,Dawadi,410505
+1,India,Maharashtra,Pune,Pune,Dawanewadi,412311
+1,India,Maharashtra,Pune,Pune,Deccan Gymkhana,411004
+1,India,Maharashtra,Pune,Pune,Degaon,412213
+1,India,Maharashtra,Pune,Pune,Dehane,412402
+1,India,Maharashtra,Pune,Pune,Dehu,412109
+1,India,Maharashtra,Pune,Pune,Dehu Road cantt,412101
+1,India,Maharashtra,Pune,Pune,Delwadi,412214
+1,India,Maharashtra,Pune,Pune,Deulgaonraja,413801
+1,India,Maharashtra,Pune,Pune,Devale,410502
+1,India,Maharashtra,Pune,Pune,Dhakale,413110
+1,India,Maharashtra,Pune,Pune,Dhamane,410506
+1,India,Maharashtra,Pune,Pune,Dhamani,410508
+1,India,Maharashtra,Pune,Pune,Dhamari,412403
+1,India,Maharashtra,Pune,Pune,Dhangavadi,412205
+1,India,Maharashtra,Pune,Pune,Dhankawadi,411043
+1,India,Maharashtra,Pune,Pune,Dhanore,412208
+1,India,Maharashtra,Pune,Pune,Dhanori,411015
+1,India,Maharashtra,Pune,Pune,Dhayari,411041
+1,India,Maharashtra,Pune,Pune,Dhekalwadi,413104
+1,India,Maharashtra,Pune,Pune,Dholwad,412409
+1,India,Maharashtra,Pune,Pune,Dighi Camp,411015
+1,India,Maharashtra,Pune,Pune,Dimbhe Colony,410509
+1,India,Maharashtra,Pune,Pune,Dingore,412409
+1,India,Maharashtra,Pune,Pune,Diwa,412301
+1,India,Maharashtra,Pune,Pune,Donda,410505
+1,India,Maharashtra,Pune,Pune,Donje,411042
+1,India,Maharashtra,Pune,Pune,Dorlewadi,413102
+1,India,Maharashtra,Pune,Pune,Dr.B.a. chowk,411001
+1,India,Maharashtra,Pune,Pune,Dukirkline,411014
+1,India,Maharashtra,Pune,Pune,East Khadki,411003
+1,India,Maharashtra,Pune,Pune,Eklahare,412402
+1,India,Maharashtra,Pune,Pune,Ex. serviceman colony,411038
+1,India,Maharashtra,Pune,Pune,Film Institute,411004
+1,India,Maharashtra,Pune,Pune,Fulgaon,412216
+1,India,Maharashtra,Pune,Pune,Gadad,410501
+1,India,Maharashtra,Pune,Pune,Galandwadi,412203
+1,India,Maharashtra,Pune,Pune,Ganegaon Dumala,412211
+1,India,Maharashtra,Pune,Pune,Ganegaon Khalasa,412209
+1,India,Maharashtra,Pune,Pune,Ganeshkhind,411007
+1,India,Maharashtra,Pune,Pune,Gangapur Kh,410516
+1,India,Maharashtra,Pune,Pune,Garade,412301
+1,India,Maharashtra,Pune,Pune,Gawadewadi,412405
+1,India,Maharashtra,Pune,Pune,Ghodegaon,412408
+1,India,Maharashtra,Pune,Pune,Ghorpade Peth,411042
+1,India,Maharashtra,Pune,Pune,Ghorpuri Bazar,411001
+1,India,Maharashtra,Pune,Pune,Ghotavade,411042
+1,India,Maharashtra,Pune,Pune,Ghotawadi,410505
+1,India,Maharashtra,Pune,Pune,Ghotondi,413120
+1,India,Maharashtra,Pune,Pune,Girawali,412408
+1,India,Maharashtra,Pune,Pune,Girim,413801
+1,India,Maharashtra,Pune,Pune,Godre,410502
+1,India,Maharashtra,Pune,Pune,Gogalwadi(e),412205
+1,India,Maharashtra,Pune,Pune,Gohe Bk,410509
+1,India,Maharashtra,Pune,Pune,Gokhalenagar,411016
+1,India,Maharashtra,Pune,Pune,Golegaon,412210
+1,India,Maharashtra,Pune,Pune,Gopalwadi,413801
+1,India,Maharashtra,Pune,Pune,Govt. polytechnic,411016
+1,India,Maharashtra,Pune,Pune,Gulani,410505
+1,India,Maharashtra,Pune,Pune,Gulunche,412102
+1,India,Maharashtra,Pune,Pune,Gunawadi,413102
+1,India,Maharashtra,Pune,Pune,Gunjalwadi,412401
+1,India,Maharashtra,Pune,Pune,Gunjawane,412213
+1,India,Maharashtra,Pune,Pune,Gurholi,412104
+1,India,Maharashtra,Pune,Pune,Guruwar Peth,411042
+1,India,Maharashtra,Pune,Pune,H.E. factory,411003
+1,India,Maharashtra,Pune,Pune,Hadapsar,411028
+1,India,Maharashtra,Pune,Pune,Hadpsar I.e.,411013
+1,India,Maharashtra,Pune,Pune,Hargude,412311
+1,India,Maharashtra,Pune,Pune,Harnas,412206
+1,India,Maharashtra,Pune,Pune,Harni,412305
+1,India,Maharashtra,Pune,Pune,Hatve Bk,412213
+1,India,Maharashtra,Pune,Pune,Hingangaon,413106
+1,India,Maharashtra,Pune,Pune,Hingniberdi,413801
+1,India,Maharashtra,Pune,Pune,Hirdoshi,412206
+1,India,Maharashtra,Pune,Pune,Hivare,412208
+1,India,Maharashtra,Pune,Pune,Hivare Bk,410504
+1,India,Maharashtra,Pune,Pune,Hivare Kh,412409
+1,India,Maharashtra,Pune,Pune,Hol,412306
+1,India,Maharashtra,Pune,Pune,I.A.t. [ girinagar],411025
+1,India,Maharashtra,Pune,Pune,Iaf Station,411032
+1,India,Maharashtra,Pune,Pune,Inamgaon,412210
+1,India,Maharashtra,Pune,Pune,Indapur,413106
+1,India,Maharashtra,Pune,Pune,Indapur Bazar,413106
+1,India,Maharashtra,Pune,Pune,Indrayani Darshan dehu road,412101
+1,India,Maharashtra,Pune,Pune,Induri,410507
+1,India,Maharashtra,Pune,Pune,Infotech park (hinjawadi),411057
+1,India,Maharashtra,Pune,Pune,Inglun,412106
+1,India,Maharashtra,Pune,Pune,Ins Shivaji lonavale,410402
+1,India,Maharashtra,Pune,Pune,Jalgaon Kadepathar,413102
+1,India,Maharashtra,Pune,Pune,Jambhali Bk,412213
+1,India,Maharashtra,Pune,Pune,Jambhe,411019
+1,India,Maharashtra,Pune,Pune,Jambhori,410509
+1,India,Maharashtra,Pune,Pune,Jambhut,410504
+1,India,Maharashtra,Pune,Pune,Jategaon Bk,412208
+1,India,Maharashtra,Pune,Pune,Javalarjun,412303
+1,India,Maharashtra,Pune,Pune,Jejuri,412303
+1,India,Maharashtra,Pune,Pune,Jeur,412305
+1,India,Maharashtra,Pune,Pune,Jhargadwadi,413102
+1,India,Maharashtra,Pune,Pune,Jogwadi,412206
+1,India,Maharashtra,Pune,Pune,Junnar,410502
+1,India,Maharashtra,Pune,Pune,Kadadhe,410513
+1,India,Maharashtra,Pune,Pune,Kadam Wak wasti,412201
+1,India,Maharashtra,Pune,Pune,Kadethan,412215
+1,India,Maharashtra,Pune,Pune,Kadus,412404
+1,India,Maharashtra,Pune,Pune,Kadve,412107
+1,India,Maharashtra,Pune,Pune,Kaivalyadham,410403
+1,India,Maharashtra,Pune,Pune,Kalamb,413114
+1,India,Maharashtra,Pune,Pune,Kalas,413105
+1,India,Maharashtra,Pune,Pune,Kalashi,413106
+1,India,Maharashtra,Pune,Pune,Kaldari,412311
+1,India,Maharashtra,Pune,Pune,Kalewadi,411017
+1,India,Maharashtra,Pune,Pune,Kalthan No 1,413106
+1,India,Maharashtra,Pune,Pune,Kalus,410501
+1,India,Maharashtra,Pune,Pune,Kalyan,412205
+1,India,Maharashtra,Pune,Pune,Kambaleshwar,413110
+1,India,Maharashtra,Pune,Pune,Kambegi,412107
+1,India,Maharashtra,Pune,Pune,Kamdhenunagar,412202
+1,India,Maharashtra,Pune,Pune,Kamshet,410405
+1,India,Maharashtra,Pune,Pune,Kamthadi,412213
+1,India,Maharashtra,Pune,Pune,Kanakwadi,412206
+1,India,Maharashtra,Pune,Pune,Kandali,412412
+1,India,Maharashtra,Pune,Pune,Kangaon,412219
+1,India,Maharashtra,Pune,Pune,Kanhe,412106
+1,India,Maharashtra,Pune,Pune,Kanhersar,410505
+1,India,Maharashtra,Pune,Pune,Kanhur,412218
+1,India,Maharashtra,Pune,Pune,Kapad Ganj,411002
+1,India,Maharashtra,Pune,Pune,Kapurhol,412205
+1,India,Maharashtra,Pune,Pune,Karandi,412208
+1,India,Maharashtra,Pune,Pune,Karandi Bk,412206
+1,India,Maharashtra,Pune,Pune,Karandi Khedebare,412213
+1,India,Maharashtra,Pune,Pune,Karanjawane,412209
+1,India,Maharashtra,Pune,Pune,Karanje,412306
+1,India,Maharashtra,Pune,Pune,Karanjgaon,410405
+1,India,Maharashtra,Pune,Pune,Karawaghaj,413102
+1,India,Maharashtra,Pune,Pune,Karda,412210
+1,India,Maharashtra,Pune,Pune,Karegaon,412220
+1,India,Maharashtra,Pune,Pune,Karhati,412204
+1,India,Maharashtra,Pune,Pune,Kari,412206
+1,India,Maharashtra,Pune,Pune,Karkhel,413102
+1,India,Maharashtra,Pune,Pune,Karla,410405
+1,India,Maharashtra,Pune,Pune,Karnawad,412206
+1,India,Maharashtra,Pune,Pune,Karunj,410405
+1,India,Maharashtra,Pune,Pune,Karvenagar,411052
+1,India,Maharashtra,Pune,Pune,Kasarsai,410506
+1,India,Maharashtra,Pune,Pune,Kasarwadi,411034
+1,India,Maharashtra,Pune,Pune,Kasba Peth,411011
+1,India,Maharashtra,Pune,Pune,Kashedi,412107
+1,India,Maharashtra,Pune,Pune,Kashing,412108
+1,India,Maharashtra,Pune,Pune,Kasurdi,412214
+1,India,Maharashtra,Pune,Pune,Katfal,413133
+1,India,Maharashtra,Pune,Pune,Kati,413120
+1,India,Maharashtra,Pune,Pune,Katraj,411046
+1,India,Maharashtra,Pune,Pune,Katyachiwadi,413104
+1,India,Maharashtra,Pune,Pune,Kawtha,412218
+1,India,Maharashtra,Pune,Pune,Kazad,413104
+1,India,Maharashtra,Pune,Pune,Kedgaon,412203
+1,India,Maharashtra,Pune,Pune,Kelawade,412213
+1,India,Maharashtra,Pune,Pune,Kendur,412403
+1,India,Maharashtra,Pune,Pune,Kenjal,412205
+1,India,Maharashtra,Pune,Pune,Kesnand,412207
+1,India,Maharashtra,Pune,Pune,Ketkavale,412205
+1,India,Maharashtra,Pune,Pune,Khadaki,413130
+1,India,Maharashtra,Pune,Pune,Khadakwasla R.s.,411024
+1,India,Maharashtra,Pune,Pune,Khadki,411003
+1,India,Maharashtra,Pune,Pune,Khadki Arsenel,411003
+1,India,Maharashtra,Pune,Pune,Khadki Bazar,411003
+1,India,Maharashtra,Pune,Pune,Khadkumbe(exptl),410502
+1,India,Maharashtra,Pune,Pune,Khalad,412301
+1,India,Maharashtra,Pune,Pune,Khamboli,411042
+1,India,Maharashtra,Pune,Pune,Khamgaon,410502
+1,India,Maharashtra,Pune,Pune,Khamgaon Bk,412214
+1,India,Maharashtra,Pune,Pune,Khamundi,410504
+1,India,Maharashtra,Pune,Pune,Khanapur,410502
+1,India,Maharashtra,Pune,Pune,Khanapur Haveli,411042
+1,India,Maharashtra,Pune,Pune,Khandaj,413116
+1,India,Maharashtra,Pune,Pune,Khandala,410301
+1,India,Maharashtra,Pune,Pune,Khandi,412106
+1,India,Maharashtra,Pune,Pune,Khandobachi Wadi,412102
+1,India,Maharashtra,Pune,Pune,Khangaon,410502
+1,India,Maharashtra,Pune,Pune,Khanote,413105
+1,India,Maharashtra,Pune,Pune,Kharoshi,412402
+1,India,Maharashtra,Pune,Pune,Khechare,412108
+1,India,Maharashtra,Pune,Pune,Khed Shivapur,412205
+1,India,Maharashtra,Pune,Pune,Khed Shivapur baug,412205
+1,India,Maharashtra,Pune,Pune,Khodad,410504
+1,India,Maharashtra,Pune,Pune,Khondhwa Kh,411048
+1,India,Maharashtra,Pune,Pune,Khopodi,412203
+1,India,Maharashtra,Pune,Pune,Khor,412203
+1,India,Maharashtra,Pune,Pune,Khorochi,413114
+1,India,Maharashtra,Pune,Pune,Khubi,412409
+1,India,Maharashtra,Pune,Pune,Khutbhav,412203
+1,India,Maharashtra,Pune,Pune,Kikvi,412205
+1,India,Maharashtra,Pune,Pune,Kiwale,410505
+1,India,Maharashtra,Pune,Pune,Kodapur,412212
+1,India,Maharashtra,Pune,Pune,Kodit,412301
+1,India,Maharashtra,Pune,Pune,Kohinde Bk,412404
+1,India,Maharashtra,Pune,Pune,Kolawade,411042
+1,India,Maharashtra,Pune,Pune,Kolvadi,412412
+1,India,Maharashtra,Pune,Pune,Kolvihire,412303
+1,India,Maharashtra,Pune,Pune,Kolwadi,412207
+1,India,Maharashtra,Pune,Pune,Kolwan,412108
+1,India,Maharashtra,Pune,Pune,Kondhanpur,412205
+1,India,Maharashtra,Pune,Pune,Kondhapuri,412209
+1,India,Maharashtra,Pune,Pune,Kondhawale,412108
+1,India,Maharashtra,Pune,Pune,Kondhwa Bk,411048
+1,India,Maharashtra,Pune,Pune,Kondhwa Lh,411048
+1,India,Maharashtra,Pune,Pune,Kondhwal,410509
+1,India,Maharashtra,Pune,Pune,Koregaon Bhima,412216
+1,India,Maharashtra,Pune,Pune,Koregaon Bhivar,412207
+1,India,Maharashtra,Pune,Pune,Koregaon Mul,412202
+1,India,Maharashtra,Pune,Pune,Korhale Bk,412103
+1,India,Maharashtra,Pune,Pune,Korhale Kh,412103
+1,India,Maharashtra,Pune,Pune,Kothale,412303
+1,India,Maharashtra,Pune,Pune,Kothrud,411038
+1,India,Maharashtra,Pune,Pune,Koyali,410501
+1,India,Maharashtra,Pune,Pune,Kude Bk,410505
+1,India,Maharashtra,Pune,Pune,Kudje,411023
+1,India,Maharashtra,Pune,Pune,Kule,412108
+1,India,Maharashtra,Pune,Pune,Kunjirwadi,412201
+1,India,Maharashtra,Pune,Pune,Kuran,410511
+1,India,Maharashtra,Pune,Pune,Kuran Bk,412107
+1,India,Maharashtra,Pune,Pune,Kuravali,413104
+1,India,Maharashtra,Pune,Pune,Kurkumbh,413802
+1,India,Maharashtra,Pune,Pune,Kurkundi,410505
+1,India,Maharashtra,Pune,Pune,Kuruli,410501
+1,India,Maharashtra,Pune,Pune,Kurungwadi,412213
+1,India,Maharashtra,Pune,Pune,Kurwande,410402
+1,India,Maharashtra,Pune,Pune,Kurwandi,410512
+1,India,Maharashtra,Pune,Pune,Kusgaon,412219
+1,India,Maharashtra,Pune,Pune,Kusgaon Bk,410401
+1,India,Maharashtra,Pune,Pune,Kushire Bk,410509
+1,India,Maharashtra,Pune,Pune,Kusur,410502
+1,India,Maharashtra,Pune,Pune,L.K. path,411003
+1,India,Maharashtra,Pune,Pune,Lakhangaon,412406
+1,India,Maharashtra,Pune,Pune,Lakhewadi,413103
+1,India,Maharashtra,Pune,Pune,Landewadi,410503
+1,India,Maharashtra,Pune,Pune,Late,412103
+1,India,Maharashtra,Pune,Pune,Lavale,411042
+1,India,Maharashtra,Pune,Pune,Lohogaon,411047
+1,India,Maharashtra,Pune,Pune,Lokmanyanagar,411030
+1,India,Maharashtra,Pune,Pune,Lonavala,410401
+1,India,Maharashtra,Pune,Pune,Lonavala Bazar,410401
+1,India,Maharashtra,Pune,Pune,Loni Bhapkar,413110
+1,India,Maharashtra,Pune,Pune,Loni Deokar,413132
+1,India,Maharashtra,Pune,Pune,Loni Dhamani,410510
+1,India,Maharashtra,Pune,Pune,Loni Kalbhor,412201
+1,India,Maharashtra,Pune,Pune,Lonikand,412216
+1,India,Maharashtra,Pune,Pune,M.Fule market,411002
+1,India,Maharashtra,Pune,Pune,M.Phulenagar,411019
+1,India,Maharashtra,Pune,Pune,Madanwadi,413130
+1,India,Maharashtra,Pune,Pune,Madh,412409
+1,India,Maharashtra,Pune,Pune,Madhukarnagar Patas,412219
+1,India,Maharashtra,Pune,Pune,Mahalunge Ingale,410501
+1,India,Maharashtra,Pune,Pune,Mahalunge Padwal,410515
+1,India,Maharashtra,Pune,Pune,Mahude Bk,412206
+1,India,Maharashtra,Pune,Pune,Mahur,412311
+1,India,Maharashtra,Pune,Pune,Malad,413130
+1,India,Maharashtra,Pune,Pune,Malawali,410405
+1,India,Maharashtra,Pune,Pune,Male,412108
+1,India,Maharashtra,Pune,Pune,Malegaon Bk,413115
+1,India,Maharashtra,Pune,Pune,Malegaon Irr colony,413115
+1,India,Maharashtra,Pune,Pune,Malewadi,412206
+1,India,Maharashtra,Pune,Pune,Malshiras,412104
+1,India,Maharashtra,Pune,Pune,Malthan,412218
+1,India,Maharashtra,Pune,Pune,Manappawasti,413110
+1,India,Maharashtra,Pune,Pune,Manchar,410503
+1,India,Maharashtra,Pune,Pune,Mandave,412409
+1,India,Maharashtra,Pune,Pune,Mandavgan Farata,412211
+1,India,Maharashtra,Pune,Pune,Mandhar,412311
+1,India,Maharashtra,Pune,Pune,Mandki,412305
+1,India,Maharashtra,Pune,Pune,Mandvi Bk,411023
+1,India,Maharashtra,Pune,Pune,Mangalwar Peth,411011
+1,India,Maharashtra,Pune,Pune,Mangaon,412107
+1,India,Maharashtra,Pune,Pune,Mangrul,412410
+1,India,Maharashtra,Pune,Pune,Manikdoh,410502
+1,India,Maharashtra,Pune,Pune,Manjal Asani,412213
+1,India,Maharashtra,Pune,Pune,Manjari Bk,412307
+1,India,Maharashtra,Pune,Pune,Manjari Farm,412307
+1,India,Maharashtra,Pune,Pune,Margasni,412213
+1,India,Maharashtra,Pune,Pune,Markal,412105
+1,India,Maharashtra,Pune,Pune,Market Yard,411037
+1,India,Maharashtra,Pune,Pune,Marunji,411057
+1,India,Maharashtra,Pune,Pune,Masulkar Colony,411018
+1,India,Maharashtra,Pune,Pune,Mavdi Kade pathar,412303
+1,India,Maharashtra,Pune,Pune,Medad,413102
+1,India,Maharashtra,Pune,Pune,Mekhali,413102
+1,India,Maharashtra,Pune,Pune,Midc Kurkumbh,413802
+1,India,Maharashtra,Pune,Pune,Midc Ranjangaon ganpati,412220
+1,India,Maharashtra,Pune,Pune,Model Colony,411016
+1,India,Maharashtra,Pune,Pune,Mohamad Wadi,411028
+1,India,Maharashtra,Pune,Pune,Morgaon,412304
+1,India,Maharashtra,Pune,Pune,Mose Bk,412107
+1,India,Maharashtra,Pune,Pune,Mose Kh,412107
+1,India,Maharashtra,Pune,Pune,Moshi,412105
+1,India,Maharashtra,Pune,Pune,Mudhale,413110
+1,India,Maharashtra,Pune,Pune,Mukhai,412208
+1,India,Maharashtra,Pune,Pune,Mundhva,411036
+1,India,Maharashtra,Pune,Pune,Mundhva Av,411036
+1,India,Maharashtra,Pune,Pune,Murti Modhave,412304
+1,India,Maharashtra,Pune,Pune,Murum,412306
+1,India,Maharashtra,Pune,Pune,Muthe,411042
+1,India,Maharashtra,Pune,Pune,N I b m,411048
+1,India,Maharashtra,Pune,Pune,N.C.l. pune,411008
+1,India,Maharashtra,Pune,Pune,N.D.a. khadakwasla,411023
+1,India,Maharashtra,Pune,Pune,N.I.a.,411045
+1,India,Maharashtra,Pune,Pune,N.W. college,411001
+1,India,Maharashtra,Pune,Pune,Naiphad,412402
+1,India,Maharashtra,Pune,Pune,Nalavane,412410
+1,India,Maharashtra,Pune,Pune,Nana Peth,411002
+1,India,Maharashtra,Pune,Pune,Nanded,411041
+1,India,Maharashtra,Pune,Pune,Nandgaon,412108
+1,India,Maharashtra,Pune,Pune,Nane,410405
+1,India,Maharashtra,Pune,Pune,Nangaon,412203
+1,India,Maharashtra,Pune,Pune,Nanvij,413801
+1,India,Maharashtra,Pune,Pune,Narayan Peth,411030
+1,India,Maharashtra,Pune,Pune,Narayangaon,410504
+1,India,Maharashtra,Pune,Pune,Narodi,410503
+1,India,Maharashtra,Pune,Pune,Nasrapur,412213
+1,India,Maharashtra,Pune,Pune,Natambi,412206
+1,India,Maharashtra,Pune,Pune,Nathachi Wadi,412214
+1,India,Maharashtra,Pune,Pune,Navsahyadri,411052
+1,India,Maharashtra,Pune,Pune,Naygaon,412104
+1,India,Maharashtra,Pune,Pune,Nazare,412206
+1,India,Maharashtra,Pune,Pune,Nazare Kade pathar,412303
+1,India,Maharashtra,Pune,Pune,Nehrunagar,411018
+1,India,Maharashtra,Pune,Pune,Nere,412206
+1,India,Maharashtra,Pune,Pune,Netwad,412409
+1,India,Maharashtra,Pune,Pune,Nhavare,412211
+1,India,Maharashtra,Pune,Pune,Nhavi,413132
+1,India,Maharashtra,Pune,Pune,Nil,411031
+1,India,Maharashtra,Pune,Pune,Nimbut,412102
+1,India,Maharashtra,Pune,Pune,Nimgaon Bhogi,412220
+1,India,Maharashtra,Pune,Pune,Nimgaon Ketki,413120
+1,India,Maharashtra,Pune,Pune,Nimgaon Khed,410505
+1,India,Maharashtra,Pune,Pune,Nimgaon Mahalungi,412209
+1,India,Maharashtra,Pune,Pune,Nimgaon Sava,410504
+1,India,Maharashtra,Pune,Pune,Nimgiri,410502
+1,India,Maharashtra,Pune,Pune,Nimone,412210
+1,India,Maharashtra,Pune,Pune,Nimsakhar,413114
+1,India,Maharashtra,Pune,Pune,Nira R s,412102
+1,India,Maharashtra,Pune,Pune,Nirawaghaj,413102
+1,India,Maharashtra,Pune,Pune,Nirgude,410502
+1,India,Maharashtra,Pune,Pune,Nirgudsar,412406
+1,India,Maharashtra,Pune,Pune,Nirvi,412210
+1,India,Maharashtra,Pune,Pune,Nirwangi,413114
+1,India,Maharashtra,Pune,Pune,Ordanance Dep talegaon dabhade,410506
+1,India,Maharashtra,Pune,Pune,Ordnance Factory dehu road,412101
+1,India,Maharashtra,Pune,Pune,Osade,411042
+1,India,Maharashtra,Pune,Pune,Otur,412409
+1,India,Maharashtra,Pune,Pune,Ozar,410504
+1,India,Maharashtra,Pune,Pune,P.C.n.t.,411044
+1,India,Maharashtra,Pune,Pune,Pabal,412403
+1,India,Maharashtra,Pune,Pune,Pabe,412212
+1,India,Maharashtra,Pune,Pune,Padvi,412203
+1,India,Maharashtra,Pune,Pune,Pait,410505
+1,India,Maharashtra,Pune,Pune,Palasdeo,413132
+1,India,Maharashtra,Pune,Pune,Palu,410505
+1,India,Maharashtra,Pune,Pune,Panawadi,412301
+1,India,Maharashtra,Pune,Pune,Pandare,413110
+1,India,Maharashtra,Pune,Pune,Pandheshwar,412303
+1,India,Maharashtra,Pune,Pune,Pangare,412301
+1,India,Maharashtra,Pune,Pune,Pangari,412206
+1,India,Maharashtra,Pune,Pune,Panshet,412107
+1,India,Maharashtra,Pune,Pune,Pargaon,412203
+1,India,Maharashtra,Pune,Pune,Pargaon Memane,412104
+1,India,Maharashtra,Pune,Pune,Pargaon Tarfe ala,410504
+1,India,Maharashtra,Pune,Pune,Pargaon Tarfe avasari,412406
+1,India,Maharashtra,Pune,Pune,Pargaon Tarfe khed,410512
+1,India,Maharashtra,Pune,Pune,Pargaon Tarfe madh,412409
+1,India,Maharashtra,Pune,Pune,Parinche,412311
+1,India,Maharashtra,Pune,Pune,Parunde,410502
+1,India,Maharashtra,Pune,Pune,Parvati,411009
+1,India,Maharashtra,Pune,Pune,Parvati Gaon,411009
+1,India,Maharashtra,Pune,Pune,Parwadi,413130
+1,India,Maharashtra,Pune,Pune,Pasure,412206
+1,India,Maharashtra,Pune,Pune,Patas,412219
+1,India,Maharashtra,Pune,Pune,Paud,412108
+1,India,Maharashtra,Pune,Pune,Pawananagar,410406
+1,India,Maharashtra,Pune,Pune,Perne,412216
+1,India,Maharashtra,Pune,Pune,Peth,410512
+1,India,Maharashtra,Pune,Pune,Phulawade,410509
+1,India,Maharashtra,Pune,Pune,Phursungi,412308
+1,India,Maharashtra,Pune,Pune,Pimpalgaon Joga,412409
+1,India,Maharashtra,Pune,Pune,Pimpalgaon Mahalunge,410503
+1,India,Maharashtra,Pune,Pune,Pimpalgaon Tarfa narayangaon,412401
+1,India,Maharashtra,Pune,Pune,Pimpalgaon Tarfe chakan,410501
+1,India,Maharashtra,Pune,Pune,Pimpalgaon Tarfe ghoda,412408
+1,India,Maharashtra,Pune,Pune,Pimpali,413102
+1,India,Maharashtra,Pune,Pune,Pimpalwandi,412412
+1,India,Maharashtra,Pune,Pune,Pimparkhed,410504
+1,India,Maharashtra,Pune,Pune,Pimple,412301
+1,India,Maharashtra,Pune,Pune,Pimpri,412303
+1,India,Maharashtra,Pune,Pune,Pimpri Bk,410505
+1,India,Maharashtra,Pune,Pune,Pimpri Colony,411017
+1,India,Maharashtra,Pune,Pune,Pimpri P f,411018
+1,India,Maharashtra,Pune,Pune,Pimpri Pendhar,410504
+1,India,Maharashtra,Pune,Pune,Pimpri Sandas,412216
+1,India,Maharashtra,Pune,Pune,Pimpri Waghire,411017
+1,India,Maharashtra,Pune,Pune,Pingori,412305
+1,India,Maharashtra,Pune,Pune,Pirangut,411042
+1,India,Maharashtra,Pune,Pune,Pisarve,412104
+1,India,Maharashtra,Pune,Pune,Pisavare,412206
+1,India,Maharashtra,Pune,Pune,Pokhari,410509
+1,India,Maharashtra,Pune,Pune,Pomgaon,412108
+1,India,Maharashtra,Pune,Pune,Punawale,411019
+1,India,Maharashtra,Pune,Pune,Pune,411001
+1,India,Maharashtra,Pune,Pune,Pune Cantt east,411001
+1,India,Maharashtra,Pune,Pune,Pune City,411002
+1,India,Maharashtra,Pune,Pune,Pune New bazar,411001
+1,India,Maharashtra,Pune,Pune,Pune R.s.,411001
+1,India,Maharashtra,Pune,Pune,Pune Weather,411005
+1,India,Maharashtra,Pune,Pune,R P t s khandala,410302
+1,India,Maharashtra,Pune,Pune,Rahu,412207
+1,India,Maharashtra,Pune,Pune,Rahu Pimpalgaon,412214
+1,India,Maharashtra,Pune,Pune,Rajegaon,413105
+1,India,Maharashtra,Pune,Pune,Rajewadi,412104
+1,India,Maharashtra,Pune,Pune,Rajgurunagar,410505
+1,India,Maharashtra,Pune,Pune,Rajpur,410509
+1,India,Maharashtra,Pune,Pune,Rajur,410502
+1,India,Maharashtra,Pune,Pune,Rajuri,412104
+1,India,Maharashtra,Pune,Pune,Rakh,412305
+1,India,Maharashtra,Pune,Pune,Rangaon,413114
+1,India,Maharashtra,Pune,Pune,Range Hills,411020
+1,India,Maharashtra,Pune,Pune,Ranjane,411042
+1,India,Maharashtra,Pune,Pune,Ranjangaon Ganpati,412209
+1,India,Maharashtra,Pune,Pune,Ranjangaon Sandas,412211
+1,India,Maharashtra,Pune,Pune,Ranjani,410504
+1,India,Maharashtra,Pune,Pune,Ranmala,412303
+1,India,Maharashtra,Pune,Pune,Rase,410501
+1,India,Maharashtra,Pune,Pune,Rashtra Bhasha bhavan,411030
+1,India,Maharashtra,Pune,Pune,Rasta Peth,411011
+1,India,Maharashtra,Pune,Pune,Ravangaon,413130
+1,India,Maharashtra,Pune,Pune,Ravet,412101
+1,India,Maharashtra,Pune,Pune,Raviwar Peth,411002
+1,India,Maharashtra,Pune,Pune,Rayari,412206
+1,India,Maharashtra,Pune,Pune,Redni,413114
+1,India,Maharashtra,Pune,Pune,Retwadi,410505
+1,India,Maharashtra,Pune,Pune,Rihe,411042
+1,India,Maharashtra,Pune,Pune,Rohokadi,412409
+1,India,Maharashtra,Pune,Pune,Roti,412219
+1,India,Maharashtra,Pune,Pune,Rule,412107
+1,India,Maharashtra,Pune,Pune,Rupeenagar,412114
+1,India,Maharashtra,Pune,Pune,S R p f daund,413801
+1,India,Maharashtra,Pune,Pune,S.P. college,411030
+1,India,Maharashtra,Pune,Pune,S.S.c.exam board,411005
+1,India,Maharashtra,Pune,Pune,Saburdi,412404
+1,India,Maharashtra,Pune,Pune,Sachapir Street,411001
+1,India,Maharashtra,Pune,Pune,Sadalgaon,412211
+1,India,Maharashtra,Pune,Pune,Sadashiv Peth,411030
+1,India,Maharashtra,Pune,Pune,Sadumbre,412109
+1,India,Maharashtra,Pune,Pune,Sahajpurwadi,412202
+1,India,Maharashtra,Pune,Pune,Sakhar,412213
+1,India,Maharashtra,Pune,Pune,Sakore,410515
+1,India,Maharashtra,Pune,Pune,Sakurde,412303
+1,India,Maharashtra,Pune,Pune,Sal,412408
+1,India,Maharashtra,Pune,Pune,Salisbury Park,411037
+1,India,Maharashtra,Pune,Pune,Salumbre,412101
+1,India,Maharashtra,Pune,Pune,Sanaswadi,412208
+1,India,Maharashtra,Pune,Pune,Sandbhorwadi(exptl),410505
+1,India,Maharashtra,Pune,Pune,Sangamner,412206
+1,India,Maharashtra,Pune,Pune,Sangavi,411027
+1,India,Maharashtra,Pune,Pune,Sangrun,411042
+1,India,Maharashtra,Pune,Pune,Sangvi,413102
+1,India,Maharashtra,Pune,Pune,Sansar,413104
+1,India,Maharashtra,Pune,Pune,Sapkalwadi,413104
+1,India,Maharashtra,Pune,Pune,Sarati,413103
+1,India,Maharashtra,Pune,Pune,Sarole,412205
+1,India,Maharashtra,Pune,Pune,Sasanenagar,411028
+1,India,Maharashtra,Pune,Pune,Saswad,412301
+1,India,Maharashtra,Pune,Pune,Sate,412106
+1,India,Maharashtra,Pune,Pune,Saval,413133
+1,India,Maharashtra,Pune,Pune,Savargaon,412401
+1,India,Maharashtra,Pune,Pune,Savindane,412218
+1,India,Maharashtra,Pune,Pune,Saygaon,412404
+1,India,Maharashtra,Pune,Pune,Shaniwar Peth,411030
+1,India,Maharashtra,Pune,Pune,Shelgaon,413114
+1,India,Maharashtra,Pune,Pune,Shere,412108
+1,India,Maharashtra,Pune,Pune,Shetfalgade,413130
+1,India,Maharashtra,Pune,Pune,Shetphal Haveli,413103
+1,India,Maharashtra,Pune,Pune,Shiavane,410506
+1,India,Maharashtra,Pune,Pune,Shikrapur,412208
+1,India,Maharashtra,Pune,Pune,Shind,412206
+1,India,Maharashtra,Pune,Pune,Shindavane,412202
+1,India,Maharashtra,Pune,Pune,Shindewadi,412205
+1,India,Maharashtra,Pune,Pune,Shinoli,410516
+1,India,Maharashtra,Pune,Pune,Shirapur,413801
+1,India,Maharashtra,Pune,Pune,Shirasane,413110
+1,India,Maharashtra,Pune,Pune,Shirasgaonkata,412210
+1,India,Maharashtra,Pune,Pune,Shiravali,413102
+1,India,Maharashtra,Pune,Pune,Shirgaon,412402
+1,India,Maharashtra,Pune,Pune,Shirkoli,412107
+1,India,Maharashtra,Pune,Pune,Shiroli,410505
+1,India,Maharashtra,Pune,Pune,Shiroli B k,410511
+1,India,Maharashtra,Pune,Pune,Shirsatwadi,413114
+1,India,Maharashtra,Pune,Pune,Shirsuphal,413102
+1,India,Maharashtra,Pune,Pune,Shirur,412210
+1,India,Maharashtra,Pune,Pune,Shivaji Housing society,411016
+1,India,Maharashtra,Pune,Pune,Shivajinagar,411005
+1,India,Maharashtra,Pune,Pune,Shivali,410406
+1,India,Maharashtra,Pune,Pune,Shivane,411023
+1,India,Maharashtra,Pune,Pune,Shivare,412205
+1,India,Maharashtra,Pune,Pune,Shivari,412301
+1,India,Maharashtra,Pune,Pune,Shive,410501
+1,India,Maharashtra,Pune,Pune,Shivnagar,413116
+1,India,Maharashtra,Pune,Pune,Shriprayagdham,412202
+1,India,Maharashtra,Pune,Pune,Shukrawar Peth,411002
+1,India,Maharashtra,Pune,Pune,Solu,412105
+1,India,Maharashtra,Pune,Pune,Someshwarnagar,412306
+1,India,Maharashtra,Pune,Pune,Sonari,412301
+1,India,Maharashtra,Pune,Pune,Sonawale,410502
+1,India,Maharashtra,Pune,Pune,Songaon,413102
+1,India,Maharashtra,Pune,Pune,Sopannagar,412301
+1,India,Maharashtra,Pune,Pune,Srpf,411022
+1,India,Maharashtra,Pune,Pune,Supa,412204
+1,India,Maharashtra,Pune,Pune,Surwad,413103
+1,India,Maharashtra,Pune,Pune,Sus,411021
+1,India,Maharashtra,Pune,Pune,Swargate,411042
+1,India,Maharashtra,Pune,Pune,Swargate Chowk,411042
+1,India,Maharashtra,Pune,Pune,T.V. nagar,411037
+1,India,Maharashtra,Pune,Pune,Takali Bhima,412208
+1,India,Maharashtra,Pune,Pune,Takave Kh,410405
+1,India,Maharashtra,Pune,Pune,Takawe Bk,412106
+1,India,Maharashtra,Pune,Pune,Taklihaji,412218
+1,India,Maharashtra,Pune,Pune,Talegaon Dabhade,410506
+1,India,Maharashtra,Pune,Pune,Talegaon Dhamdhere,412208
+1,India,Maharashtra,Pune,Pune,Talegaon G h,410507
+1,India,Maharashtra,Pune,Pune,Taleghar,410509
+1,India,Maharashtra,Pune,Pune,Taleran,412409
+1,India,Maharashtra,Pune,Pune,Talwade,412114
+1,India,Maharashtra,Pune,Pune,Tambad,412213
+1,India,Maharashtra,Pune,Pune,Tambe,410502
+1,India,Maharashtra,Pune,Pune,Tandali,412211
+1,India,Maharashtra,Pune,Pune,Tandulwadi,413102
+1,India,Maharashtra,Pune,Pune,Taparewadi,412205
+1,India,Maharashtra,Pune,Pune,Tav,412107
+1,India,Maharashtra,Pune,Pune,Tavshi,413104
+1,India,Maharashtra,Pune,Pune,Tekawade,412104
+1,India,Maharashtra,Pune,Pune,Telewadi,412207
+1,India,Maharashtra,Pune,Pune,Thathawade,411019
+1,India,Maharashtra,Pune,Pune,Thergaon,411019
+1,India,Maharashtra,Pune,Pune,Theur,412110
+1,India,Maharashtra,Pune,Pune,Thugaon,410512
+1,India,Maharashtra,Pune,Pune,Tirpad,410509
+1,India,Maharashtra,Pune,Pune,Titeghar,412206
+1,India,Maharashtra,Pune,Pune,Tiwai Hills,410513
+1,India,Maharashtra,Pune,Pune,Tokawade,412402
+1,India,Maharashtra,Pune,Pune,Tondal,412312
+1,India,Maharashtra,Pune,Pune,Udapur,412409
+1,India,Maharashtra,Pune,Pune,Udhat,413104
+1,India,Maharashtra,Pune,Pune,Umbraj,412412
+1,India,Maharashtra,Pune,Pune,Umbre Navlakh,410507
+1,India,Maharashtra,Pune,Pune,Undawadi K p,413102
+1,India,Maharashtra,Pune,Pune,Undawadi Supa,413102
+1,India,Maharashtra,Pune,Pune,Uralgaon,412211
+1,India,Maharashtra,Pune,Pune,Uravade,411042
+1,India,Maharashtra,Pune,Pune,Urse,410506
+1,India,Maharashtra,Pune,Pune,Uruli Devachi,412308
+1,India,Maharashtra,Pune,Pune,Urulikanchan,412202
+1,India,Maharashtra,Pune,Pune,Utchil,410502
+1,India,Maharashtra,Pune,Pune,Utroli,412206
+1,India,Maharashtra,Pune,Pune,Uttamnagar,411023
+1,India,Maharashtra,Pune,Pune,Vada,412402
+1,India,Maharashtra,Pune,Pune,Vadaj,410502
+1,India,Maharashtra,Pune,Pune,Vadapuri,413106
+1,India,Maharashtra,Pune,Pune,Vadebholhai,412207
+1,India,Maharashtra,Pune,Pune,Vadeshwar,412106
+1,India,Maharashtra,Pune,Pune,Vadgaon,412106
+1,India,Maharashtra,Pune,Pune,Vadgaon Anand,412411
+1,India,Maharashtra,Pune,Pune,Vadgaon Budruk,411041
+1,India,Maharashtra,Pune,Pune,Vadgaon Dalache,412206
+1,India,Maharashtra,Pune,Pune,Vadgaon Ghenanad,410501
+1,India,Maharashtra,Pune,Pune,Vadgaon Kandali,412412
+1,India,Maharashtra,Pune,Pune,Vadgaon Kashimbeg,410503
+1,India,Maharashtra,Pune,Pune,Vadgaon Nimbalkar,412103
+1,India,Maharashtra,Pune,Pune,Vadgaon Peer,410510
+1,India,Maharashtra,Pune,Pune,Vadgaon Rasai,412211
+1,India,Maharashtra,Pune,Pune,Vadgaon Sahani,412401
+1,India,Maharashtra,Pune,Pune,Vadgaon Sheri,411014
+1,India,Maharashtra,Pune,Pune,Vadhu Bk,412216
+1,India,Maharashtra,Pune,Pune,Vadki,412308
+1,India,Maharashtra,Pune,Pune,Vagholi,412207
+1,India,Maharashtra,Pune,Pune,Valati,410504
+1,India,Maharashtra,Pune,Pune,Valha,412305
+1,India,Maharashtra,Pune,Pune,Vanpuri,412301
+1,India,Maharashtra,Pune,Pune,Vaphgaon,410505
+1,India,Maharashtra,Pune,Pune,Varale,410507
+1,India,Maharashtra,Pune,Pune,Vardade,411042
+1,India,Maharashtra,Pune,Pune,Varkute Kh,413120
+1,India,Maharashtra,Pune,Pune,Varodi Kh,412206
+1,India,Maharashtra,Pune,Pune,Varoti Bk,412212
+1,India,Maharashtra,Pune,Pune,Varude,412209
+1,India,Maharashtra,Pune,Pune,Varvand,412215
+1,India,Maharashtra,Pune,Pune,Varye Bk,412205
+1,India,Maharashtra,Pune,Pune,Vasuli,410501
+1,India,Maharashtra,Pune,Pune,Veer,412312
+1,India,Maharashtra,Pune,Pune,Vehergaon,410405
+1,India,Maharashtra,Pune,Pune,Velhe,412212
+1,India,Maharashtra,Pune,Pune,Velu,412205
+1,India,Maharashtra,Pune,Pune,Velvand,412206
+1,India,Maharashtra,Pune,Pune,Venavadi,412206
+1,India,Maharashtra,Pune,Pune,Vetale,412404
+1,India,Maharashtra,Pune,Pune,Vidyanagar,411032
+1,India,Maharashtra,Pune,Pune,Vishnupuri,410507
+1,India,Maharashtra,Pune,Pune,Vishrantwadi,411015
+1,India,Maharashtra,Pune,Pune,Vithalwadi,412208
+1,India,Maharashtra,Pune,Pune,Vyahali,413120
+1,India,Maharashtra,Pune,Pune,Waghapur,412104
+1,India,Maharashtra,Pune,Pune,Wakad,411057
+1,India,Maharashtra,Pune,Pune,Waki,412306
+1,India,Maharashtra,Pune,Pune,Waki Bk,410501
+1,India,Maharashtra,Pune,Pune,Walchandnagar,413114
+1,India,Maharashtra,Pune,Pune,Walki,412207
+1,India,Maharashtra,Pune,Pune,Walunj,412303
+1,India,Maharashtra,Pune,Pune,Wangani,412213
+1,India,Maharashtra,Pune,Pune,Wanowarie,411040
+1,India,Maharashtra,Pune,Pune,Warje,411058
+1,India,Maharashtra,Pune,Pune,Washere,412404
+1,India,Maharashtra,Pune,Pune,Watluj,413105
+1,India,Maharashtra,Pune,Pune,Winzer,412213
+1,India,Maharashtra,Pune,Pune,Yamunanagar,411044
+1,India,Maharashtra,Pune,Pune,Yavat,412214
+1,India,Maharashtra,Pune,Pune,Yavat R s,412214
+1,India,Maharashtra,Pune,Pune,Yedgaon,410504
+1,India,Maharashtra,Pune,Pune,Yenere,410502
+1,India,Maharashtra,Pune,Pune,Yeniye Bk,410505
+1,India,Maharashtra,Pune,Pune,Yerwada,411006
+1,India,Maharashtra,Pune,Pune,Yerwada T.s.,411001
+1,India,Rajasthan,Alwar,Alwar,A.G.Dadhiya,301401
+1,India,Rajasthan,Alwar,Alwar,Adoli,301035
+1,India,Rajasthan,Alwar,Alwar,Agar,301027
+1,India,Rajasthan,Alwar,Alwar,Ajabgarh,301027
+1,India,Rajasthan,Alwar,Alwar,Ajabpura,301024
+1,India,Rajasthan,Alwar,Alwar,Ajerka,301401
+1,India,Rajasthan,Alwar,Alwar,Akbarpur,301001
+1,India,Rajasthan,Alwar,Alwar,Aklimpur,301703
+1,India,Rajasthan,Alwar,Alwar,Alamdika,301712
+1,India,Rajasthan,Alwar,Alwar,Alanpur,301412
+1,India,Rajasthan,Alwar,Alwar,Alaora,301026
+1,India,Rajasthan,Alwar,Alwar,Alwar Bus Stand,301001
+1,India,Rajasthan,Alwar,Alwar,Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Anantpura,301713
+1,India,Rajasthan,Alwar,Alwar,Arwa,321605
+1,India,Rajasthan,Alwar,Alwar,Aryanagar Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Babari,301412
+1,India,Rajasthan,Alwar,Alwar,Babaria,301412
+1,India,Rajasthan,Alwar,Alwar,Bagarrajput,301001
+1,India,Rajasthan,Alwar,Alwar,Bagheri Kalan,301712
+1,India,Rajasthan,Alwar,Alwar,Baghora,301411
+1,India,Rajasthan,Alwar,Alwar,Baghore,301405
+1,India,Rajasthan,Alwar,Alwar,Bahadurpur,301028
+1,India,Rajasthan,Alwar,Alwar,Bahala,301030
+1,India,Rajasthan,Alwar,Alwar,Bahali,301414
+1,India,Rajasthan,Alwar,Alwar,Bahroj,301404
+1,India,Rajasthan,Alwar,Alwar,Bahror,301701
+1,India,Rajasthan,Alwar,Alwar,Bahror Jat,301714
+1,India,Rajasthan,Alwar,Alwar,Bahtookalan,321605
+1,India,Rajasthan,Alwar,Alwar,Balata,301406
+1,India,Rajasthan,Alwar,Alwar,Baldeogarh,301410
+1,India,Rajasthan,Alwar,Alwar,Ballupura,301408
+1,India,Rajasthan,Alwar,Alwar,Balluwas,301407
+1,India,Rajasthan,Alwar,Alwar,Bamanwas,301412
+1,India,Rajasthan,Alwar,Alwar,Bamanwas Kankar,301024
+1,India,Rajasthan,Alwar,Alwar,Bamboli,301001
+1,India,Rajasthan,Alwar,Alwar,Bambora,301405
+1,India,Rajasthan,Alwar,Alwar,Bandra,301411
+1,India,Rajasthan,Alwar,Alwar,Bansur,301402
+1,India,Rajasthan,Alwar,Alwar,Barer,301408
+1,India,Rajasthan,Alwar,Alwar,Barkhera,301406
+1,India,Rajasthan,Alwar,Alwar,Barkokhurd,301413
+1,India,Rajasthan,Alwar,Alwar,Barodakan,321607
+1,India,Rajasthan,Alwar,Alwar,Barodameo,301021
+1,India,Rajasthan,Alwar,Alwar,Barrod,301020
+1,India,Rajasthan,Alwar,Alwar,Basai,301709
+1,India,Rajasthan,Alwar,Alwar,Basai Kalan,301404
+1,India,Rajasthan,Alwar,Alwar,Basaijogian,301024
+1,India,Rajasthan,Alwar,Alwar,Baseth,321605
+1,India,Rajasthan,Alwar,Alwar,Baskripal Nagar,301405
+1,India,Rajasthan,Alwar,Alwar,Basmenpur,301407
+1,India,Rajasthan,Alwar,Alwar,Basni,301401
+1,India,Rajasthan,Alwar,Alwar,Beda,301021
+1,India,Rajasthan,Alwar,Alwar,Bedar,321633
+1,India,Rajasthan,Alwar,Alwar,Beejwa,301025
+1,India,Rajasthan,Alwar,Alwar,Beejwar,301406
+1,India,Rajasthan,Alwar,Alwar,Beejwar Chauhan,301401
+1,India,Rajasthan,Alwar,Alwar,Beelaheri,301702
+1,India,Rajasthan,Alwar,Alwar,Beleta,301414
+1,India,Rajasthan,Alwar,Alwar,Berla,321633
+1,India,Rajasthan,Alwar,Alwar,Bhagana,301702
+1,India,Rajasthan,Alwar,Alwar,Bhageet,301030
+1,India,Rajasthan,Alwar,Alwar,Bhagukawas,301412
+1,India,Rajasthan,Alwar,Alwar,Bhajera,301028
+1,India,Rajasthan,Alwar,Alwar,Bhajera,301409
+1,India,Rajasthan,Alwar,Alwar,Bhandodi,301414
+1,India,Rajasthan,Alwar,Alwar,Bhandrol,301022
+1,India,Rajasthan,Alwar,Alwar,Bhangroli,301022
+1,India,Rajasthan,Alwar,Alwar,Bhanokhar,301035
+1,India,Rajasthan,Alwar,Alwar,Bhanot,301401
+1,India,Rajasthan,Alwar,Alwar,Bhanwar,301035
+1,India,Rajasthan,Alwar,Alwar,Bharkol,321633
+1,India,Rajasthan,Alwar,Alwar,Bhikhaheri,301413
+1,India,Rajasthan,Alwar,Alwar,Bhindoosi,301405
+1,India,Rajasthan,Alwar,Alwar,Bhiwari Ind. Area. Alwar,301019
+1,India,Rajasthan,Alwar,Alwar,Bhoggore,301001
+1,India,Rajasthan,Alwar,Alwar,Bhonker,301707
+1,India,Rajasthan,Alwar,Alwar,Bhuda,301409
+1,India,Rajasthan,Alwar,Alwar,Bhungra Ahir,301427
+1,India,Rajasthan,Alwar,Alwar,Bhupsera,301402
+1,India,Rajasthan,Alwar,Alwar,Bichgaon,321607
+1,India,Rajasthan,Alwar,Alwar,Bichhala,301411
+1,India,Rajasthan,Alwar,Alwar,Bighota,301415
+1,India,Rajasthan,Alwar,Alwar,Bilali,301024
+1,India,Rajasthan,Alwar,Alwar,Bilaspur,301411
+1,India,Rajasthan,Alwar,Alwar,Binjari,301408
+1,India,Rajasthan,Alwar,Alwar,Birampur,301411
+1,India,Rajasthan,Alwar,Alwar,Buddhi Bawal,301707
+1,India,Rajasthan,Alwar,Alwar,Buddhwal,301709
+1,India,Rajasthan,Alwar,Alwar,Bulari,301409
+1,India,Rajasthan,Alwar,Alwar,Buntoli,301021
+1,India,Rajasthan,Alwar,Alwar,Burja,301001
+1,India,Rajasthan,Alwar,Alwar,Buteri,301402
+1,India,Rajasthan,Alwar,Alwar,Butiyana,301021
+1,India,Rajasthan,Alwar,Alwar,Chandoli,301023
+1,India,Rajasthan,Alwar,Alwar,Chandpur,301407
+1,India,Rajasthan,Alwar,Alwar,Chandupura,301414
+1,India,Rajasthan,Alwar,Alwar,Chatarpura,301024
+1,India,Rajasthan,Alwar,Alwar,Chaubara,301706
+1,India,Rajasthan,Alwar,Alwar,Chauharpur,301707
+1,India,Rajasthan,Alwar,Alwar,Cheerwa,301025
+1,India,Rajasthan,Alwar,Alwar,Chhilori,321633
+1,India,Rajasthan,Alwar,Alwar,Chikani,301028
+1,India,Rajasthan,Alwar,Alwar,Chimrauli Gaur,321633
+1,India,Rajasthan,Alwar,Alwar,Chomu,301026
+1,India,Rajasthan,Alwar,Alwar,Choola,301402
+1,India,Rajasthan,Alwar,Alwar,Chorotipahar,301028
+1,India,Rajasthan,Alwar,Alwar,Dabarwas,301704
+1,India,Rajasthan,Alwar,Alwar,Dantia,321606
+1,India,Rajasthan,Alwar,Alwar,Dariba Project,301410
+1,India,Rajasthan,Alwar,Alwar,Daroda,321606
+1,India,Rajasthan,Alwar,Alwar,Deenar,301021
+1,India,Rajasthan,Alwar,Alwar,Delhi Gate Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Dera,301409
+1,India,Rajasthan,Alwar,Alwar,Dera Bamanwas,301022
+1,India,Rajasthan,Alwar,Alwar,Desula,301030
+1,India,Rajasthan,Alwar,Alwar,Devli,321633
+1,India,Rajasthan,Alwar,Alwar,Devti,301415
+1,India,Rajasthan,Alwar,Alwar,Dhakpuri,301406
+1,India,Rajasthan,Alwar,Alwar,Dhamred,301408
+1,India,Rajasthan,Alwar,Alwar,Dhanwari,301025
+1,India,Rajasthan,Alwar,Alwar,Dhigawara,301414
+1,India,Rajasthan,Alwar,Alwar,Diwakari,301001
+1,India,Rajasthan,Alwar,Alwar,Dongri,301604
+1,India,Rajasthan,Alwar,Alwar,Dooghera,301020
+1,India,Rajasthan,Alwar,Alwar,Doomroli,301703
+1,India,Rajasthan,Alwar,Alwar,Doroli,321606
+1,India,Rajasthan,Alwar,Alwar,Doroli,301408
+1,India,Rajasthan,Alwar,Alwar,Dosod,301703
+1,India,Rajasthan,Alwar,Alwar,Dubbi,301408
+1,India,Rajasthan,Alwar,Alwar,Duhar Chogan,301022
+1,India,Rajasthan,Alwar,Alwar,Dwarapur,301022
+1,India,Rajasthan,Alwar,Alwar,Fetehpur,301402
+1,India,Rajasthan,Alwar,Alwar,gadoj,301701
+1,India,Rajasthan,Alwar,Alwar,Gaduwas,301401
+1,India,Rajasthan,Alwar,Alwar,Gahankar,301405
+1,India,Rajasthan,Alwar,Alwar,Gandala,301709
+1,India,Rajasthan,Alwar,Alwar,Gandura,301021
+1,India,Rajasthan,Alwar,Alwar,Garh Basai,301022
+1,India,Rajasthan,Alwar,Alwar,Garhi,301024
+1,India,Rajasthan,Alwar,Alwar,Garhi Sawai Ram,301413
+1,India,Rajasthan,Alwar,Alwar,Garu,321606
+1,India,Rajasthan,Alwar,Alwar,Ghasoli,301405
+1,India,Rajasthan,Alwar,Alwar,Ghat,301001
+1,India,Rajasthan,Alwar,Alwar,Ghatla,301404
+1,India,Rajasthan,Alwar,Alwar,Gheelot,301705
+1,India,Rajasthan,Alwar,Alwar,Ghewar,301410
+1,India,Rajasthan,Alwar,Alwar,Giglana,301704
+1,India,Rajasthan,Alwar,Alwar,Girudi,301402
+1,India,Rajasthan,Alwar,Alwar,Golakabas,301410
+1,India,Rajasthan,Alwar,Alwar,Gopipura,301407
+1,India,Rajasthan,Alwar,Alwar,Gordhanpura,301410
+1,India,Rajasthan,Alwar,Alwar,Gothra,301405
+1,India,Rajasthan,Alwar,Alwar,Gothra,301413
+1,India,Rajasthan,Alwar,Alwar,Gotoli,301411
+1,India,Rajasthan,Alwar,Alwar,Govind Garh Alwar,301604
+1,India,Rajasthan,Alwar,Alwar,Gudhachurani,301022
+1,India,Rajasthan,Alwar,Alwar,Gugalkota,301706
+1,India,Rajasthan,Alwar,Alwar,Gunta,301402
+1,India,Rajasthan,Alwar,Alwar,Gunti,301701
+1,India,Rajasthan,Alwar,Alwar,Guwana,301713
+1,India,Rajasthan,Alwar,Alwar,Gwalda,301707
+1,India,Rajasthan,Alwar,Alwar,Gyanpura,301024
+1,India,Rajasthan,Alwar,Alwar,H.B.Colony Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Haldeena,301406
+1,India,Rajasthan,Alwar,Alwar,Hameerka,301411
+1,India,Rajasthan,Alwar,Alwar,Hamidpur,301701
+1,India,Rajasthan,Alwar,Alwar,Hamirpur,301402
+1,India,Rajasthan,Alwar,Alwar,Harsana,321607
+1,India,Rajasthan,Alwar,Alwar,Harsauli,301403
+1,India,Rajasthan,Alwar,Alwar,Harsora,301412
+1,India,Rajasthan,Alwar,Alwar,Hasanpur,321607
+1,India,Rajasthan,Alwar,Alwar,Hatoondi,301427
+1,India,Rajasthan,Alwar,Alwar,Hazipur,301402
+1,India,Rajasthan,Alwar,Alwar,Hingwahera,301411
+1,India,Rajasthan,Alwar,Alwar,Holawas,301402
+1,India,Rajasthan,Alwar,Alwar,Huria Kalan,301704
+1,India,Rajasthan,Alwar,Alwar,Ikrotia,301702
+1,India,Rajasthan,Alwar,Alwar,Indpura,301026
+1,India,Rajasthan,Alwar,Alwar,Intoli,301409
+1,India,Rajasthan,Alwar,Alwar,Ismailpur,301404
+1,India,Rajasthan,Alwar,Alwar,Isroda,301411
+1,India,Rajasthan,Alwar,Alwar,Isrota,321605
+1,India,Rajasthan,Alwar,Alwar,Itarana Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Itera,301021
+1,India,Rajasthan,Alwar,Alwar,Jadla,321607
+1,India,Rajasthan,Alwar,Alwar,Jaguwas,301701
+1,India,Rajasthan,Alwar,Alwar,Jainpurwas,301701
+1,India,Rajasthan,Alwar,Alwar,Jakhrana,301713
+1,India,Rajasthan,Alwar,Alwar,Jalawas,301714
+1,India,Rajasthan,Alwar,Alwar,Jamalpur,301406
+1,India,Rajasthan,Alwar,Alwar,Jamdoli,301409
+1,India,Rajasthan,Alwar,Alwar,Jaoli,321607
+1,India,Rajasthan,Alwar,Alwar,Jasai,301427
+1,India,Rajasthan,Alwar,Alwar,Jatiyana,301403
+1,India,Rajasthan,Alwar,Alwar,Jatiyana,301023
+1,India,Rajasthan,Alwar,Alwar,Jatpur,301413
+1,India,Rajasthan,Alwar,Alwar,Jatpur,301030
+1,India,Rajasthan,Alwar,Alwar,Jatwara,301035
+1,India,Rajasthan,Alwar,Alwar,Jeroli,301411
+1,India,Rajasthan,Alwar,Alwar,Jhalatala,301413
+1,India,Rajasthan,Alwar,Alwar,Jhiri,301027
+1,India,Rajasthan,Alwar,Alwar,Jhiwana,301707
+1,India,Rajasthan,Alwar,Alwar,Jindoli,301404
+1,India,Rajasthan,Alwar,Alwar,Jodia,301702
+1,India,Rajasthan,Alwar,Alwar,Jonal,301401
+1,India,Rajasthan,Alwar,Alwar,Jonicha Khurd,301706
+1,India,Rajasthan,Alwar,Alwar,Jonichakalan,301706
+1,India,Rajasthan,Alwar,Alwar,Joria,301707
+1,India,Rajasthan,Alwar,Alwar,Kakrali Meo,301028
+1,India,Rajasthan,Alwar,Alwar,Kalgaon,301702
+1,India,Rajasthan,Alwar,Alwar,Kalgaon,301405
+1,India,Rajasthan,Alwar,Alwar,Kalsara,301406
+1,India,Rajasthan,Alwar,Alwar,Kalwari,321606
+1,India,Rajasthan,Alwar,Alwar,Kanethi,301413
+1,India,Rajasthan,Alwar,Alwar,Kanhawas,301703
+1,India,Rajasthan,Alwar,Alwar,Kankardopa,301701
+1,India,Rajasthan,Alwar,Alwar,KARANA,301024
+1,India,Rajasthan,Alwar,Alwar,Karanpura,301409
+1,India,Rajasthan,Alwar,Alwar,Karni Kot,301427
+1,India,Rajasthan,Alwar,Alwar,Karoda,301020
+1,India,Rajasthan,Alwar,Alwar,Karoli,301028
+1,India,Rajasthan,Alwar,Alwar,Karoth,301408
+1,India,Rajasthan,Alwar,Alwar,Kathoowas,301704
+1,India,Rajasthan,Alwar,Alwar,Kathumar,321605
+1,India,Rajasthan,Alwar,Alwar,Kayasa,301703
+1,India,Rajasthan,Alwar,Alwar,Keelpurkhera,301409
+1,India,Rajasthan,Alwar,Alwar,Kerwawal,301406
+1,India,Rajasthan,Alwar,Alwar,Khairthal,301404
+1,India,Rajasthan,Alwar,Alwar,Khanpur Ahir,301403
+1,India,Rajasthan,Alwar,Alwar,KHanpur,301702
+1,India,Rajasthan,Alwar,Alwar,Khanpur Jat,301030
+1,India,Rajasthan,Alwar,Alwar,Khanpur Mewan,301405
+1,India,Rajasthan,Alwar,Alwar,Khareda,301406
+1,India,Rajasthan,Alwar,Alwar,Khatankhera,301701
+1,India,Rajasthan,Alwar,Alwar,Khazuri Bass,301018
+1,India,Rajasthan,Alwar,Alwar,Kheda Kalyanpur,301035
+1,India,Rajasthan,Alwar,Alwar,Khera,301402
+1,India,Rajasthan,Alwar,Alwar,Khera Mahmood,301604
+1,India,Rajasthan,Alwar,Alwar,Kherajahar,301028
+1,India,Rajasthan,Alwar,Alwar,Kheramangal Singh,301413
+1,India,Rajasthan,Alwar,Alwar,Kherameda,321605
+1,India,Rajasthan,Alwar,Alwar,KHERI,301026
+1,India,Rajasthan,Alwar,Alwar,kherkheri Kalan,301024
+1,India,Rajasthan,Alwar,Alwar,Kherli,321606
+1,India,Rajasthan,Alwar,Alwar,Kherli Syed,301030
+1,India,Rajasthan,Alwar,Alwar,khilora,301026
+1,India,Rajasthan,Alwar,Alwar,Khoh,301035
+1,India,Rajasthan,Alwar,Alwar,Khoh,301410
+1,India,Rajasthan,Alwar,Alwar,Khohar,301709
+1,India,Rajasthan,Alwar,Alwar,Khohrana,301713
+1,India,Rajasthan,Alwar,Alwar,Khohri,301713
+1,India,Rajasthan,Alwar,Alwar,Khonkhar,301035
+1,India,Rajasthan,Alwar,Alwar,Khoondrot,301704
+1,India,Rajasthan,Alwar,Alwar,Khoramalawali,321633
+1,India,Rajasthan,Alwar,Alwar,Khori,301402
+1,India,Rajasthan,Alwar,Alwar,Khudiana,321607
+1,India,Rajasthan,Alwar,Alwar,Khutabpura,301702
+1,India,Rajasthan,Alwar,Alwar,Khuteta Kalan,301001
+1,India,Rajasthan,Alwar,Alwar,Kishan Garh Bass,301405
+1,India,Rajasthan,Alwar,Alwar,Kishori,301022
+1,India,Rajasthan,Alwar,Alwar,Kithoor,301028
+1,India,Rajasthan,Alwar,Alwar,Kkoh,301026
+1,India,Rajasthan,Alwar,Alwar,Kolahera,301024
+1,India,Rajasthan,Alwar,Alwar,Kolila,301020
+1,India,Rajasthan,Alwar,Alwar,Koondla,301415
+1,India,Rajasthan,Alwar,Alwar,Kotkassim,301702
+1,India,Rajasthan,Alwar,Alwar,Kutina,301708
+1,India,Rajasthan,Alwar,Alwar,Ladpur,301702
+1,India,Rajasthan,Alwar,Alwar,Lakkakanagal,301402
+1,India,Rajasthan,Alwar,Alwar,Lalpura,301027
+1,India,Rajasthan,Alwar,Alwar,Langerwas,301405
+1,India,Rajasthan,Alwar,Alwar,Laxman Garh,321607
+1,India,Rajasthan,Alwar,Alwar,Leeli,321607
+1,India,Rajasthan,Alwar,Alwar,Leeli,301406
+1,India,Rajasthan,Alwar,Alwar,Lekri,301402
+1,India,Rajasthan,Alwar,Alwar,Machari,301001
+1,India,Rajasthan,Alwar,Alwar,Machari,301408
+1,India,Rajasthan,Alwar,Alwar,"Machari Chowk,rajgarh",301408
+1,India,Rajasthan,Alwar,Alwar,Machhroli,301712
+1,India,Rajasthan,Alwar,Alwar,Madhogarh,301001
+1,India,Rajasthan,Alwar,Alwar,Mahanpur,301402
+1,India,Rajasthan,Alwar,Alwar,Maharajawas,301713
+1,India,Rajasthan,Alwar,Alwar,Mahond,301405
+1,India,Rajasthan,Alwar,Alwar,Mahuakhurd,301001
+1,India,Rajasthan,Alwar,Alwar,Majari Kalan,301703
+1,India,Rajasthan,Alwar,Alwar,Majrikanhawas,301703
+1,India,Rajasthan,Alwar,Alwar,Malakhera Gate Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Malakhera,301406
+1,India,Rajasthan,Alwar,Alwar,Malpur,301026
+1,India,Rajasthan,Alwar,Alwar,Malutana,301022
+1,India,Rajasthan,Alwar,Alwar,Mancha,301405
+1,India,Rajasthan,Alwar,Alwar,Manchal,301701
+1,India,Rajasthan,Alwar,Alwar,Mandawar,301407
+1,India,Rajasthan,Alwar,Alwar,Mandha,301405
+1,India,Rajasthan,Alwar,Alwar,Mandhan,301704
+1,India,Rajasthan,Alwar,Alwar,Manka,301401
+1,India,Rajasthan,Alwar,Alwar,Masari,321605
+1,India,Rajasthan,Alwar,Alwar,Maseet,301707
+1,India,Rajasthan,Alwar,Alwar,Matalwas,301702
+1,India,Rajasthan,Alwar,Alwar,Matasya Ind. Area,301030
+1,India,Rajasthan,Alwar,Alwar,Mathuraheda,321605
+1,India,Rajasthan,Alwar,Alwar,Mator,301404
+1,India,Rajasthan,Alwar,Alwar,Mauj Pur,321633
+1,India,Rajasthan,Alwar,Alwar,Mehesra,301707
+1,India,Rajasthan,Alwar,Alwar,Mehtawas,301704
+1,India,Rajasthan,Alwar,Alwar,Methna,321605
+1,India,Rajasthan,Alwar,Alwar,Milakpur,301026
+1,India,Rajasthan,Alwar,Alwar,Milakpur Turk,301707
+1,India,Rajasthan,Alwar,Alwar,Mirjapur,301403
+1,India,Rajasthan,Alwar,Alwar,Mohammedpur,301701
+1,India,Rajasthan,Alwar,Alwar,Molia,301021
+1,India,Rajasthan,Alwar,Alwar,Moonpur,301408
+1,India,Rajasthan,Alwar,Alwar,Moosakhera,301405
+1,India,Rajasthan,Alwar,Alwar,Mothuka,301405
+1,India,Rajasthan,Alwar,Alwar,MOTIDOONGRI,301002
+1,India,Rajasthan,Alwar,Alwar,Motiwara,301415
+1,India,Rajasthan,Alwar,Alwar,Mubarikpur,301025
+1,India,Rajasthan,Alwar,Alwar,Mundana,301411
+1,India,Rajasthan,Alwar,Alwar,Mundanwara Kalan,301427
+1,India,Rajasthan,Alwar,Alwar,Mundawar,301024
+1,India,Rajasthan,Alwar,Alwar,Mundia,301409
+1,India,Rajasthan,Alwar,Alwar,Naghori,301705
+1,India,Rajasthan,Alwar,Alwar,Nagli,301708
+1,India,Rajasthan,Alwar,Alwar,Nanagwas,301704
+1,India,Rajasthan,Alwar,Alwar,Nangal Khoria,301701
+1,India,Rajasthan,Alwar,Alwar,Nangal Salia,301712
+1,India,Rajasthan,Alwar,Alwar,Nangalbani,301027
+1,India,Rajasthan,Alwar,Alwar,Nangalkhanjadi,321607
+1,India,Rajasthan,Alwar,Alwar,Nangli Megha,301001
+1,India,Rajasthan,Alwar,Alwar,Narainpur,301024
+1,India,Rajasthan,Alwar,Alwar,Naswari,301026
+1,India,Rajasthan,Alwar,Alwar,Nathalwara,301415
+1,India,Rajasthan,Alwar,Alwar,Natoj,321606
+1,India,Rajasthan,Alwar,Alwar,Nawalpura,301414
+1,India,Rajasthan,Alwar,Alwar,Nayabas,301024
+1,India,Rajasthan,Alwar,Alwar,Neekuch,301025
+1,India,Rajasthan,Alwar,Alwar,Neemla,301415
+1,India,Rajasthan,Alwar,Alwar,Neemrana,301705
+1,India,Rajasthan,Alwar,Alwar,Neemuchana,301024
+1,India,Rajasthan,Alwar,Alwar,New Jahadu,301035
+1,India,Rajasthan,Alwar,Alwar,Nibhera,301021
+1,India,Rajasthan,Alwar,Alwar,Nithari,301406
+1,India,Rajasthan,Alwar,Alwar,Nizamnagar,301021
+1,India,Rajasthan,Alwar,Alwar,Nogaon,301025
+1,India,Rajasthan,Alwar,Alwar,Noor Nagar,301404
+1,India,Rajasthan,Alwar,Alwar,Noorpurganjpur,321607
+1,India,Rajasthan,Alwar,Alwar,Pada,301408
+1,India,Rajasthan,Alwar,Alwar,Padakchapli,301027
+1,India,Rajasthan,Alwar,Alwar,Padmara Khurd,301427
+1,India,Rajasthan,Alwar,Alwar,Pahari,301701
+1,India,Rajasthan,Alwar,Alwar,Pahel,301404
+1,India,Rajasthan,Alwar,Alwar,Pala,301406
+1,India,Rajasthan,Alwar,Alwar,Palpur,301411
+1,India,Rajasthan,Alwar,Alwar,Palpur,301702
+1,India,Rajasthan,Alwar,Alwar,Palwa,301414
+1,India,Rajasthan,Alwar,Alwar,Palwa,301706
+1,India,Rajasthan,Alwar,Alwar,Parbeni,301409
+1,India,Rajasthan,Alwar,Alwar,Parisal,301023
+1,India,Rajasthan,Alwar,Alwar,Partapur,301704
+1,India,Rajasthan,Alwar,Alwar,Pata,301025
+1,India,Rajasthan,Alwar,Alwar,Patalia,301403
+1,India,Rajasthan,Alwar,Alwar,Patan,301414
+1,India,Rajasthan,Alwar,Alwar,Patan Mewan,301404
+1,India,Rajasthan,Alwar,Alwar,Peepli,301427
+1,India,Rajasthan,Alwar,Alwar,Peepli,301709
+1,India,Rajasthan,Alwar,Alwar,Peproli,301026
+1,India,Rajasthan,Alwar,Alwar,Phari,301604
+1,India,Rajasthan,Alwar,Alwar,Pholadpur,301706
+1,India,Rajasthan,Alwar,Alwar,Phullawas,301411
+1,India,Rajasthan,Alwar,Alwar,Pinan,301413
+1,India,Rajasthan,Alwar,Alwar,Piplai,301027
+1,India,Rajasthan,Alwar,Alwar,Poonkher,301414
+1,India,Rajasthan,Alwar,Alwar,Pragpura,301409
+1,India,Rajasthan,Alwar,Alwar,Pratap Garh,301027
+1,India,Rajasthan,Alwar,Alwar,Pratapsinghpura,301705
+1,India,Rajasthan,Alwar,Alwar,Prithvipura,301406
+1,India,Rajasthan,Alwar,Alwar,Pur,301702
+1,India,Rajasthan,Alwar,Alwar,R.H.B. Bhiwari,301019
+1,India,Rajasthan,Alwar,Alwar,Rabhana,301411
+1,India,Rajasthan,Alwar,Alwar,Raghunathgarh,301025
+1,India,Rajasthan,Alwar,Alwar,Raibka,301028
+1,India,Rajasthan,Alwar,Alwar,Railway Station Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Raisarana,301708
+1,India,Rajasthan,Alwar,Alwar,Raisis,301001
+1,India,Rajasthan,Alwar,Alwar,Rajgarh R.S.,301408
+1,India,Rajasthan,Alwar,Alwar,Rajgarh,301408
+1,India,Rajasthan,Alwar,Alwar,Rajpur,301415
+1,India,Rajasthan,Alwar,Alwar,Rajwara,301427
+1,India,Rajasthan,Alwar,Alwar,Rambas,301604
+1,India,Rajasthan,Alwar,Alwar,Ramgarh,301026
+1,India,Rajasthan,Alwar,Alwar,Ramjika Guwada,301027
+1,India,Rajasthan,Alwar,Alwar,Ramnagar,321607
+1,India,Rajasthan,Alwar,Alwar,Rampur,301416
+1,India,Rajasthan,Alwar,Alwar,Ranjeet Nager,301001
+1,India,Rajasthan,Alwar,Alwar,Ranoth,301404
+1,India,Rajasthan,Alwar,Alwar,Rasgan,301404
+1,India,Rajasthan,Alwar,Alwar,Rasgaon,301025
+1,India,Rajasthan,Alwar,Alwar,Rata Khurd,301023
+1,India,Rajasthan,Alwar,Alwar,Ratanpura,301402
+1,India,Rajasthan,Alwar,Alwar,Reni,301409
+1,India,Rajasthan,Alwar,Alwar,Reta,321605
+1,India,Rajasthan,Alwar,Alwar,Rewali,301701
+1,India,Rajasthan,Alwar,Alwar,Rodwal,301705
+1,India,Rajasthan,Alwar,Alwar,Ronijathan,301035
+1,India,Rajasthan,Alwar,Alwar,Sadhka,301021
+1,India,Rajasthan,Alwar,Alwar,Sahari,301035
+1,India,Rajasthan,Alwar,Alwar,Sainthli,301026
+1,India,Rajasthan,Alwar,Alwar,Sakat,301415
+1,India,Rajasthan,Alwar,Alwar,Sakatpura (Bawad),301706
+1,India,Rajasthan,Alwar,Alwar,Saleta,301022
+1,India,Rajasthan,Alwar,Alwar,Saloli,301409
+1,India,Rajasthan,Alwar,Alwar,Salpur,301030
+1,India,Rajasthan,Alwar,Alwar,Salwari,301035
+1,India,Rajasthan,Alwar,Alwar,Samra,301027
+1,India,Rajasthan,Alwar,Alwar,Samuchi,321606
+1,India,Rajasthan,Alwar,Alwar,Sanoli,301714
+1,India,Rajasthan,Alwar,Alwar,Santhalpur,301402
+1,India,Rajasthan,Alwar,Alwar,Santo,301708
+1,India,Rajasthan,Alwar,Alwar,Saraikalan,301401
+1,India,Rajasthan,Alwar,Alwar,Sarheta,301411
+1,India,Rajasthan,Alwar,Alwar,Sariska Palace,301022
+1,India,Rajasthan,Alwar,Alwar,Sectt. Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Sedampur,301604
+1,India,Rajasthan,Alwar,Alwar,Seelgaon,301401
+1,India,Rajasthan,Alwar,Alwar,Seelibaori,301022
+1,India,Rajasthan,Alwar,Alwar,Sehra,301413
+1,India,Rajasthan,Alwar,Alwar,Semla Khurd,301604
+1,India,Rajasthan,Alwar,Alwar,Shahbad,301411
+1,India,Rajasthan,Alwar,Alwar,Shahdod,301019
+1,India,Rajasthan,Alwar,Alwar,Shahdoli,301028
+1,India,Rajasthan,Alwar,Alwar,Shahjahanpur,301706
+1,India,Rajasthan,Alwar,Alwar,Shahpur,301023
+1,India,Rajasthan,Alwar,Alwar,Shamda,301412
+1,India,Rajasthan,Alwar,Alwar,Sheetal,301018
+1,India,Rajasthan,Alwar,Alwar,Sheopur,301407
+1,India,Rajasthan,Alwar,Alwar,Sherpur,301701
+1,India,Rajasthan,Alwar,Alwar,Shivajee Park Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Shyampura,301402
+1,India,Rajasthan,Alwar,Alwar,Sihalikalan,301401
+1,India,Rajasthan,Alwar,Alwar,Silarpur,301018
+1,India,Rajasthan,Alwar,Alwar,Siliserh,301001
+1,India,Rajasthan,Alwar,Alwar,Sirmor,301026
+1,India,Rajasthan,Alwar,Alwar,Siryani,301708
+1,India,Rajasthan,Alwar,Alwar,Sodawas,301427
+1,India,Rajasthan,Alwar,Alwar,Sonkh,321605
+1,India,Rajasthan,Alwar,Alwar,Sonkher,321606
+1,India,Rajasthan,Alwar,Alwar,Sonkheri,321606
+1,India,Rajasthan,Alwar,Alwar,Sorai,321607
+1,India,Rajasthan,Alwar,Alwar,Sorkha Kalan,301404
+1,India,Rajasthan,Alwar,Alwar,Srichandpura,301408
+1,India,Rajasthan,Alwar,Alwar,Sudiana,321605
+1,India,Rajasthan,Alwar,Alwar,Suratgarh,301022
+1,India,Rajasthan,Alwar,Alwar,Surer,301408
+1,India,Rajasthan,Alwar,Alwar,Syaluta,301410
+1,India,Rajasthan,Alwar,Alwar,Talab,301410
+1,India,Rajasthan,Alwar,Alwar,Talwana,301703
+1,India,Rajasthan,Alwar,Alwar,Tapukara,301707
+1,India,Rajasthan,Alwar,Alwar,Tarwala,301405
+1,India,Rajasthan,Alwar,Alwar,Tasai,321605
+1,India,Rajasthan,Alwar,Alwar,Tasing,301701
+1,India,Rajasthan,Alwar,Alwar,Tatarpur,301404
+1,India,Rajasthan,Alwar,Alwar,Tehla,301410
+1,India,Rajasthan,Alwar,Alwar,Tehnoli,301405
+1,India,Rajasthan,Alwar,Alwar,Tehtra,301409
+1,India,Rajasthan,Alwar,Alwar,Thana,301408
+1,India,Rajasthan,Alwar,Alwar,Thanagazi,301022
+1,India,Rajasthan,Alwar,Alwar,Thons,301405
+1,India,Rajasthan,Alwar,Alwar,Tikri,321605
+1,India,Rajasthan,Alwar,Alwar,Tilwar,301410
+1,India,Rajasthan,Alwar,Alwar,Titarka,301411
+1,India,Rajasthan,Alwar,Alwar,Titpuri,321605
+1,India,Rajasthan,Alwar,Alwar,Tizara,301411
+1,India,Rajasthan,Alwar,Alwar,Toda,321607
+1,India,Rajasthan,Alwar,Alwar,Todanagar,301413
+1,India,Rajasthan,Alwar,Alwar,Toolera,301001
+1,India,Rajasthan,Alwar,Alwar,Tripoliya Alwar,301001
+1,India,Rajasthan,Alwar,Alwar,Ujoli,301702
+1,India,Rajasthan,Alwar,Alwar,Umren,301001
+1,India,Rajasthan,Alwar,Alwar,Untwal,301028
+1,India,Rajasthan,Alwar,Alwar,Vabeli,301408
+1,India,Rajasthan,Alwar,Alwar,Vallabhgram,301404
+1,India,Rajasthan,Alwar,Alwar,Veersingh Pur,301405
+1,India,Rajasthan,Alwar,Alwar,Vijai Mandir,301023
+1,India,Rajasthan,Alwar,Alwar,Vijay Mandir,301023
+1,India,Rajasthan,Alwar,Alwar,Vijayapura,301024
+1,India,Haryana,Jhajjar,Jhajjar,Achhej,124106
+1,India,Haryana,Jhajjar,Jhajjar,Ahri,124108
+1,India,Haryana,Jhajjar,Jhajjar,Akheri Madanpur,124146
+1,India,Haryana,Jhajjar,Jhajjar,Arya Nagar Jhajjar,124103
+1,India,Haryana,Jhajjar,Jhajjar,Assaudha,124505
+1,India,Haryana,Jhajjar,Jhajjar,Badli,124105
+1,India,Haryana,Jhajjar,Jhajjar,Badsa,124105
+1,India,Haryana,Jhajjar,Jhajjar,Baghpur,124201
+1,India,Haryana,Jhajjar,Jhajjar,Bahadurgarh,124507
+1,India,Haryana,Jhajjar,Jhajjar,Bahadurgarh Mandi,124508
+1,India,Haryana,Jhajjar,Jhajjar,Bahadurgarh Sector 6,124507
+1,India,Haryana,Jhajjar,Jhajjar,Bahu,124142
+1,India,Haryana,Jhajjar,Jhajjar,Bajidpur Tappa Haveli,124104
+1,India,Haryana,Jhajjar,Jhajjar,Bakra,124201
+1,India,Haryana,Jhajjar,Jhajjar,Bamnaula,124105
+1,India,Haryana,Jhajjar,Jhajjar,Bamnoli,124505
+1,India,Haryana,Jhajjar,Jhajjar,Barahi,124505
+1,India,Haryana,Jhajjar,Jhajjar,Barhana,124107
+1,India,Haryana,Jhajjar,Jhajjar,Beri,124201
+1,India,Haryana,Jhajjar,Jhajjar,Bhadani,124104
+1,India,Haryana,Jhajjar,Jhajjar,Bhatera,124108
+1,India,Haryana,Jhajjar,Jhajjar,Bhindawas,124109
+1,India,Haryana,Jhajjar,Jhajjar,Bhupnia,124105
+1,India,Haryana,Jhajjar,Jhajjar,Bhurawas,124146
+1,India,Haryana,Jhajjar,Jhajjar,Bilochpura,124109
+1,India,Haryana,Jhajjar,Jhajjar,Birar,124146
+1,India,Haryana,Jhajjar,Jhajjar,Birdhana,124102
+1,India,Haryana,Jhajjar,Jhajjar,Birohar,124106
+1,India,Haryana,Jhajjar,Jhajjar,Bishan,124201
+1,India,Haryana,Jhajjar,Jhajjar,Chamanpura,124102
+1,India,Haryana,Jhajjar,Jhajjar,Charra,124504
+1,India,Haryana,Jhajjar,Jhajjar,Chhappar,124108
+1,India,Haryana,Jhajjar,Jhajjar,Chhochi,124107
+1,India,Haryana,Jhajjar,Jhajjar,Chhuchhakwas,124106
+1,India,Haryana,Jhajjar,Jhajjar,Chudani,124504
+1,India,Haryana,Jhajjar,Jhajjar,Daboda Kalan,124508
+1,India,Haryana,Jhajjar,Jhajjar,Daboda Khurd,124508
+1,India,Haryana,Jhajjar,Jhajjar,Dadanpur,124103
+1,India,Haryana,Jhajjar,Jhajjar,Dadri Toe,124103
+1,India,Haryana,Jhajjar,Jhajjar,Darauli,124109
+1,India,Haryana,Jhajjar,Jhajjar,Dawla Raiya,124103
+1,India,Haryana,Jhajjar,Jhajjar,Deverkhana,124105
+1,India,Haryana,Jhajjar,Jhajjar,Dhakla,124109
+1,India,Haryana,Jhajjar,Jhajjar,Dhandlan,124107
+1,India,Haryana,Jhajjar,Jhajjar,Dhaur,124201
+1,India,Haryana,Jhajjar,Jhajjar,Dighal,124107
+1,India,Haryana,Jhajjar,Jhajjar,Dubaldhan,124202
+1,India,Haryana,Jhajjar,Jhajjar,Dujana,124102
+1,India,Haryana,Jhajjar,Jhajjar,Dulhera,124508
+1,India,Haryana,Jhajjar,Jhajjar,Gawalison,124103
+1,India,Haryana,Jhajjar,Jhajjar,Gochhi,124107
+1,India,Haryana,Jhajjar,Jhajjar,Goela Kalan,124508
+1,India,Haryana,Jhajjar,Jhajjar,Goria,124142
+1,India,Haryana,Jhajjar,Jhajjar,Gubhana,124105
+1,India,Haryana,Jhajjar,Jhajjar,Gudha,124103
+1,India,Haryana,Jhajjar,Jhajjar,Gurukul Jhajjar,124103
+1,India,Haryana,Jhajjar,Jhajjar,Hasanpur,124103
+1,India,Haryana,Jhajjar,Jhajjar,Hassangarh,124404
+1,India,Haryana,Jhajjar,Jhajjar,I.A.Bahadurgarh,124507
+1,India,Haryana,Jhajjar,Jhajjar,Jahangirpur,124104
+1,India,Haryana,Jhajjar,Jhajjar,Jahazgarh,124103
+1,India,Haryana,Jhajjar,Jhajjar,Jakhauda,124505
+1,India,Haryana,Jhajjar,Jhajjar,Jassaur Kheri,124505
+1,India,Haryana,Jhajjar,Jhajjar,Jhajjar,124103
+1,India,Haryana,Jhajjar,Jhajjar,Jhamri,124142
+1,India,Haryana,Jhajjar,Jhajjar,Jhanswa Kalan,124146
+1,India,Haryana,Jhajjar,Jhajjar,Jharli,124106
+1,India,Haryana,Jhajjar,Jhajjar,Jnv Kiloi,124104
+1,India,Haryana,Jhajjar,Jhajjar,Jondhi,124103
+1,India,Haryana,Jhajjar,Jhajjar,Kablana,124104
+1,India,Haryana,Jhajjar,Jhajjar,Kabulpur,124201
+1,India,Haryana,Jhajjar,Jhajjar,Kahri,124108
+1,India,Haryana,Jhajjar,Jhajjar,Kanonda,124505
+1,India,Haryana,Jhajjar,Jhajjar,Kasni,124109
+1,India,Haryana,Jhajjar,Jhajjar,Kassar,124508
+1,India,Haryana,Jhajjar,Jhajjar,Khachrauli,124106
+1,India,Haryana,Jhajjar,Jhajjar,Khanpur Khurd,124142
+1,India,Haryana,Jhajjar,Jhajjar,Kharman,124508
+1,India,Haryana,Jhajjar,Jhajjar,Khatiwas,124103
+1,India,Haryana,Jhajjar,Jhajjar,Kheri Asra,124104
+1,India,Haryana,Jhajjar,Jhajjar,Kheri Jat,124105
+1,India,Haryana,Jhajjar,Jhajjar,Kheri Kumar,124103
+1,India,Haryana,Jhajjar,Jhajjar,Khetawas,124109
+1,India,Haryana,Jhajjar,Jhajjar,Khorra,124142
+1,India,Haryana,Jhajjar,Jhajjar,Khudan,124108
+1,India,Haryana,Jhajjar,Jhajjar,Khungai,124104
+1,India,Haryana,Jhajjar,Jhajjar,Kulasi,124505
+1,India,Haryana,Jhajjar,Jhajjar,Ladain,124146
+1,India,Haryana,Jhajjar,Jhajjar,Ladpur,124105
+1,India,Haryana,Jhajjar,Jhajjar,Ladrawan,124505
+1,India,Haryana,Jhajjar,Jhajjar,Line Par Bahadurgarh,124507
+1,India,Haryana,Jhajjar,Jhajjar,Lohari,124108
+1,India,Haryana,Jhajjar,Jhajjar,Lowa Kalan,124508
+1,India,Haryana,Jhajjar,Jhajjar,Luksar,124508
+1,India,Haryana,Jhajjar,Jhajjar,M.P.Majra,124103
+1,India,Haryana,Jhajjar,Jhajjar,Machrauli,124108
+1,India,Haryana,Jhajjar,Jhajjar,Madana Kalan,124102
+1,India,Haryana,Jhajjar,Jhajjar,"Main Bazar, Bahadurgarh",124507
+1,India,Haryana,Jhajjar,Jhajjar,Majra,124202
+1,India,Haryana,Jhajjar,Jhajjar,Mandothi,124506
+1,India,Haryana,Jhajjar,Jhajjar,Marot,124106
+1,India,Haryana,Jhajjar,Jhajjar,Matanhail,124106
+1,India,Haryana,Jhajjar,Jhajjar,Mehrana,124102
+1,India,Haryana,Jhajjar,Jhajjar,Mundahera,124146
+1,India,Haryana,Jhajjar,Jhajjar,Mundsa,124106
+1,India,Haryana,Jhajjar,Jhajjar,Nehru College Jhajjar,124104
+1,India,Haryana,Jhajjar,Jhajjar,Nilaheri,124146
+1,India,Haryana,Jhajjar,Jhajjar,Niwada,124109
+1,India,Haryana,Jhajjar,Jhajjar,Nogawan,124108
+1,India,Haryana,Jhajjar,Jhajjar,Nogawan,124106
+1,India,Haryana,Jhajjar,Jhajjar,Noona Majra,124508
+1,India,Haryana,Jhajjar,Jhajjar,Palra,124103
+1,India,Haryana,Jhajjar,Jhajjar,Pataudah,124108
+1,India,Haryana,Jhajjar,Jhajjar,Pelpa,124105
+1,India,Haryana,Jhajjar,Jhajjar,Pilana,124202
+1,India,Haryana,Jhajjar,Jhajjar,Rewari Khera,124504
+1,India,Haryana,Jhajjar,Jhajjar,Ritauli,124201
+1,India,Haryana,Jhajjar,Jhajjar,Sahlawas,124146
+1,India,Haryana,Jhajjar,Jhajjar,Samaspur Majra,124109
+1,India,Haryana,Jhajjar,Jhajjar,Sampla,124501
+1,India,Haryana,Jhajjar,Jhajjar,Sankhol,124508
+1,India,Haryana,Jhajjar,Jhajjar,Sasroli,124106
+1,India,Haryana,Jhajjar,Jhajjar,Sehlenga,124106
+1,India,Haryana,Jhajjar,Jhajjar,Seria,124102
+1,India,Haryana,Jhajjar,Jhajjar,Sewana,124202
+1,India,Haryana,Jhajjar,Jhajjar,Silana,124103
+1,India,Haryana,Jhajjar,Jhajjar,Silani,124103
+1,India,Haryana,Jhajjar,Jhajjar,Soldha,124508
+1,India,Haryana,Jhajjar,Jhajjar,Sondhi,124105
+1,India,Haryana,Jhajjar,Jhajjar,Subana,124109
+1,India,Haryana,Jhajjar,Jhajjar,Suha,124104
+1,India,Haryana,Jhajjar,Jhajjar,Sulodha,124103
+1,India,Haryana,Jhajjar,Jhajjar,Surheti,124109
+1,India,Haryana,Jhajjar,Jhajjar,Talao,124103
+1,India,Haryana,Jhajjar,Jhajjar,Tandaheri,124506
+1,India,Haryana,Jhajjar,Jhajjar,Tumbaheri,124109
+1,India,Haryana,Jhajjar,Jhajjar,Ukhal Channa,124104
+1,India,Haryana,Jhajjar,Jhajjar,Utlodha,124103
+1,India,Haryana,Jhajjar,Jhajjar,Yakubpur,124103

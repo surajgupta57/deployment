@@ -1,0 +1,1 @@
+{"areas": [{"name": "Jubilee Hills", "slug": "jubilee-hills", "city": "Hyderabad", "city_slug": "hyderabad", "district": "Hyderabad", "district_slug": "hyderabad"}, {"name": "Kapra", "slug": "kapra", "city": "Hyderabad", "city_slug": "hyderabad", "district": "Hyderabad", "district_slug": "hyderabad"}]}

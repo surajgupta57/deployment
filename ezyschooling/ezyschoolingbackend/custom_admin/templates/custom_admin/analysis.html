@@ -1,0 +1,152 @@
+{% extends "custom_admin/base_custom.html" %}
+{% load static %}
+
+{% load render_table from django_tables2 %}
+{% load export_url from django_tables2 %}
+{{ filter.form.media.css }}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% block title_main %}Dashboard{% endblock %}
+{% block body_main %}
+{% include 'partials/_js.html' %}
+
+
+<script>
+ $(document).ready(function() {
+   $('#example').DataTable( {
+       dom: 'Blfrtip',
+       lengthMenu: [[50, 100, 250, -1], [50, 100, 250, "All"]],
+       buttons: [
+       {
+           extend: 'excelHtml5',
+           text: 'Genrate Excel Sheet'
+           }
+       ]
+   });
+   $('#usertable').DataTable( {
+       dom: 'Blfrtip',
+       lengthMenu: [[50, 100, 250, -1], [50, 100, 250, "All"]],
+       buttons: [
+         {
+           extend: 'excelHtml5',
+           text: 'Genrate Excel Sheet'
+         }
+       ]
+   });
+});
+
+</script>
+<script type="text/javascript">
+ var selectedItem = sessionStorage.getItem("SelectedItem");
+ console.log("selectedItem",selectedItem)
+ $('#dropdown').val(selectedItem);
+ jQuery(function() {
+   jQuery('#dropdown').change(function() {
+       this.form.submit();
+       var dropVal = $(this).val();
+       sessionStorage.setItem("SelectedItem", dropVal);
+   });
+});
+</script>
+{% include "partials/_sidebar_main.html" %}
+<div class="main-content" id="panel">
+ {% include "partials/_navbar_main.html" %}
+
+ <div class="text-center mt-3"><h1>User registered by Uniform App</h1></div>
+
+<table id="usertable">
+ <thead>
+   <tr>
+     <th class="" scope="">User's id</th>
+     <th class="" scope="">User's Name</th>
+     <th class="" scope="">User's Email</th>
+     <th class="" scope="">User' Phone</th>
+     <th class="" scope="">Created on</th>
+   </tr>
+ </thead>
+ <tbody>
+   {% for user in uniform_app_user %}
+   <tr>
+       <td scope="row">{{user.id}}</td>
+       <td>{{user.name}}</td>
+       <td>{{user.email}}</td>
+       <td>{{user.phone}}</td>
+       <td>{{user.timestamp}}</td>
+   </tr>
+   {% endfor %}
+ </tbody>
+ <tfoot>
+
+ </tfoot>
+
+</table>
+<div class="text-center mt-3">
+  <h2>Admission form Details of User registered by Uniform App</h2>
+ </div>
+<form action="{% url 'custom_admin:uniform-app-analysis' %}" method="post">
+   {% csrf_token %}
+   <label for="parent">Parent Type</label>
+   <select class="customselect" name="parent" id="dropdown">
+       <option value="father" />Father</option>
+       <option value="mother" />Mother</option>
+       <option value="guardian" />Guardian</option>
+       <option value="All" />All</option>
+   </select>
+</form>
+<table id="example">
+   <thead>
+     <tr>
+       <th class="" scope="">User's id</th>
+       <th class="" scope="">Parent'sName</th>
+       <th class="" scope="">Parent'type</th>
+       <th class="" scope="">Parent'Email</th>
+       <th class="" scope="">child'name</th>
+       <th class="" scope="">Parent'Phone</th>
+       <th class="" scope="">School Applied For</th>
+       <th class="" scope="">Class Applied For</th>
+       <th class="" scope="">Fees</th>
+       <th class="" scope="">School Convenience Fee</th>
+       <th class="" scope="">receipt id</th>
+       <th class="" scope="">session</th>
+       <th class="" scope="">Apply Date</th>
+     </tr>
+   </thead>
+   <tbody>
+   {% for i in listings %}
+       <tr>
+           <td>{{i.0}}</td>
+           <td>{{i.1}}</td>
+           <td>{{i.2}}</td>
+           <td>{{i.3}}</td>
+           <td>{{i.4}}</td>
+           <td>{{i.5}}</td>
+           <td>{{i.6}}</td>
+           <td>{{i.7}}</td>
+           <td>{{i.8}}</td>
+           <td>{{i.9}}</td>
+           <td>{{i.10}}</td>
+           <td>{{i.11}}</td>
+           <td>{{i.12}}</td>
+       </tr>
+   {% endfor %}
+   </tbody>
+       <tfoot>
+           <tr>
+             <th >User's id</th>
+             <th >Parent'sName</th>
+             <th >Parent'type</th>
+             <th >Parent'Email</th>
+             <th >child'name</th>
+             <th >Parent'Phone</th>
+             <th >School Applied For</th>
+             <th >Class Applied For</th>
+             <th >Fees</th>
+             <th >School Convenience Fee</th>
+             <th >receipt id</th>
+             <th >session</th>
+             <th >Apply Date</th>
+           </tr>
+         </tfoot>
+</table>
+
+{% endblock %}

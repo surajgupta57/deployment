@@ -1,0 +1,10 @@
+{% extends 'admin/import_export/change_list.html' %}
+
+{% block object-tools-items %}
+{% if has_add_permission %}
+<li>
+    <a href="{% url 'new_webpush_dashboard' %}" class="btn btn-high btn-success">Webpush Dashboard</a>
+</li>
+{% endif %}
+{{ block.super }}
+{% endblock %}

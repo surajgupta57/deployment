@@ -1,0 +1,6 @@
+Error: No such option: --app
+You are using `--app` as an option of the worker sub-command:
+celery worker --app celeryapp <...>
+
+The support for this usage was removed in Celery 5.0. Instead you should use `--app` as a global option:
+celery --app celeryapp worker <...>

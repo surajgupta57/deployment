@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Receipt</title>
+    <style>
+        div {
+            font-size: 1.2em;
+            padding-bottom: 10px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        #school{
+            font-size: 1.4em;
+            padding-bottom: 0px;
+        }
+        #address {
+            padding: 0px;
+        }
+    </style>
+<head>
+
+<body>
+    <div class="text-center">
+        <img src="{{app.school_applied.school.logo.url}}" alt="Logo" width="150" height="150" />
+        <div id = "school"><strong>{{app.school_applied.school.name}}</strong></div>
+        <span id = "address"> {{app.school_applied.school.street_address | title}} </span>
+        <div id="address"> {{app.school_applied.school.phone_no}} </div>
+    </div>
+    <div>
+        <div><b>Receipt id:&nbsp;</b> {{ app.receipt_id }}</div>
+<!--        <div><b>Form id:&nbsp;</b> {{ app.school_applied.uid }}</div>-->
+        <div><b>Child name:&nbsp;</b> {{ app.school_applied.form.child.name }}</div>
+        <div><b>{% if app.school_applied.apply_for.name != child_class %} Applied Class*: {% else %} Applied Class: {% endif %}&nbsp;</b> {% if app.school_applied.apply_for.name != child_class %} {{ child_class }} / {% endif %} {{ app.school_applied.apply_for.name }}</div>
+        <div><b>Form fees:&nbsp;</b> {{ form_fee }}</div>
+        {% if app.school_applied.child.orphan == "YES"%}
+        <div><b>Guardian contact:&nbsp;</b> {{ app.school_applied.form.guardian.phone }}</div>
+        {% else %}
+        <div><b>Father contact:&nbsp;</b> {{ app.school_applied.form.father.phone }}</div>
+        <div><b>Mother contact:&nbsp;</b> {{ app.school_applied.form.mother.phone }}</div>
+        {% endif %}
+        <br><br>
+        <div class="col-12">Note: {% if app.school_applied.apply_for.name != child_class %} <li>Registration is not confirmation of admission.</li><li>{{ child_class }} and {{ app.school_applied.apply_for.name }} are the same class, and the application form is valid for both of them.</li>{% else %} Registration is not confirmation of admission. {% endif %}</div>
+    </div>
+</body>
+
+</html>

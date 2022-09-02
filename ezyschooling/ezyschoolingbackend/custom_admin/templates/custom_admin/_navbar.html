@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+      <img src="https://ezyschooling.com/_nuxt/img/ezyschoolinglogo.5e9461a.png" alt="" height="24" class="d-inline-block align-top">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      {% if request.user.is_superuser %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'custom_admin:home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Parenting
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'custom_admin:user_signup' %}">All Users</a>
+            <a class="dropdown-item" href="{% url 'custom_admin:user_with_cart' %}">User Cart Items</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admissions
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'custom_admin:all_applications' %}">All Applications</a>
+            <a class="dropdown-item" href="{% url 'custom_admin:school_views'%}">School Views</a>
+            <a class="dropdown-item" href="{% url 'custom_admin:school_enquiries'%}">School Enquiries</a>
+            <a class="dropdown-item" href="{% url 'custom_admin:admission_guidance_data'%}">Admission Guidance/a>
+          </div>
+        </li>
+        <li>
+          <a class="nav-link" href="{% url 'custom_admin:uniform-app-analysis' %}"> Analytics </a>
+        </li>
+      {% else%} 
+        <li class="nav-item" >
+          <a class="nav-link" href="{% url 'operators:home'%}">Home</a>  
+        </li>      
+      {% endif%} 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Operators
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'operators:home'%}">Home</a>
+            <a class="dropdown-item" href="{% url 'operators:list' %}">All Operators</a>
+            <a class="dropdown-item" href="{% url 'operators:register'%}">Create Operator</a>
+          </div>
+        </li>
+    </ul>
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+  </div>
+</nav>

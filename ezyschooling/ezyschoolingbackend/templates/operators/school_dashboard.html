@@ -1,0 +1,98 @@
+{% extends 'operators/home.html' %}
+{% block title %}School Dashboard{% endblock %}
+
+{% block head %}
+{{ form.media.css }}
+{% endblock %}
+{% block content %}
+{% include 'operators/_navbar.html' %}
+<div class="container py-4">
+    <h1 class="text-center pt-5">{{school_profile.name}}</h1>
+    <a href="{{school_profile.website}}"><h6 class="text-center">{{school_profile.website}}</h6></a>
+    <ul class="nav nav-tabs my-4">
+        <li class="nav-item">
+            <a class="nav-link {% if school_profile is None %} disabled{% endif %} " href="/operators/schools/profile/{{school_profile.id}}">School Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if school_point is None %} disabled{% endif %} " href="/operators/schools/point/{{school_point.id}}">School Point</a>
+        </li>
+    </ul>
+
+    <div>
+        <h1>
+            Age Criterias
+            <a href="/operators/schools/create/age/">
+                <button class="btn btn-primary">Create</button>
+            </a>
+        </h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">School</th>
+                <th scope="col">Class</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for age_criteria in age_criterias %}
+                        <tr>
+                            <td>{{ age_criteria.school }}</td>
+                            <td>{{ age_criteria.class_relation }}</td>
+                            <td>{{ age_criteria.start_date }}</td>
+                            <td>{{ age_criteria.end_date }}</td>
+                            <td><a class="{% if age_criteria is None %} disabled{% endif %} " href="/operators/schools/age/{{age_criteria.id}}">Edit</a></td>
+                            <td><a class="{% if age_criteria is None %} disabled{% endif %} " href="/operators/schools/delete/age/{{age_criteria.id}}">Delete</a></td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div>
+        <h1>
+            Distance Points
+            <a href="/operators/schools/create/distance/">
+                <button class="btn btn-primary">Create</button>
+            </a>
+        </h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">School</th>
+                <th scope="col">Start</th>
+                <th scope="col">End</th>
+                <th scope="col">Point</th>
+                <th scope="col">Timestamp</th>
+                <th scope="col">Updated At</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for distance_point in distance_points %}
+                        <tr>
+                            <td>{{ distance_point.school }}</td>
+                            <td>{{ distance_point.start }}</td>
+                            <td>{{ distance_point.end }}</td>
+                            <td>{{ distance_point.point }}</td>
+                            <td>{{ distance_point.timestamp }}</td>
+                            <td>{{ distance_point.updated_at }}</td>
+                            <td><a class="{% if distance_point is None %} disabled{% endif %} " href="/operators/schools/distance/{{distance_point.id}}">Edit</a></td>
+                            <td><a class="{% if age_criteria is None %} disabled{% endif %} " href="/operators/schools/delete/distance/{{distance_point.id}}">Delete</a></td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}
+{% block script %}
+{{ form.media.js }}
+{% endblock %}
+

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">EzySchooling</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'custom_admin:get_all_parent_profile_data' %}">All Parent Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'custom_admin:get_school_enquiry_for_anon_user' %}">School Enquiry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'custom_admin:get_contact_us_for_anon_user' %}">Contact Us Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'custom_admin:admission_guidance_data' %}">Admission Guidance Registrations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="document.getElementById('formnew').submit()">Logout</a>
+          </li>
+          <form action="{% url 'logout' %}" id = "formnew" method="POST">{% csrf_token %}</form>
+        </ul>
+      </div>
+    </div>
+  </nav>

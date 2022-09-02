@@ -1,0 +1,8 @@
+{% extends 'admin/import_export/change_list.html' %}
+
+{% block object-tools-items %}
+<li>
+    <a href="{% url 'new_source_add' %}" class="btn btn-high btn-success">Add New Source</a>
+</li>
+{{ block.super }}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'operators/home.html' %}
+{% block title%} Logout{% endblock %}
+{% block content %}
+    {% include "operators/_navbar.html" %}
+    <div class="container py-4">
+        <h2 class="text-center pt-5">Logged Out</h2>
+        <h4> Thanks for spending some quality time with the Web site today. </h4>
+        <a href="/operators/login">Log in again</a>
+    </div>
+{% endblock %}
